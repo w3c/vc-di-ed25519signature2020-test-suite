@@ -5,7 +5,7 @@
 
 const jsonld = require('jsonld');
 const util = require('./util');
-const {sha256digest} = require('./sha256digest');
+const {hashDigest} = require('./hashDigest');
 const jsigs = require('jsonld-signatures');
 
 const constants = jsigs;
@@ -67,7 +67,7 @@ module.exports = class LinkedDataSignature extends LinkedDataProof {
    */
   constructor({
     type, proof, LDKeyClass, date, key, signer, verifier, useNativeCanonize,
-    contextUrl, canonizeAlgorithm = 'URDNA2015', hash = sha256digest
+    contextUrl, canonizeAlgorithm = 'URDNA2015', hash = hashDigest()
   } = {}) {
     super({type});
     this.LDKeyClass = LDKeyClass;
