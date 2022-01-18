@@ -18,13 +18,14 @@ module.exports = class LinkedDataSignature extends LinkedDataProof {
    * NOTE: Developers are never expected to use this class directly, but to
    * only work with individual suites.
    *
-   * @param {object} options - Options hashmap.
+   * @param {object} options - Options to use.
    * @param {string} options.type - Suite name, provided by subclass.
    * @typedef LDKeyPair
-   * @param {LDKeyPair} LDKeyClass - The crypto-ld key class that this suite
-   *   will use to sign/verify signatures. Provided by subclass. Used
-   *   during the `verifySignature` operation, to create an instance (containing
-   *   a `verifier()` property) of a public key fetched via a `documentLoader`.
+   * @param {LDKeyPair} options.LDKeyClass - The crypto-ld key class
+   *   that this suite will use to sign/verify signatures. Provided
+   *   by subclass. Used during the `verifySignature` operation, to
+   *   create an instance (containing a `verifier()` property) of a
+   *   public key fetched via a `documentLoader`.
    *
    * @param {string} options.contextUrl - JSON-LD context URL that corresponds
    *   to this signature suite. Provided by subclass. Used for enforcing suite
@@ -91,7 +92,7 @@ module.exports = class LinkedDataSignature extends LinkedDataProof {
   }
 
   /**
-   * @param document {object} to be signed.
+   * @param {object} document - Document to be signed.
    * @param purpose {ProofPurpose}
    * @param documentLoader {function}
    * @param expansionMap {function}
