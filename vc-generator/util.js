@@ -26,10 +26,10 @@ api.w3cDate = date => {
 /**
  * Concatenates two Uint8Arrays.
  *
- * @param b1 {Uint8Array}.
- * @param b2 {Uint8Array}.
+ * @param {Uint8Array} b1 - A UInt8Array.
+ * @param {Uint8Array} b2 - A Uint8Array.
  *
- * @return {Uint8Array} the result.
+ * @returns {Uint8Array} The result.
  */
 api.concat = (b1, b2) => {
   const rval = new Uint8Array(b1.length + b2.length);
