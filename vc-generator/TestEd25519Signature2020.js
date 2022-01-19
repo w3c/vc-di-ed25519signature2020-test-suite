@@ -4,11 +4,11 @@
 
 const base58btc = require('base58-universal');
 const TestLinkedDataSignature = require('./TestLinkedDataSignature');
-import {
+const {
   Ed25519VerificationKey2020
-} from '@digitalbazaar/ed25519-verification-key-2020';
-import suiteContext2020 from 'ed25519-signature-2020-context';
-import suiteContext2018 from 'ed25519-signature-2018-context';
+} = require('@digitalbazaar/ed25519-verification-key-2020');
+const suiteContext2020 = require('ed25519-signature-2020-context');
+const suiteContext2018 = require('ed25519-signature-2018-context');
 
 // 'https://w3id.org/security/suites/ed25519-2020/v1'
 const SUITE_CONTEXT_URL = suiteContext2020.constants.CONTEXT_URL;
@@ -17,7 +17,7 @@ const SUITE_CONTEXT_URL_2018 = suiteContext2018.constants.CONTEXT_URL;
 // multibase base58-btc header
 const MULTIBASE_BASE58BTC_HEADER = 'z';
 
-export class Ed25519Signature2020 extends TestLinkedDataSignature {
+class Ed25519Signature2020 extends TestLinkedDataSignature {
   /**
    * @param {object} options - Options hashmap.
    *
@@ -217,3 +217,4 @@ function _includesContext({document, contextUrl}) {
 
 Ed25519Signature2020.CONTEXT_URL = SUITE_CONTEXT_URL;
 Ed25519Signature2020.CONTEXT = suiteContext2020.contexts.get(SUITE_CONTEXT_URL);
+module.exports = Ed25519Signature2020;
