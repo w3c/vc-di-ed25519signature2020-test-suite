@@ -48,12 +48,22 @@ describe('Ed25519 2020 Tests', function() {
             } catch(e) {
               error = e;
             }
-            should.not.exist(response);
+            should.not.exist(response, 'Expected verifier to throw');
             should.exist(error);
           }
           // only one test is positive so far
           if(test.negative == false) {
-
+            let error;
+            let response;
+            try {
+              response = await implementation.verify({
+                credential: test.credential
+              });
+            } catch(e) {
+              error = e;
+            }
+            should.exist(response, 'Expected verifier to return a response');
+            should.not.exist(error);
           }
 
         });
