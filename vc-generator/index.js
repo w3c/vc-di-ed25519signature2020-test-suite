@@ -19,8 +19,64 @@ const credentialsPath = join(process.cwd(), 'credentials');
 const main = async () => {
   const {methodFor} = await getDiDKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
-  await _validVC(key);
+  const validVC = await _validVC(key);
+  await _noProofValue(validVC);
+  await _noProofPurpose(validVC);
+  await _noProofCreated(validVC);
+  await _noProofType(validVC);
 };
+
+async function _noProofType(credential) {
+  const copy = cloneJSON(credential);
+  delete copy.proof.type;
+  const title = 'should not verify a proof with out a type';
+  const data = {
+    negative: true,
+    credential: copy,
+    row: title,
+    title
+  };
+  await writeJSON({path: `${credentialsPath}/noProofType.json`, data});
+}
+
+async function _noProofCreated(credential) {
+  const copy = cloneJSON(credential);
+  delete copy.proof.created;
+  const title = 'should not verify a proof with out a created';
+  const data = {
+    negative: true,
+    credential: copy,
+    row: title,
+    title
+  };
+  await writeJSON({path: `${credentialsPath}/noProofCreatedVC.json`, data});
+}
+
+async function _noProofPurpose(credential) {
+  const copy = cloneJSON(credential);
+  delete copy.proof.proofPurpose;
+  const title = 'should not verify a proof with out a proofPurpose';
+  const data = {
+    negative: true,
+    credential: copy,
+    row: title,
+    title
+  };
+  await writeJSON({path: `${credentialsPath}/noProofPurposeVC.json`, data});
+}
+
+async function _noProofValue(credential) {
+  const copy = cloneJSON(credential);
+  delete copy.proof.proofValue;
+  const title = 'should not verify a proof with out a proofValue';
+  const data = {
+    negative: true,
+    credential: copy,
+    row: title,
+    title
+  };
+  await writeJSON({path: `${credentialsPath}/noProofValueVC.json`, data});
+}
 
 async function _validVC(key) {
   const suite = new Ed25519Signature2020({key});
@@ -37,6 +93,7 @@ async function _validVC(key) {
     title
   };
   await writeJSON({path: `${credentialsPath}/validVC.json`, data});
+  return signedVC;
 }
 
 // run main by calling node ./vc-generator
