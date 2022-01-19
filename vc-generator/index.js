@@ -24,11 +24,18 @@ const main = async () => {
 
 async function _validVC(key) {
   const suite = new Ed25519Signature2020({key});
-  const data = await vc.issue({
+  const signedVC = await vc.issue({
     credential: cloneJSON(credential),
     suite,
     documentLoader
   });
+  const title = 'should verify a valid VC with an Ed25519Signature 2020';
+  const data = {
+    negative: false,
+    credential: signedVC,
+    row: title,
+    title
+  };
   await writeJSON({path: `${credentialsPath}/validVC.json`, data});
 }
 
