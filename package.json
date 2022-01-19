@@ -9,6 +9,7 @@
   "dependencies": {
     "@digitalbazaar/did-method-key": "^2.0.0",
     "@digitalbazaar/ed25519-verification-key-2020": "^3.2.0",
+    "@digitalbazaar/vc": "^2.1.0",
     "base58-universal": "^1.0.0",
     "bnid": "^2.1.0",
     "chai": "^4.3.4",
