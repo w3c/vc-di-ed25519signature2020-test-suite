@@ -3,7 +3,9 @@
  */
 
 const canonicalize = require('canonicalize');
+const {createSign, generateKeyPair} = require('crypto');
 const {join} = require('path');
+const {promisify} = require('util');
 const {
   cloneJSON,
   getDiDKey,
@@ -15,6 +17,7 @@ const vc = require('@digitalbazaar/vc');
 const documentLoader = require('./documentLoader');
 const {hashDigest} = require('./hashDigest');
 
+const generateKeyPairAsync = promisify(generateKeyPair);
 const credentialsPath = join(process.cwd(), 'credentials');
 
 // this will generate the signed VCs for the test
@@ -28,9 +31,37 @@ const main = async () => {
     _noProofCreated(validVC),
     _noProofType(validVC),
     _incorrectDigest(key),
-    _incorrectCanonize(key)
+    _incorrectCanonize(key),
+    _incorrectSigner(key)
   ]);
 };
+
+async function _incorrectSigner(key) {
+  const rsaKeyPair = await generateKeyPairAsync('rsa', {modulusLength: 4096});
+  const suite = new Ed25519Signature2020({key});
+  suite.sign = async ({verifyData, proof}) => {
+    const sign = createSign('rsa-sha256');
+    sign.write(verifyData);
+    sign.end();
+    proof.proofValue = sign.sign(rsaKeyPair.privateKey, 'base64');
+    return proof;
+  };
+
+  const signedVC = await vc.issue({
+    credential: cloneJSON(credential),
+    suite,
+    documentLoader
+  });
+
+  const title = 'should not verify if signer is not Ed25519';
+  const data = {
+    negative: true,
+    credential: signedVC,
+    row: title,
+    title
+  };
+  await writeJSON({path: `${credentialsPath}/rsaSigned.json`, data});
+}
 
 async function _incorrectCanonize(key) {
   const suite = new Ed25519Signature2020({key});
