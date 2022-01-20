@@ -2,6 +2,7 @@
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
 
+const canonicalize = require('canonicalize');
 const {join} = require('path');
 const {
   cloneJSON,
@@ -32,12 +33,12 @@ const main = async () => {
 };
 
 async function _incorrectCanonize(key) {
-  const suite = new Ed25519Signature2020({
-    key,
-    // the 2012 algorithm labels blank nodes differently than the 2015
-    // algorithm so child will be canonized differently
-    canonizeAlgorithm: 'URGNA2012'
-  });
+  const suite = new Ed25519Signature2020({key});
+  // canonize is expected to be async
+  suite.canonize = async input => {
+    // this will canonize using JCS
+    return canonicalize(input);
+  };
   const signedVC = await vc.issue({
     credential: cloneJSON(credential),
     suite,
@@ -50,7 +51,7 @@ async function _incorrectCanonize(key) {
     row: title,
     title
   };
-  await writeJSON({path: `${credentialsPath}/canonizeURGNA2012.json`, data});
+  await writeJSON({path: `${credentialsPath}/canonizeJCS.json`, data});
 }
 
 async function _incorrectDigest(key) {

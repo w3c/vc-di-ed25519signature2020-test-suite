@@ -13,6 +13,7 @@
     "@digitalcredentials/did-context": "^1.0.0",
     "base58-universal": "^1.0.0",
     "bnid": "^2.1.0",
+    "canonicalize": "^1.0.8",
     "chai": "^4.3.4",
     "credentials-context": "^2.0.0",
     "ed25519-signature-2018-context": "^1.1.0",
