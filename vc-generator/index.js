@@ -2,6 +2,7 @@
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
 
+const {join} = require('path');
 const {
   cloneJSON,
   getDiDKey,
@@ -11,7 +12,8 @@ const credential = require('./testVC');
 const Ed25519Signature2020 = require('./TestEd25519Signature2020');
 const vc = require('@digitalbazaar/vc');
 const documentLoader = require('./documentLoader');
-const {join} = require('path');
+const {hashDigest} = require('./hashDigest');
+
 
 const credentialsPath = join(process.cwd(), 'credentials');
 
@@ -20,11 +22,35 @@ const main = async () => {
   const {methodFor} = await getDiDKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
   const validVC = await _validVC(key);
-  await _noProofValue(validVC);
-  await _noProofPurpose(validVC);
-  await _noProofCreated(validVC);
-  await _noProofType(validVC);
+  await Promise.all([
+    _noProofValue(validVC),
+    _noProofPurpose(validVC),
+    _noProofCreated(validVC),
+    _noProofType(validVC),
+    _incorrectDigest(key)
+  ]);
 };
+
+async function _incorrectDigest(key) {
+  const suite = new Ed25519Signature2020({
+    key,
+    hash: hashDigest({algorithm: 'sha512'})
+  });
+  const signedVC = await vc.issue({
+    credential: cloneJSON(credential),
+    suite,
+    documentLoader
+  });
+  const title = 'should not verify if digest is not sha-256';
+  const data = {
+    negative: true,
+    credential: signedVC,
+    row: title,
+    title
+  };
+  await writeJSON({path: `${credentialsPath}/digestSha512.json`, data});
+
+}
 
 async function _noProofType(credential) {
   const copy = cloneJSON(credential);
