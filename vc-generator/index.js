@@ -34,6 +34,8 @@ const main = async () => {
 async function _incorrectCanonize(key) {
   const suite = new Ed25519Signature2020({
     key,
+    // the 2012 algorithm labels blank nodes differently than the 2015
+    // algorithm so child will be canonized differently
     canonizeAlgorithm: 'URGNA2012'
   });
   const signedVC = await vc.issue({
