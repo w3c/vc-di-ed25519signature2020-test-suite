@@ -14,7 +14,6 @@ const vc = require('@digitalbazaar/vc');
 const documentLoader = require('./documentLoader');
 const {hashDigest} = require('./hashDigest');
 
-
 const credentialsPath = join(process.cwd(), 'credentials');
 
 // this will generate the signed VCs for the test
@@ -27,9 +26,30 @@ const main = async () => {
     _noProofPurpose(validVC),
     _noProofCreated(validVC),
     _noProofType(validVC),
-    _incorrectDigest(key)
+    _incorrectDigest(key),
+    _incorrectCanonize(key)
   ]);
 };
+
+async function _incorrectCanonize(key) {
+  const suite = new Ed25519Signature2020({
+    key,
+    canonizeAlgorithm: 'URGNA2012'
+  });
+  const signedVC = await vc.issue({
+    credential: cloneJSON(credential),
+    suite,
+    documentLoader
+  });
+  const title = 'should not verify if canonize algorithm is not URDNA2015';
+  const data = {
+    negative: true,
+    credential: signedVC,
+    row: title,
+    title
+  };
+  await writeJSON({path: `${credentialsPath}/canonizeURGNA2012.json`, data});
+}
 
 async function _incorrectDigest(key) {
   const suite = new Ed25519Signature2020({
@@ -49,7 +69,6 @@ async function _incorrectDigest(key) {
     title
   };
   await writeJSON({path: `${credentialsPath}/digestSha512.json`, data});
-
 }
 
 async function _noProofType(credential) {
