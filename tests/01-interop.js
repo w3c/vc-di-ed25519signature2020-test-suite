@@ -20,24 +20,26 @@ const testAPIs = implementations.filter(v => test.includes(v.name));
 describe('Ed25519 2020 Tests', function() {
   const summaries = new Set();
   this.summary = summaries;
+  // column names for the matrix go here
+  const columnNames = [];
+  const reportData = [];
+  // this will tell the report
+  // to make an interop matrix with this suite
+  this.matrix = true;
+  this.report = true;
+  this.columns = columnNames;
+  this.rowLabel = 'Test Name';
+  this.columnLabel = 'Verifier';
+  // the reportData will be displayed under the test title
+  this.reportData = reportData;
   for(const verifier of testAPIs) {
     // wrap the testApi config in an Implementation class
     const implementation = new Implementation(verifier);
     describe(verifier.name, function() {
-      // column names for the matrix go here
-      const columnNames = [];
-      const reportData = [];
-      // this will tell the report
-      // to make an interop matrix with this suite
-      this.matrix = true;
-      this.report = true;
-      this.columns = columnNames;
-      this.rowLabel = 'Test Name';
-      this.columnLabel = 'Verifier';
-      // the reportData will be displayed under the test title
-      this.reportData = reportData;
+      columnNames.push(verifier.name);
       for(const test of credentials) {
         it(test.title, async function() {
+          this.test.cell = {columnId: verifier.name, rowId: test.row};
           if(test.negative === true) {
             let error;
             let response;

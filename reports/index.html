@@ -62,15 +62,15 @@
     </section>
     <section id="sotd">
       sotd is required
-      Tests passed 5/6 83%
-      Tests failed 1/6 17%
+      Tests passed 8/8 100%
+      Tests failed 0/8 0%
       Tests skipped 0
-      Total tests 6
+      Total tests 8
     </section>
     <section id="conformance">
       <!--- This will take the tests and display them as matrices -->
-        <section class="informative" id="Digital Bazaar">
-          <h2>Digital Bazaar</h2>
+        <section class="informative" id="Ed25519 2020 Tests">
+          <h2>Ed25519 2020 Tests</h2>
           <style>
             .no-wrap {
               white-space: nowrap;
@@ -116,8 +116,57 @@
                   <span>&#8659;</span><span>Test Name</span>
                   </div>
                 </th>
+                    <th class="no-wrap small-font">Digital Bazaar</th>
                 </thead>
               <tbody>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">should not verify if canonize algorithm is not URDNA2015</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">should not verify if digest is not sha-256</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">should not verify a proof with out a created</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">should not verify a proof with out a proofPurpose</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">should not verify a proof with out a type</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">should not verify a proof with out a proofValue</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">should not verify if signer is not Ed25519</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">should verify a valid VC with an Ed25519Signature 2020</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
             </tbody>
             </table>
           </div>
