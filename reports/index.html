@@ -13,10 +13,10 @@
           // set this in the config section
           var respecConfig = {
       "specStatus": "unofficial",
-      "shortName": "test-verifiable-credentials-test-suite",
+      "shortName": "di-ed25519-test-suite",
       "subtitle": "Test Interoperability Report for Verifiable Credentials",
-      "github": "https://github.com/digitalbazaar/w3c-test-suite-template",
-      "edDraftURI": "https://digitalbazaar.github.io/w3c-test-suite-template/",
+      "github": "https://github.com/digitalbazaar/di-ed25519-test-suite",
+      "edDraftURI": "https://digitalbazaar.github.io/di-ed25519-test-suite",
       "doJsonLd": true,
       "includePermalinks": false,
       "editors": [
@@ -62,10 +62,41 @@
     </section>
     <section id="sotd">
       sotd is required
-      Tests passed 8/8 100%
-      Tests failed 0/8 0%
+      Tests passed 9/9 100%
+      Tests failed 0/9 0%
       Tests skipped 0
-      Total tests 8
+      Total tests 9
+    </section>
+    
+    <section class="informative" id="conformance-testing-results">
+      <h2> Conformance Testing Results </h2>
+      <section class="informative" id="Key">
+        <h3>Key</h3>
+        <ul>
+          <li>
+    ✓ - Success
+          </li>
+          <li>
+    ❌ - Error
+          </li>
+          <li>
+    no support - Implementation explicitly does not support this feature
+          </li>
+          <li>
+    untested - This test is new, implementation has not been run on it yet
+          </li>
+          <li>
+    Listed on the left side are the expected features.
+          </li>
+          <li>
+    Listed on the top are verifiers.
+          </li>
+        </ul>
+      </section>
+    
+      <p>
+      The results of the tests are show below:
+      </p>
     </section>
     <section id="conformance">
       <!--- This will take the tests and display them as matrices -->
@@ -131,6 +162,12 @@
               <tr>
                 <!--This is the name of the test-->
                 <td class="subtest">should not verify if digest is not sha-256</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">should not verify if key material is not MULTIBASE &amp; MULTICODEC</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
               </tr>
