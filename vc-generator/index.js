@@ -24,17 +24,49 @@ const credentialsPath = join(process.cwd(), 'credentials');
 const main = async () => {
   const {methodFor} = await getDiDKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
-  const validVC = await _validVC(key);
-  await Promise.all([
+  const {path, data} = await _validVC(key);
+  // use copies of the validVC in other tests
+  const validVC = data.credential;
+  // create all of the other vc
+  const vcs = await Promise.all([
     _noProofValue(validVC),
     _noProofPurpose(validVC),
     _noProofCreated(validVC),
     _noProofType(validVC),
+    _incorrectCodec(validVC),
     _incorrectDigest(key),
     _incorrectCanonize(key),
     _incorrectSigner(key)
   ]);
+  // write them to disk
+  await Promise.all([
+    ...vcs,
+    // add the valid vc to the list
+    {path, data}
+  ].map(writeJSON));
 };
+
+function _incorrectCodec(credential) {
+  const copy = cloneJSON(credential);
+  // break the did key verification method into parts
+  const parts = copy.proof.verificationMethod.split(':');
+  // pop off the last part and remove the opening z
+  const last = parts.pop().substr(1);
+  // re-add the key material at the end
+  parts.push(last);
+  copy.proof.verificationMethod = parts.join(':');
+  console.log(JSON.stringify(copy.proof, null, 2));
+  const title = 'should not verify if key material is not ' +
+    'MULTIBASE & MULTICODEC';
+  const data = {
+    negative: true,
+    credential: copy,
+    row: title,
+    title
+  };
+  return {path: `${credentialsPath}/incorrectCodec.json`, data};
+
+}
 
 async function _incorrectSigner(key) {
   const rsaKeyPair = await generateKeyPairAsync('rsa', {modulusLength: 4096});
@@ -60,7 +92,7 @@ async function _incorrectSigner(key) {
     row: title,
     title
   };
-  await writeJSON({path: `${credentialsPath}/rsaSigned.json`, data});
+  return {path: `${credentialsPath}/rsaSigned.json`, data};
 }
 
 async function _incorrectCanonize(key) {
@@ -82,7 +114,7 @@ async function _incorrectCanonize(key) {
     row: title,
     title
   };
-  await writeJSON({path: `${credentialsPath}/canonizeJCS.json`, data});
+  return {path: `${credentialsPath}/canonizeJCS.json`, data};
 }
 
 async function _incorrectDigest(key) {
@@ -102,10 +134,10 @@ async function _incorrectDigest(key) {
     row: title,
     title
   };
-  await writeJSON({path: `${credentialsPath}/digestSha512.json`, data});
+  return {path: `${credentialsPath}/digestSha512.json`, data};
 }
 
-async function _noProofType(credential) {
+function _noProofType(credential) {
   const copy = cloneJSON(credential);
   delete copy.proof.type;
   const title = 'should not verify a proof with out a type';
@@ -115,10 +147,10 @@ async function _noProofType(credential) {
     row: title,
     title
   };
-  await writeJSON({path: `${credentialsPath}/noProofType.json`, data});
+  return {path: `${credentialsPath}/noProofType.json`, data};
 }
 
-async function _noProofCreated(credential) {
+function _noProofCreated(credential) {
   const copy = cloneJSON(credential);
   delete copy.proof.created;
   const title = 'should not verify a proof with out a created';
@@ -128,10 +160,10 @@ async function _noProofCreated(credential) {
     row: title,
     title
   };
-  await writeJSON({path: `${credentialsPath}/noProofCreatedVC.json`, data});
+  return {path: `${credentialsPath}/noProofCreatedVC.json`, data};
 }
 
-async function _noProofPurpose(credential) {
+function _noProofPurpose(credential) {
   const copy = cloneJSON(credential);
   delete copy.proof.proofPurpose;
   const title = 'should not verify a proof with out a proofPurpose';
@@ -141,10 +173,10 @@ async function _noProofPurpose(credential) {
     row: title,
     title
   };
-  await writeJSON({path: `${credentialsPath}/noProofPurposeVC.json`, data});
+  return {path: `${credentialsPath}/noProofPurposeVC.json`, data};
 }
 
-async function _noProofValue(credential) {
+function _noProofValue(credential) {
   const copy = cloneJSON(credential);
   delete copy.proof.proofValue;
   const title = 'should not verify a proof with out a proofValue';
@@ -154,7 +186,7 @@ async function _noProofValue(credential) {
     row: title,
     title
   };
-  await writeJSON({path: `${credentialsPath}/noProofValueVC.json`, data});
+  return {path: `${credentialsPath}/noProofValueVC.json`, data};
 }
 
 async function _validVC(key) {
@@ -171,8 +203,7 @@ async function _validVC(key) {
     row: title,
     title
   };
-  await writeJSON({path: `${credentialsPath}/validVC.json`, data});
-  return signedVC;
+  return {path: `${credentialsPath}/validVC.json`, data};
 }
 
 // run main by calling node ./vc-generator
