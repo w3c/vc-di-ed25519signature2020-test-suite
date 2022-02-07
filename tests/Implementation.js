@@ -38,7 +38,7 @@ class Implementation {
       };
       const result = await httpClient.post(
         this.settings.issuer.endpoint,
-        {headers, httpsAgent, json: body}
+        {headers, agent: httpsAgent, json: body}
       );
       return result;
     } catch(e) {
@@ -61,7 +61,7 @@ class Implementation {
       };
       const result = await httpClient.post(
         this.settings.verifier,
-        {headers, httpsAgent, json: body}
+        {headers, agent: httpsAgent, json: body}
       );
       return result;
     } catch(e) {
