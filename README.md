@@ -11,7 +11,7 @@
 
 ## Background
 
-Provides interopability tests for verifiers that support Ed25519Signature2020.
+Provides interoperability tests for verifiers that support [Ed25519Signature2020](https://w3c-ccg.github.io/lds-ed25519-2020/).
 
 ## Install
 
