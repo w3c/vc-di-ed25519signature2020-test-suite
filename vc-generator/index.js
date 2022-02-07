@@ -22,6 +22,7 @@ const credentialsPath = join(process.cwd(), 'credentials');
 
 // this will generate the signed VCs for the test
 const main = async () => {
+  console.log('generating vcs');
   const {methodFor} = await getDiDKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
   const {path, data} = await _validVC(key);
@@ -38,12 +39,14 @@ const main = async () => {
     _incorrectCanonize(key),
     _incorrectSigner(key)
   ]);
+  console.log('writing vcs to /credentials');
   // write them to disk
   await Promise.all([
     ...vcs,
     // add the valid vc to the list
     {path, data}
   ].map(writeJSON));
+  console.log('vcs generated');
 };
 
 function _incorrectCodec(credential) {
@@ -55,7 +58,6 @@ function _incorrectCodec(credential) {
   // re-add the key material at the end
   parts.push(last);
   copy.proof.verificationMethod = parts.join(':');
-  console.log(JSON.stringify(copy.proof, null, 2));
   const title = 'should not verify if key material is not ' +
     'MULTIBASE & MULTICODEC';
   const data = {
