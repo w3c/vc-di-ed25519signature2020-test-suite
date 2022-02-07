@@ -25,7 +25,7 @@ npm i
 npm test
 ```
 
-##Generator
+## Generator
 
 To generate new test data use this command:
 
@@ -34,7 +34,7 @@ npm run generate-vcs
 ```
 
 
-##Implementation
+## Implementation
 
 To add a new Implementation simply add a new file to the Implementations dir.
 ```js
