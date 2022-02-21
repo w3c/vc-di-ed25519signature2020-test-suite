@@ -18,7 +18,7 @@ class Implementation {
   constructor(settings) {
     this.settings = settings;
   }
-  async issue({credential}) {
+  async issue({credential, options = {}}) {
     try {
       const headers = {..._headers, ...this.settings.issuer.headers};
       const expires = () => {
@@ -34,7 +34,8 @@ class Implementation {
           expirationDate: expires(),
           issuer: this.settings.issuer.id,
           '@context': credential['@context']
-        }
+        },
+        options
       };
       const result = await httpClient.post(
         this.settings.issuer.endpoint,
@@ -47,7 +48,7 @@ class Implementation {
       throw e;
     }
   }
-  async verify({credential, auth}) {
+  async verify({credential, auth, options = {checks: ['proof']}}) {
     try {
       const headers = {..._headers};
       if(auth && auth.type === 'oauth2-bearer-token') {
@@ -55,9 +56,7 @@ class Implementation {
       }
       const body = {
         verifiableCredential: credential,
-        options: {
-          checks: ['proof'],
-        },
+        options
       };
       const result = await httpClient.post(
         this.settings.verifier,
