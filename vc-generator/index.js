@@ -2,6 +2,7 @@
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
 
+const vc = require('@digitalbazaar/vc');
 const canonicalize = require('canonicalize');
 const {createSign, generateKeyPair} = require('crypto');
 const {join} = require('path');
@@ -11,9 +12,9 @@ const {
   getDiDKey,
   writeJSON
 } = require('./helpers');
+const implementations = require('../implementations');
 const credential = require('./testVC');
 const Ed25519Signature2020 = require('./TestEd25519Signature2020');
-const vc = require('@digitalbazaar/vc');
 const documentLoader = require('./documentLoader');
 const {hashDigest} = require('./hashDigest');
 
@@ -22,6 +23,10 @@ const credentialsPath = join(process.cwd(), 'credentials');
 
 // this will generate the signed VCs for the test
 const main = async () => {
+  if(!process.env.ED25519_TEST_CONFIG_FILE) {
+    throw new Error(`ENV variable ED25519_TEST_CONFIG_FILE is required.`);
+  }
+  const config = require(process.env.ED25519_TEST_CONFIG_FILE);
   console.log('generating vcs');
   const {methodFor} = await getDiDKey();
   const key = methodFor({purpose: 'capabilityInvocation'});

@@ -34,13 +34,23 @@ const cloneJSON = data => JSON.parse(JSON.stringify(data, null, 2));
  * @returns {Promise<object>} - Returns the resulting did key driver result.
  */
 const getDiDKey = async ({keySeed = _seed} = {}) => {
+  // convert multibase seed to Uint8Array
   const seed = decodeSecretKeySeed({secretKeySeed: keySeed});
   return didKeyDriver.generate({seed});
 };
 
+async function getInvocationSigner({seedMultiBase}) {
+  const didKey = await getDiDkey({keySeed: seedMultiBase});
+
+  const {didDocument: {capabilityInvocation}} = didKey;
+
+  return didKey.keyPairs.get(capabilityInvocation[0]);
+}
+
 module.exports = {
   getDiDKey,
   cloneJSON,
-  writeJSON
+  writeJSON,
+  getInvocationSigner
 };
 
