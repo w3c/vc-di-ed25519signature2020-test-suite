@@ -10,6 +10,7 @@ const {promisify} = require('util');
 const {
   cloneJSON,
   getDiDKey,
+  getInvocationSigner,
   writeJSON
 } = require('./helpers');
 const implementations = require('../implementations');
@@ -27,6 +28,7 @@ const main = async () => {
     throw new Error(`ENV variable ED25519_TEST_CONFIG_FILE is required.`);
   }
   const config = require(process.env.ED25519_TEST_CONFIG_FILE);
+  const invocationSigner = await getInvocationSigner({seedMultiBase: config.key.seedMultiBase});
   console.log('generating vcs');
   const {methodFor} = await getDiDKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
@@ -67,12 +69,16 @@ function _incorrectCodec(credential) {
     'MULTIBASE & MULTICODEC';
   const data = {
     negative: true,
-    credential: copy,
+    body: {
+      options: {
+        checks: ['proof']
+      },
+      verifiableCredential: copy
+    },
     row: title,
     title
   };
   return {path: `${credentialsPath}/incorrectCodec.json`, data};
-
 }
 
 async function _incorrectSigner(key) {
@@ -95,7 +101,12 @@ async function _incorrectSigner(key) {
   const title = 'should not verify if signer is not Ed25519';
   const data = {
     negative: true,
-    credential: signedVC,
+    body: {
+      options: {
+        checks: ['proof']
+      },
+      verifiableCredential: signedVC
+    },
     row: title,
     title
   };
@@ -117,7 +128,12 @@ async function _incorrectCanonize(key) {
   const title = 'should not verify if canonize algorithm is not URDNA2015';
   const data = {
     negative: true,
-    credential: signedVC,
+    body: {
+      options: {
+        checks: ['proof']
+      },
+      verifiableCredential: signedVC
+    },
     row: title,
     title
   };
@@ -137,7 +153,12 @@ async function _incorrectDigest(key) {
   const title = 'should not verify if digest is not sha-256';
   const data = {
     negative: true,
-    credential: signedVC,
+    body: {
+      options: {
+        checks: ['proof']
+      },
+      verifiableCredential: signedVC
+    },
     row: title,
     title
   };
@@ -150,7 +171,12 @@ function _noProofType(credential) {
   const title = 'should not verify a proof with out a type';
   const data = {
     negative: true,
-    credential: copy,
+    body: {
+      options: {
+        checks: ['proof']
+      },
+      verifiableCredential: copy
+    },
     row: title,
     title
   };
@@ -163,7 +189,12 @@ function _noProofCreated(credential) {
   const title = 'should not verify a proof with out a created';
   const data = {
     negative: true,
-    credential: copy,
+    body: {
+      options: {
+        checks: ['proof']
+      },
+      verifiableCredential: copy
+    },
     row: title,
     title
   };
@@ -176,7 +207,12 @@ function _noProofPurpose(credential) {
   const title = 'should not verify a proof with out a proofPurpose';
   const data = {
     negative: true,
-    credential: copy,
+    body: {
+      options: {
+        checks: ['proof']
+      },
+      verifiableCredential: copy
+    },
     row: title,
     title
   };
@@ -189,7 +225,12 @@ function _noProofValue(credential) {
   const title = 'should not verify a proof with out a proofValue';
   const data = {
     negative: true,
-    credential: copy,
+    body: {
+      options: {
+        checks: ['proof']
+      },
+      verifiableCredential: copy
+    },
     row: title,
     title
   };
@@ -206,7 +247,12 @@ async function _validVC(key) {
   const title = 'should verify a valid VC with an Ed25519Signature 2020';
   const data = {
     negative: false,
-    credential: signedVC,
+    body: {
+      options: {
+        checks: ['proof']
+      },
+      verifiableCredential: signedVC
+    },
     row: title,
     title
   };

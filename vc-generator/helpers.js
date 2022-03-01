@@ -29,22 +29,22 @@ const cloneJSON = data => JSON.parse(JSON.stringify(data, null, 2));
  * Takes in a bs58 mutlicodec multibase seed and returns a did key.
  *
  * @param {object} options - Options to use.
- * @param {string} [options.keySeed=_seed] - A bs58 encoded string.
+ * @param {string} [options.seedMultiBase=_seed] - A bs58 encoded string.
  *
  * @returns {Promise<object>} - Returns the resulting did key driver result.
  */
-const getDiDKey = async ({keySeed = _seed} = {}) => {
+const getDiDKey = async ({seedMultiBase = _seed} = {}) => {
   // convert multibase seed to Uint8Array
-  const seed = decodeSecretKeySeed({secretKeySeed: keySeed});
+  const seed = decodeSecretKeySeed({secretKeySeed: seedMultiBase});
   return didKeyDriver.generate({seed});
 };
 
 async function getInvocationSigner({seedMultiBase}) {
-  const didKey = await getDiDkey({keySeed: seedMultiBase});
+  const didKey = await getDiDkey({seedMultiBase});
 
   const {didDocument: {capabilityInvocation}} = didKey;
 
-  return didKey.keyPairs.get(capabilityInvocation[0]);
+  return didKey.keyPairs.get(capabilityInvocation[0]).signer();
 }
 
 module.exports = {
