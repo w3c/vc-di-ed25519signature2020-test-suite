@@ -18,9 +18,9 @@ class Implementation {
   constructor(settings) {
     this.settings = settings;
   }
-  async issue({credential, options = {}}) {
+  async issue({credential, headers = {}, options = {}}) {
     try {
-      const headers = {..._headers, ...this.settings.issuer.headers};
+      const headers = {..._headers, ...headers};
       const expires = () => {
         const date = new Date();
         date.setMonth(date.getMonth() + 2);
@@ -48,16 +48,9 @@ class Implementation {
       throw e;
     }
   }
-  async verify({credential, auth, options = {checks: ['proof']}}) {
-    try {
-      const headers = {..._headers};
-      if(auth && auth.type === 'oauth2-bearer-token') {
-        headers.Authorization = `Bearer ${auth.accessToken}`;
-      }
-      const body = {
-        verifiableCredential: credential,
-        options
-      };
+  async verify({body, headers = {}}) {
+        try {
+      const headers = {..._headers, ...headers};
       const result = await httpClient.post(
         this.settings.verifier,
         {headers, agent: httpsAgent, json: body}

@@ -40,7 +40,7 @@ const getDiDKey = async ({seedMultiBase = _seed} = {}) => {
 };
 
 async function getInvocationSigner({seedMultiBase}) {
-  const didKey = await getDiDkey({seedMultiBase});
+  const didKey = await getDiDKey({seedMultiBase});
 
   const {didDocument: {capabilityInvocation}} = didKey;
 
