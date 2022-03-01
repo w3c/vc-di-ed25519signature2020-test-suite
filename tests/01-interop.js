@@ -45,7 +45,8 @@ describe('Ed25519 2020 Tests', function() {
             let response;
             try {
               response = await implementation.verify({
-                credential: test.credential
+                body: test.body,
+                headers: test.headers
               });
             } catch(e) {
               error = e;
@@ -59,7 +60,8 @@ describe('Ed25519 2020 Tests', function() {
             let response;
             try {
               response = await implementation.verify({
-                credential: test.credential
+                body: test.body,
+                headers: test.headers
               });
             } catch(e) {
               error = e;

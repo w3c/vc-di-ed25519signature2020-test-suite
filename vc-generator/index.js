@@ -34,7 +34,7 @@ const main = async () => {
   const key = methodFor({purpose: 'capabilityInvocation'});
   const {path, data} = await _validVC(key);
   // use copies of the validVC in other tests
-  const validVC = data.credential;
+  const validVC = data.body.verifiableCredential;
   // create all of the other vc
   const vcs = await Promise.all([
     _noProofValue(validVC),
