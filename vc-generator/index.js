@@ -5,6 +5,7 @@
 const vc = require('@digitalbazaar/vc');
 const canonicalize = require('canonicalize');
 const {createSign, generateKeyPair} = require('crypto');
+const {signCapabilityInvocation} = require('@digitalbazaar/http-signature-zcap-invoke');
 const {join} = require('path');
 const {promisify} = require('util');
 const {
@@ -21,6 +22,13 @@ const {hashDigest} = require('./hashDigest');
 
 const generateKeyPairAsync = promisify(generateKeyPair);
 const credentialsPath = join(process.cwd(), 'credentials');
+// test these implementations' issuers or verifiers
+const test = [
+  'Digital Bazaar'
+];
+
+// only test listed implementations
+const testAPIs = implementations.filter(v => test.includes(v.name));
 
 // this will generate the signed VCs for the test
 const main = async () => {
@@ -44,9 +52,28 @@ const main = async () => {
     _incorrectCodec(validVC),
     _incorrectDigest(key),
     _incorrectCanonize(key),
-    _incorrectSigner(key)
+    _incorrectSigner(key),
+    // make sure the validVC is in the list of VCs
+    {path, data}
   ]);
-  console.log('writing vcs to /credentials');
+  // loop through each implementation & write the test data to disk
+  // FIXME this will create a postman collection in the future
+  for(const implementation of testAPIs) {
+    const signatureHeaders = await signCapabilityInvocation({
+      url,
+      method,
+      headers: {
+        ...headers,
+        date: new Date().toUTCString()
+      },
+      json,
+      expires: new Date('12-20-2022'),
+      invocationSigner,
+      capability: capability || await generateZcapUri({url}),
+      capabilityAction: action
+    });
+  }
+    console.log('writing   vcs to /credentials');
   // write them to disk
   await Promise.all([
     ...vcs,
@@ -69,6 +96,7 @@ function _incorrectCodec(credential) {
     'MULTIBASE & MULTICODEC';
   const data = {
     negative: true,
+    endpoint: 'verifier',
     body: {
       options: {
         checks: ['proof']
@@ -101,6 +129,7 @@ async function _incorrectSigner(key) {
   const title = 'should not verify if signer is not Ed25519';
   const data = {
     negative: true,
+    endpoint: 'verifier',
     body: {
       options: {
         checks: ['proof']
@@ -128,6 +157,7 @@ async function _incorrectCanonize(key) {
   const title = 'should not verify if canonize algorithm is not URDNA2015';
   const data = {
     negative: true,
+    endpoint: 'verifier',
     body: {
       options: {
         checks: ['proof']
@@ -153,6 +183,7 @@ async function _incorrectDigest(key) {
   const title = 'should not verify if digest is not sha-256';
   const data = {
     negative: true,
+    endpoint: 'verifier',
     body: {
       options: {
         checks: ['proof']
@@ -171,6 +202,7 @@ function _noProofType(credential) {
   const title = 'should not verify a proof with out a type';
   const data = {
     negative: true,
+    endpoint: 'verifier',
     body: {
       options: {
         checks: ['proof']
@@ -189,6 +221,7 @@ function _noProofCreated(credential) {
   const title = 'should not verify a proof with out a created';
   const data = {
     negative: true,
+    endpoint: 'verifier',
     body: {
       options: {
         checks: ['proof']
@@ -207,6 +240,7 @@ function _noProofPurpose(credential) {
   const title = 'should not verify a proof with out a proofPurpose';
   const data = {
     negative: true,
+    endpoint: 'verifier',
     body: {
       options: {
         checks: ['proof']
@@ -225,6 +259,7 @@ function _noProofValue(credential) {
   const title = 'should not verify a proof with out a proofValue';
   const data = {
     negative: true,
+    endpoint: 'verifier',
     body: {
       options: {
         checks: ['proof']
@@ -247,6 +282,7 @@ async function _validVC(key) {
   const title = 'should verify a valid VC with an Ed25519Signature 2020';
   const data = {
     negative: false,
+    endpoint: 'verifier',
     body: {
       options: {
         checks: ['proof']
