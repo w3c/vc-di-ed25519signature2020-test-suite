@@ -65,7 +65,8 @@ const main = async () => {
         const endpointData = implementation[vc.data.endpoint];
         const url = endpointData.endpoint;
         const headers = endpointData.headers || {};
-        const signatureHeaders = await signCapabilityInvocation({
+        // adds the auth header for the request here
+        vc.data.headers = await signCapabilityInvocation({
           url,
           method: endpointData.method || 'POST',
           headers: {
@@ -77,14 +78,13 @@ const main = async () => {
           // FIXME set validUntil once vc refresh is up
           expires: new Date(Date.now() + 365 * 24 * 60 * 60000),
           invocationSigner,
-          capability: endpointData.zcap,
+          capability: JSON.parse(endpointData.zcap),
           capabilityAction: 'write'
         });
-        vc.data.headers = signatureHeaders;
         return writeJSON(vc);
       })
   }));
-    console.log('vcs generated');
+  console.log('vcs generated');
 };
 
 function _incorrectCodec(credential) {
