@@ -43,20 +43,24 @@ class Implementation {
       );
       return result;
     } catch(e) {
+      console.error('issue', e);
       // this is just to make debugging easier
       //console.error(e);
       throw e;
     }
   }
   async verify({body, headers = {}}) {
-        try {
-      const headers = {..._headers, ...headers};
-      const result = await httpClient.post(
-        this.settings.verifier,
-        {headers, agent: httpsAgent, json: body}
+       try {
+          const result = await httpClient.post(
+          this.settings.verifier.endpoint,
+          {headers: {..._headers, ...headers},
+          agent: httpsAgent,
+          json: body
+       }
       );
       return result;
     } catch(e) {
+      console.error(e);
       // this is just to make debugging easier
       if(e && e.response && e.response.data) {
         throw new Error(JSON.stringify(e.response.data, null, 2));
