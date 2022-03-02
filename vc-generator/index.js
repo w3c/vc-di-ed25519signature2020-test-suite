@@ -22,7 +22,7 @@ const {hashDigest} = require('./hashDigest');
 
 const generateKeyPairAsync = promisify(generateKeyPair);
 const credentialsPath = join(process.cwd(), 'credentials');
-// test these implementations' issuers or verifiers
+// use these implementations' issuers or verifiers
 const test = [
   'Digital Bazaar'
 ];
@@ -43,7 +43,7 @@ const main = async () => {
   const {path, data} = await _validVC(key);
   // use copies of the validVC in other tests
   const validVC = data.body.verifiableCredential;
-  // create all of the other vc
+  // create all of the other vcs once
   const vcs = await Promise.all([
     _noProofValue(validVC),
     _noProofPurpose(validVC),
@@ -56,31 +56,35 @@ const main = async () => {
     // make sure the validVC is in the list of VCs
     {path, data}
   ]);
-  // loop through each implementation & write the test data to disk
-  // FIXME this will create a postman collection in the future
-  for(const implementation of testAPIs) {
-    const signatureHeaders = await signCapabilityInvocation({
-      url,
-      method,
-      headers: {
-        ...headers,
-        date: new Date().toUTCString()
-      },
-      json,
-      expires: new Date('12-20-2022'),
-      invocationSigner,
-      capability: capability || await generateZcapUri({url}),
-      capabilityAction: action
-    });
-  }
-    console.log('writing   vcs to /credentials');
-  // write them to disk
-  await Promise.all([
-    ...vcs,
-    // add the valid vc to the list
-    {path, data}
-  ].map(writeJSON));
-  console.log('vcs generated');
+  console.log('writing   vcs to /credentials');
+  // loop through each vc and make test data for each implementation.
+  // FIXME this will become a postman collection in the future.
+  await Promise.all(vcs.flatMap(async vc => {
+      return testAPIs.map(async implementation => {
+        // get the data for the endpoint being tested
+        const endpointData = implementation[vc.data.endpoint];
+        const url = endpointData.endpoint;
+        const headers = endpointData.headers || {};
+        const signatureHeaders = await signCapabilityInvocation({
+          url,
+          method: endpointData.method || 'POST',
+          headers: {
+            ...headers,
+            date: new Date().toUTCString()
+          },
+          json: vc.data.body,
+          // expires one year for now
+          // FIXME set validUntil once vc refresh is up
+          expires: new Date(Date.now() + 365 * 24 * 60 * 60000),
+          invocationSigner,
+          capability: endpointData.zcap,
+          capabilityAction: 'write'
+        });
+        vc.data.headers = signatureHeaders;
+        return writeJSON(vc);
+      })
+  }));
+    console.log('vcs generated');
 };
 
 function _incorrectCodec(credential) {
