@@ -27,7 +27,7 @@
     }
   },
   "verifier": {
-    "endpoint": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z",
+    "endpoint": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z/credentials/verify",
     "zcap": {
       "@context": [
         "https://w3id.org/zcap/v1",
