@@ -27,7 +27,27 @@ npm test
 
 ## Generator
 
-To generate new test data use this command:
+To generate new test data you need a seed for a key authorized to use
+the issuer and verifier.
+
+You must set this environment variable:
+
+```
+ED25519_TEST_CONFIG_FILE=/home/me/.secrets/myKey.json
+```
+
+to a path containing a file with this seed material:
+
+```js
+{
+  "key": {
+    "seedMultiBase": "z1AaQMckJsfmeSyE6GzXENWcW5XW4yu7mUUiyN1yh8yCY6T",
+    "id": "did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S"
+  }
+}
+```
+
+Then use this command:
 
 ```js
 npm run generate-vcs
