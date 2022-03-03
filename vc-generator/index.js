@@ -56,7 +56,7 @@ const main = async () => {
     // make sure the validVC is in the list of VCs
     {path, data}
   ]);
-  console.log('writing   vcs to /credentials');
+  console.log('writing vcs to /credentials');
   // loop through each vc and make test data for each implementation.
   // FIXME this will become a postman collection in the future.
   await Promise.all(vcs.flatMap(async vc => {
@@ -65,18 +65,20 @@ const main = async () => {
         const endpointData = implementation[vc.data.endpoint];
         const url = endpointData.endpoint;
         const headers = endpointData.headers || {};
+        // expires one year for now
+        const expires = new Date(Date.now() + 365 * 24 * 60 * 60000);
         // adds the auth header for the request here
         vc.data.headers = await signCapabilityInvocation({
           url,
           method: endpointData.method || 'POST',
           headers: {
             ...headers,
-            date: new Date().toUTCString()
+            date: new Date().toUTCString(),
+            expires: expires.toUTCString()
           },
           json: vc.data.body,
-          // expires one year for now
           // FIXME set validUntil once vc refresh is up
-          expires: new Date(Date.now() + 365 * 24 * 60 * 60000),
+          expires,
           invocationSigner,
           capability: JSON.parse(endpointData.zcap),
           capabilityAction: 'write'
