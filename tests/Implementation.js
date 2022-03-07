@@ -20,7 +20,6 @@ class Implementation {
   }
   async issue({credential, headers = {}, options = {}}) {
     try {
-      const headers = {..._headers, ...headers};
       const expires = () => {
         const date = new Date();
         date.setMonth(date.getMonth() + 2);
@@ -38,8 +37,11 @@ class Implementation {
         options
       };
       const result = await httpClient.post(
-        this.settings.issuer.endpoint,
-        {headers, agent: httpsAgent, json: body}
+        this.settings.issuer.endpoint, {
+          headers: {..._headers, ...headers},
+          agent: httpsAgent,
+          json: body
+        }
       );
       return result;
     } catch(e) {
@@ -50,13 +52,13 @@ class Implementation {
     }
   }
   async verify({body, headers = {}}) {
-       try {
-          const result = await httpClient.post(
-          this.settings.verifier.endpoint,
-          {headers: {..._headers, ...headers},
+    try {
+      const result = await httpClient.post(
+        this.settings.verifier.endpoint, {
+          headers: {..._headers, ...headers},
           agent: httpsAgent,
           json: body
-       }
+        }
       );
       return result;
     } catch(e) {
