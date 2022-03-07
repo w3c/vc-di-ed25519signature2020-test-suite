@@ -5,7 +5,9 @@
 const vc = require('@digitalbazaar/vc');
 const canonicalize = require('canonicalize');
 const {createSign, generateKeyPair} = require('crypto');
-const {signCapabilityInvocation} = require('@digitalbazaar/http-signature-zcap-invoke');
+const {
+  signCapabilityInvocation
+} = require('@digitalbazaar/http-signature-zcap-invoke');
 const {join} = require('path');
 const {promisify} = require('util');
 const {
@@ -36,7 +38,8 @@ const main = async () => {
     throw new Error(`ENV variable ED25519_TEST_CONFIG_FILE is required.`);
   }
   const config = require(process.env.ED25519_TEST_CONFIG_FILE);
-  const invocationSigner = await getInvocationSigner({seedMultiBase: config.key.seedMultiBase});
+  const invocationSigner = await getInvocationSigner(
+    {seedMultiBase: config.key.seedMultiBase});
   console.log('generating vcs');
   const {methodFor} = await getDiDKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
@@ -60,31 +63,31 @@ const main = async () => {
   // loop through each vc and make test data for each implementation.
   // FIXME this will become a postman collection in the future.
   await Promise.all(vcs.flatMap(async vc => {
-      return testAPIs.map(async implementation => {
-        // get the data for the endpoint being tested
-        const endpointData = implementation[vc.data.endpoint];
-        const url = endpointData.endpoint;
-        const headers = endpointData.headers || {};
-        // expires one year for now
-        const expires = new Date(Date.now() + 365 * 24 * 60 * 60000);
-        // adds the auth header for the request here
-        vc.data.headers = await signCapabilityInvocation({
-          url,
-          method: endpointData.method || 'POST',
-          headers: {
-            ...headers,
-            date: new Date().toUTCString(),
-            expires: expires.toUTCString()
-          },
-          json: vc.data.body,
-          // FIXME set validUntil once vc refresh is up
-          expires,
-          invocationSigner,
-          capability: JSON.parse(endpointData.zcap),
-          capabilityAction: 'write'
-        });
-        return writeJSON(vc);
-      })
+    return testAPIs.map(async implementation => {
+      // get the data for the endpoint being tested
+      const endpointData = implementation[vc.data.endpoint];
+      const url = endpointData.endpoint;
+      const headers = endpointData.headers || {};
+      // expires one year for now
+      const expires = new Date(Date.now() + 365 * 24 * 60 * 60000);
+      // adds the auth header for the request here
+      vc.data.headers = await signCapabilityInvocation({
+        url,
+        method: endpointData.method || 'POST',
+        headers: {
+          ...headers,
+          date: new Date().toUTCString(),
+          expires: expires.toUTCString()
+        },
+        json: vc.data.body,
+        // FIXME set validUntil once vc refresh is up
+        expires,
+        invocationSigner,
+        capability: JSON.parse(endpointData.zcap),
+        capabilityAction: 'write'
+      });
+      return writeJSON(vc);
+    });
   }));
   console.log('vcs generated');
 };
