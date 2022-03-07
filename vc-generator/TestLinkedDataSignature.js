@@ -92,11 +92,15 @@ module.exports = class LinkedDataSignature extends LinkedDataProof {
   }
 
   /**
+   * @param document.document
    * @param {object} document - Document to be signed.
-   * @param purpose {ProofPurpose}
-   * @param documentLoader {function}
-   * @param expansionMap {function}
+   * @param purpose - {ProofPurpose}.
+   * @param documentLoader - {function}.
+   * @param expansionMap - {function}.
    *
+   * @param document.purpose
+   * @param document.documentLoader
+   * @param document.expansionMap
    * @returns {Promise<object>} Resolves with the created proof object.
    */
   async createProof({document, purpose, documentLoader, expansionMap}) {
@@ -155,11 +159,12 @@ module.exports = class LinkedDataSignature extends LinkedDataProof {
   }
 
   /**
-   * @param document {object} to be signed.
-   * @param purpose {ProofPurpose}
-   * @param documentLoader {function}
-   * @param expansionMap {function}
+   * @param document - {object} To be signed.
+   * @param purpose - {ProofPurpose}.
+   * @param documentLoader - {function}.
+   * @param expansionMap - {function}.
    *
+   * @param document.proof
    * @returns {Promise<object>} Resolves with the created proof object.
    */
   async updateProof({proof}) {
@@ -168,11 +173,15 @@ module.exports = class LinkedDataSignature extends LinkedDataProof {
   }
 
   /**
-   * @param proof {object} the proof to be verified.
-   * @param document {object} the document the proof applies to.
-   * @param documentLoader {function}
-   * @param expansionMap {function}
+   * @param proof.proof
+   * @param proof - {object} The proof to be verified.
+   * @param document - {object} The document the proof applies to.
+   * @param documentLoader - {function}.
+   * @param expansionMap - {function}.
    *
+   * @param proof.document
+   * @param proof.documentLoader
+   * @param proof.expansionMap
    * @returns {Promise<{object}>} Resolves with the verification result.
    */
   async verifyProof({proof, document, documentLoader, expansionMap}) {
@@ -228,11 +237,15 @@ module.exports = class LinkedDataSignature extends LinkedDataProof {
   }
 
   /**
-   * @param document {object} to be signed/verified.
-   * @param proof {object}
-   * @param documentLoader {function}
-   * @param expansionMap {function}
+   * @param document.document
+   * @param document - {object} To be signed/verified.
+   * @param proof - {object}.
+   * @param documentLoader - {function}.
+   * @param expansionMap - {function}.
    *
+   * @param document.proof
+   * @param document.documentLoader
+   * @param document.expansionMap
    * @returns {Promise<{Uint8Array}>}.
    */
   async createVerifyData({document, proof, documentLoader, expansionMap}) {
@@ -265,9 +278,11 @@ module.exports = class LinkedDataSignature extends LinkedDataProof {
   }
 
   /**
-   * @param document {object} to be signed.
-   * @param proof {object}
-   * @param documentLoader {function}
+   * @param document - {object} To be signed.
+   * @param document.proof
+   * @param proof - {object}.
+   * @param documentLoader - {function}.
+   * @param document.documentLoader
    */
   async getVerificationMethod({proof, documentLoader}) {
     let {verificationMethod} = proof;
@@ -300,25 +315,25 @@ module.exports = class LinkedDataSignature extends LinkedDataProof {
   }
 
   /**
-   * @param verifyData {Uint8Array}.
-   * @param document {object} to be signed.
-   * @param proof {object}
-   * @param documentLoader {function}
-   * @param expansionMap {function}
+   * @param verifyData - {Uint8Array}.
+   * @param document - {object} To be signed.
+   * @param proof - {object}.
+   * @param documentLoader - {function}.
+   * @param expansionMap - {function}.
    *
-   * @returns {Promise<{object}>} the proof containing the signature value.
+   * @returns {Promise<{object}>} The proof containing the signature value.
    */
   async sign() {
     throw new Error('Must be implemented by a derived class.');
   }
 
   /**
-   * @param verifyData {Uint8Array}.
-   * @param verificationMethod {object}.
-   * @param document {object} to be signed.
-   * @param proof {object}
-   * @param documentLoader {function}
-   * @param expansionMap {function}
+   * @param verifyData - {Uint8Array}.
+   * @param verificationMethod - {object}.
+   * @param document - {object} To be signed.
+   * @param proof - {object}.
+   * @param documentLoader - {function}.
+   * @param expansionMap - {function}.
    *
    * @returns {Promise<boolean>}
    */
@@ -373,9 +388,13 @@ function _includesContext({document, contextUrl}) {
     (Array.isArray(context) && context.includes(contextUrl));
 }
 
-/**
+/**.
  * See constructor docstring for param details.
  *
+ * @param root0
+ * @param root0.key
+ * @param root0.signer
+ * @param root0.verifier
  * @returns {{verificationMethod: string, key: LDKeyPair,
  *   signer: {sign: Function, id: string},
  *   verifier: {verify: Function, id: string}}} - Validated and initialized
