@@ -109,6 +109,9 @@ function _incorrectCodec(credential) {
       },
       verifiableCredential: copy
     },
+    expected: {
+      status: 400
+    },
     row: title,
     title
   };
@@ -142,6 +145,9 @@ async function _incorrectSigner(key) {
       },
       verifiableCredential: signedVC
     },
+    expected: {
+      status: 400
+    },
     row: title,
     title
   };
@@ -170,6 +176,9 @@ async function _incorrectCanonize(key) {
       },
       verifiableCredential: signedVC
     },
+    expected: {
+      status: 400
+    },
     row: title,
     title
   };
@@ -196,6 +205,9 @@ async function _incorrectDigest(key) {
       },
       verifiableCredential: signedVC
     },
+    expected: {
+      status: 400
+    },
     row: title,
     title
   };
@@ -214,6 +226,9 @@ function _noProofType(credential) {
         checks: ['proof']
       },
       verifiableCredential: copy
+    },
+    expected: {
+      status: 400
     },
     row: title,
     title
@@ -234,6 +249,9 @@ function _noProofCreated(credential) {
       },
       verifiableCredential: copy
     },
+    expected: {
+      status: 400
+    },
     row: title,
     title
   };
@@ -253,6 +271,9 @@ function _noProofPurpose(credential) {
       },
       verifiableCredential: copy
     },
+    expected: {
+      status: 400
+    },
     row: title,
     title
   };
@@ -271,6 +292,9 @@ function _noProofValue(credential) {
         checks: ['proof']
       },
       verifiableCredential: copy
+    },
+    expected: {
+      status: 400
     },
     row: title,
     title
@@ -294,6 +318,9 @@ async function _validVC(key) {
         checks: ['proof']
       },
       verifiableCredential: signedVC
+    },
+    expected: {
+      status: 200
     },
     row: title,
     title

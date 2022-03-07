@@ -53,6 +53,7 @@ describe('Ed25519 2020 Tests', function() {
             }
             should.not.exist(response, 'Expected verifier to throw');
             should.exist(error);
+            error.status.should.equal(test.expected.status, `Expected status to be ${test.expected.status}`);
           }
           // only one test is positive so far
           if(test.negative == false) {
@@ -68,6 +69,7 @@ describe('Ed25519 2020 Tests', function() {
             }
             should.exist(response, 'Expected verifier to return a response');
             should.not.exist(error);
+            response.status.should.equal(test.expected.status, `Expected status to be ${test.expected.status}`);
           }
 
         });
