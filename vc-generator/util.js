@@ -9,9 +9,9 @@ module.exports = api;
 /**
  * Converts the given date into W3C datetime format (eg: 2011-03-09T21:55:41Z).
  *
- * @param date the date to convert.
+ * @param {Date|number|string} date - The date to convert.
  *
- * @return the date in W3C datetime format.
+ * @returns {string} The date in W3C datetime format.
  */
 api.w3cDate = date => {
   if(date === undefined || date === null) {
