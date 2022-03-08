@@ -45,7 +45,7 @@ const main = async () => {
   const key = methodFor({purpose: 'capabilityInvocation'});
   const {path, data} = await _validVC(key);
   // use copies of the validVC in other tests
-  const validVC = data.body.verifiableCredential;
+  const validVC = data.request.body.verifiableCredential;
   // create all of the other vcs once
   const vcs = await Promise.all([
     _noProofValue(validVC),
@@ -66,20 +66,21 @@ const main = async () => {
     return testAPIs.map(async implementation => {
       // get the data for the endpoint being tested
       const endpointData = implementation[vc.data.endpoint];
-      const url = endpointData.endpoint;
+      vc.data.request.url = endpointData.endpoint;
+      vc.data.request.method = endpointData.method || 'POST';
       const headers = endpointData.headers || {};
       // expires one year for now
       const expires = new Date(Date.now() + 365 * 24 * 60 * 60000);
       // adds the auth header for the request here
-      vc.data.headers = await signCapabilityInvocation({
-        url,
-        method: endpointData.method || 'POST',
+      vc.data.request.headers = await signCapabilityInvocation({
+        url: vc.data.request.url,
+        method: vc.data.request.method,
         headers: {
           ...headers,
           date: new Date().toUTCString(),
           expires: expires.toUTCString()
         },
-        json: vc.data.body,
+        json: vc.data.request.body,
         // FIXME set validUntil once vc refresh is up
         expires,
         invocationSigner,
@@ -106,11 +107,13 @@ function _incorrectCodec(credential) {
   const data = {
     negative: true,
     endpoint: 'verifier',
-    body: {
-      options: {
-        checks: ['proof']
-      },
-      verifiableCredential: copy
+    request: {
+      body: {
+        options: {
+          checks: ['proof']
+        },
+        verifiableCredential: copy
+      }
     },
     expected: {
       status: 400
@@ -142,11 +145,13 @@ async function _incorrectSigner(key) {
   const data = {
     negative: true,
     endpoint: 'verifier',
-    body: {
-      options: {
-        checks: ['proof']
-      },
-      verifiableCredential: signedVC
+    request: {
+      body: {
+        options: {
+          checks: ['proof']
+        },
+        verifiableCredential: signedVC
+      }
     },
     expected: {
       status: 400
@@ -173,11 +178,13 @@ async function _incorrectCanonize(key) {
   const data = {
     negative: true,
     endpoint: 'verifier',
-    body: {
-      options: {
-        checks: ['proof']
-      },
-      verifiableCredential: signedVC
+    request: {
+      body: {
+        options: {
+          checks: ['proof']
+        },
+        verifiableCredential: signedVC
+      }
     },
     expected: {
       status: 400
@@ -202,11 +209,13 @@ async function _incorrectDigest(key) {
   const data = {
     negative: true,
     endpoint: 'verifier',
-    body: {
-      options: {
-        checks: ['proof']
-      },
-      verifiableCredential: signedVC
+    request: {
+      body: {
+        options: {
+          checks: ['proof']
+        },
+        verifiableCredential: signedVC
+      }
     },
     expected: {
       status: 400
@@ -224,11 +233,13 @@ function _noProofType(credential) {
   const data = {
     negative: true,
     endpoint: 'verifier',
-    body: {
-      options: {
-        checks: ['proof']
-      },
-      verifiableCredential: copy
+    request: {
+      body: {
+        options: {
+          checks: ['proof']
+        },
+        verifiableCredential: copy
+      }
     },
     expected: {
       status: 400
@@ -246,11 +257,13 @@ function _noProofCreated(credential) {
   const data = {
     negative: true,
     endpoint: 'verifier',
-    body: {
-      options: {
-        checks: ['proof']
-      },
-      verifiableCredential: copy
+    request: {
+      body: {
+        options: {
+          checks: ['proof']
+        },
+        verifiableCredential: copy
+      }
     },
     expected: {
       status: 400
@@ -268,11 +281,13 @@ function _noProofPurpose(credential) {
   const data = {
     negative: true,
     endpoint: 'verifier',
-    body: {
-      options: {
-        checks: ['proof']
-      },
-      verifiableCredential: copy
+    request: {
+      body: {
+        options: {
+          checks: ['proof']
+        },
+        verifiableCredential: copy
+      }
     },
     expected: {
       status: 400
@@ -290,11 +305,13 @@ function _noProofValue(credential) {
   const data = {
     negative: true,
     endpoint: 'verifier',
-    body: {
-      options: {
-        checks: ['proof']
-      },
-      verifiableCredential: copy
+    request: {
+      body: {
+        options: {
+          checks: ['proof']
+        },
+        verifiableCredential: copy
+      }
     },
     expected: {
       status: 400
@@ -316,11 +333,13 @@ async function _validVC(key) {
   const data = {
     negative: false,
     endpoint: 'verifier',
-    body: {
-      options: {
-        checks: ['proof']
+    request: {
+      body: {
+        options: {
+          checks: ['proof']
+        },
+        verifiableCredential: signedVC
       },
-      verifiableCredential: signedVC
     },
     expected: {
       status: 200
