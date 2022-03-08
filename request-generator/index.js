@@ -23,7 +23,7 @@ const documentLoader = require('./documentLoader');
 const {hashDigest} = require('./hashDigest');
 
 const generateKeyPairAsync = promisify(generateKeyPair);
-const credentialsPath = join(process.cwd(), 'credentials');
+const requestsPath = join(process.cwd(), 'requests');
 // use these implementations' issuers or verifiers
 const test = [
   'Digital Bazaar'
@@ -40,7 +40,7 @@ const main = async () => {
   const config = require(process.env.ED25519_TEST_CONFIG_FILE);
   const invocationSigner = await getInvocationSigner(
     {seedMultiBase: config.key.seedMultiBase});
-  console.log('generating vcs');
+  console.log('generating requests');
   const {methodFor} = await getDiDKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
   const {path, data} = await _validVC(key);
@@ -59,7 +59,7 @@ const main = async () => {
     // make sure the validVC is in the list of VCs
     {path, data}
   ]);
-  console.log('writing vcs to /credentials');
+  console.log('writing requests to /requests');
   // loop through each vc and make test data for each implementation.
   // FIXME this will become a postman collection in the future.
   await Promise.all(vcs.flatMap(async vc => {
@@ -90,7 +90,7 @@ const main = async () => {
       return writeJSON(vc);
     });
   }));
-  console.log('vcs generated');
+  console.log('requests generated');
 };
 
 function _incorrectCodec(credential) {
@@ -121,7 +121,7 @@ function _incorrectCodec(credential) {
     row: title,
     title
   };
-  return {path: `${credentialsPath}/incorrectCodec.json`, data};
+  return {path: `${requestsPath}/incorrectCodec.json`, data};
 }
 
 async function _incorrectSigner(key) {
@@ -159,7 +159,7 @@ async function _incorrectSigner(key) {
     row: title,
     title
   };
-  return {path: `${credentialsPath}/rsaSigned.json`, data};
+  return {path: `${requestsPath}/rsaSigned.json`, data};
 }
 
 async function _incorrectCanonize(key) {
@@ -192,7 +192,7 @@ async function _incorrectCanonize(key) {
     row: title,
     title
   };
-  return {path: `${credentialsPath}/canonizeJCS.json`, data};
+  return {path: `${requestsPath}/canonizeJCS.json`, data};
 }
 
 async function _incorrectDigest(key) {
@@ -223,7 +223,7 @@ async function _incorrectDigest(key) {
     row: title,
     title
   };
-  return {path: `${credentialsPath}/digestSha512.json`, data};
+  return {path: `${requestsPath}/digestSha512.json`, data};
 }
 
 function _noProofType(credential) {
@@ -247,7 +247,7 @@ function _noProofType(credential) {
     row: title,
     title
   };
-  return {path: `${credentialsPath}/noProofType.json`, data};
+  return {path: `${requestsPath}/noProofType.json`, data};
 }
 
 function _noProofCreated(credential) {
@@ -271,7 +271,7 @@ function _noProofCreated(credential) {
     row: title,
     title
   };
-  return {path: `${credentialsPath}/noProofCreatedVC.json`, data};
+  return {path: `${requestsPath}/noProofCreatedVC.json`, data};
 }
 
 function _noProofPurpose(credential) {
@@ -295,7 +295,7 @@ function _noProofPurpose(credential) {
     row: title,
     title
   };
-  return {path: `${credentialsPath}/noProofPurposeVC.json`, data};
+  return {path: `${requestsPath}/noProofPurposeVC.json`, data};
 }
 
 function _noProofValue(credential) {
@@ -319,7 +319,7 @@ function _noProofValue(credential) {
     row: title,
     title
   };
-  return {path: `${credentialsPath}/noProofValueVC.json`, data};
+  return {path: `${requestsPath}/noProofValueVC.json`, data};
 }
 
 async function _validVC(key) {
@@ -347,7 +347,7 @@ async function _validVC(key) {
     row: title,
     title
   };
-  return {path: `${credentialsPath}/validVC.json`, data};
+  return {path: `${requestsPath}/validVC.json`, data};
 }
 
 // run main by calling node ./vc-generator
