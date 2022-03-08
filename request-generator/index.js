@@ -5,6 +5,7 @@
 const vc = require('@digitalbazaar/vc');
 const canonicalize = require('canonicalize');
 const {createSign, generateKeyPair} = require('crypto');
+const {v4: uuidv4} = require('uuid');
 const {
   signCapabilityInvocation
 } = require('@digitalbazaar/http-signature-zcap-invoke');
@@ -14,7 +15,8 @@ const {
   cloneJSON,
   getDiDKey,
   getInvocationSigner,
-  writeJSON
+  writeJSON,
+  ISOTimeStamp
 } = require('./helpers');
 const implementations = require('../implementations');
 const credential = require('./testVC');
@@ -56,6 +58,7 @@ const main = async () => {
     _incorrectDigest(key),
     _incorrectCanonize(key),
     _incorrectSigner(key),
+    _issuerRequest(),
     // make sure the validVC is in the list of VCs
     {path, data}
   ]);
@@ -66,6 +69,9 @@ const main = async () => {
     return testAPIs.map(async implementation => {
       // get the data for the endpoint being tested
       const endpointData = implementation[vc.data.endpoint];
+      if(vc.data.endpoint === 'issuer') {
+        vc.data.request.body.credential.issuer = endpointData.id;
+      }
       vc.data.request.url = endpointData.endpoint;
       vc.data.request.method = endpointData.method || 'POST';
       const headers = endpointData.headers || {};
@@ -348,6 +354,31 @@ async function _validVC(key) {
     title
   };
   return {path: `${requestsPath}/validVC.json`, data};
+}
+
+async function _issuerRequest() {
+  const body = {
+    credential: {
+      ...cloneJSON(credential),
+      id: `urn:uuid:${uuidv4()}`,
+      issuanceDate: ISOTimeStamp(),
+      expirationDate: ISOTimeStamp({
+        date: new Date(Date.now() + 365 * 24 * 60 * 60000)
+      }),
+    }
+  };
+  const title = 'should issue a valid VC with an Ed25519Signature 2020';
+  const data = {
+    negative: false,
+    endpoint: 'issuer',
+    request: {body},
+    expected: {
+      status: 201
+    },
+    row: title,
+    title
+  };
+  return {path: `${requestsPath}/issueVC.json`, data};
 }
 
 // run main by calling node ./vc-generator

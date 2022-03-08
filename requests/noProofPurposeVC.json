@@ -34,22 +34,22 @@
         },
         "proof": {
           "type": "Ed25519Signature2020",
-          "created": "2022-03-08T15:59:00Z",
+          "created": "2022-03-08T19:42:06Z",
           "verificationMethod": "did:key:z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b#z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b",
-          "proofValue": "z4B7zok7cDTL6K1YP93oTHBk9jEnCqiM1WBW26RzsDH5KBc8vdyA6GhV7XYYhSMTcvj6smP1WFK2MPUgMhPQv1MJn"
+          "proofValue": "z5yX8MSD61RD33z6czuoKepqST4aPanudxHQF6nf3ZzSWn5B67FxPBe3Ne4jtqeuYjJ5g7FUBn7SBrnnDtbsm4ibT"
         }
       }
     },
     "url": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z/credentials/verify",
     "method": "POST",
     "headers": {
-      "date": "Tue, 08 Mar 2022 15:59:00 GMT",
-      "expires": "Wed, 08 Mar 2023 15:59:00 GMT",
+      "date": "Tue, 08 Mar 2022 19:42:06 GMT",
+      "expires": "Wed, 08 Mar 2023 19:42:06 GMT",
       "host": "verifier.qa.veres.app",
       "capability-invocation": "zcap capability=\"H4sIAAAAAAAAA7VSXXOiMBT9L-z0rYgExcLTilqYVTsotpbu9CGSi8YqSUNAodP_vkG7zn4-7MPO5OHOTc6559yTN-1zwjIJR6m5X7WNlDx3DeNgUdJiYm3UCeZGaWrXv1_lkBSCysrICyohN4Cgbtd0dNRG7QbyfK1RorlaITK3KChx7W5iprZN9MRpO3onBVt3rFQBwEyT1Q2xILXUoEaOYLsdCAUmCvcClVvb0xcut5gdt9V4dhu9piYJHvNDaI9wFW_CmRfXXDwMwr3vBbUTKR6OBWRygDle0Z3S-SGlceQKxqR7cnRl9a_QrTolCJpSEK1X3FI15C3M-Q_9XNW16XCUoXj6eAyHo-ieHPzxyvI7T2oczUqWYElZtsBiDWqdl5X9kfrSzY2_0hqJAKJMULzLz-8rNQmOnCoSNUCtGuntro6chdlzra5rnaRwZS_V3DdNVhzUs9E5mYiuMywLAU1CzaIFYAnkwoN0dPMTz1nh2dQU5IaRXxJ5QUfzS2c72ONgWMXz-dK883qDGsbxasusFfPTOYU0rJ-2k9mnfwV8NxIWgrO88ZFcshzCDtYnXY2PS3uwwTRr_vH_C_r5Q9UD3hWNphpNxiwv72d31nRel0Ik5mJ59CZBvPCDoEyptWDeslv3uS_H1Qwi5A-zKdl3-mVvFEb-U-gxET9S4pVTYked_WiyDsg4u9Xe378BzXs1f5wDAAA\",action=\"write\"",
-      "digest": "mh=uEiBSpXknvHyh-UEQ7CJykldDZj1iYsoUbEysp1jaeZC9LQ",
+      "digest": "mh=uEiA5mHy2f-MSXFa80G40jo5-QFwTHKNSdKfL8NAyCkfAlQ",
       "content-type": "application/json",
-      "authorization": "Signature keyId=\"did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S#z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S\",headers=\"(key-id) (created) (expires) (request-target) host capability-invocation content-type digest\",signature=\"ktZ3hJxDdW8Amhrwtz7EKUF/mrVQXpIO0r/2j0p29P04rbHlMMJ8Ab4TLoQpT4E8X5zq1W3xdCy2aCvSz2j+CA==\",created=\"1646755140\",expires=\"1678291140\""
+      "authorization": "Signature keyId=\"did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S#z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S\",headers=\"(key-id) (created) (expires) (request-target) host capability-invocation content-type digest\",signature=\"XekgH9SR23/IUhruzCk4J16pwW862h5kdwlrS0Cv+M8iZ2SeRht34Ohfagdat+XdkbWewLLumlza1gd9fadZAw==\",created=\"1646768526\",expires=\"1678304526\""
     }
   },
   "expected": {
