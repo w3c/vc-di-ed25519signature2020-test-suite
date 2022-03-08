@@ -5,7 +5,6 @@
 const vc = require('@digitalbazaar/vc');
 const canonicalize = require('canonicalize');
 const {createSign, generateKeyPair} = require('crypto');
-const {v4: uuidv4} = require('uuid');
 const {
   signCapabilityInvocation
 } = require('@digitalbazaar/http-signature-zcap-invoke');
@@ -360,13 +359,13 @@ async function _issuerRequest() {
   const body = {
     credential: {
       ...cloneJSON(credential),
-      id: `urn:uuid:${uuidv4()}`,
       issuanceDate: ISOTimeStamp(),
       expirationDate: ISOTimeStamp({
         date: new Date(Date.now() + 365 * 24 * 60 * 60000)
       }),
     }
   };
+  delete body.credential.id;
   const title = 'should issue a valid VC with an Ed25519Signature 2020';
   const data = {
     negative: false,
