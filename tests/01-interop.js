@@ -5,7 +5,7 @@
 
 const chai = require('chai');
 const Implementation = require('./Implementation');
-const credentials = require('../credentials');
+const requests = require('../requests');
 const implementations = require('../implementations');
 
 const should = chai.should();
@@ -37,7 +37,7 @@ describe('Ed25519 2020 Tests', function() {
     const implementation = new Implementation(verifier);
     describe(verifier.name, function() {
       columnNames.push(verifier.name);
-      for(const test of credentials) {
+      for(const test of requests) {
         it(test.title, async function() {
           this.test.cell = {columnId: verifier.name, rowId: test.row};
           if(test.negative === true) {

@@ -1,5 +1,5 @@
 {
-  "negative": false,
+  "negative": true,
   "endpoint": "verifier",
   "request": {
     "body": {
@@ -33,29 +33,28 @@
           }
         },
         "proof": {
-          "type": "Ed25519Signature2020",
-          "created": "2022-03-08T15:24:29Z",
+          "created": "2022-03-08T15:59:00Z",
           "verificationMethod": "did:key:z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b#z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b",
           "proofPurpose": "assertionMethod",
-          "proofValue": "zWiktfcs62Qj68wTBCfaCUhukJCazT8zQP9qWR8Gt7JxF8VzMgnfLynu8dJkLUPmd5mfbL1CbrXWX4ZAtwsdPNms"
+          "proofValue": "z4B7zok7cDTL6K1YP93oTHBk9jEnCqiM1WBW26RzsDH5KBc8vdyA6GhV7XYYhSMTcvj6smP1WFK2MPUgMhPQv1MJn"
         }
       }
     },
     "url": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z/credentials/verify",
     "method": "POST",
     "headers": {
-      "date": "Tue, 08 Mar 2022 15:24:30 GMT",
-      "expires": "Wed, 08 Mar 2023 15:24:30 GMT",
+      "date": "Tue, 08 Mar 2022 15:59:00 GMT",
+      "expires": "Wed, 08 Mar 2023 15:59:00 GMT",
       "host": "verifier.qa.veres.app",
       "capability-invocation": "zcap capability=\"H4sIAAAAAAAAA7VSXXOiMBT9L-z0rYgExcLTilqYVTsotpbu9CGSi8YqSUNAodP_vkG7zn4-7MPO5OHOTc6559yTN-1zwjIJR6m5X7WNlDx3DeNgUdJiYm3UCeZGaWrXv1_lkBSCysrICyohN4Cgbtd0dNRG7QbyfK1RorlaITK3KChx7W5iprZN9MRpO3onBVt3rFQBwEyT1Q2xILXUoEaOYLsdCAUmCvcClVvb0xcut5gdt9V4dhu9piYJHvNDaI9wFW_CmRfXXDwMwr3vBbUTKR6OBWRygDle0Z3S-SGlceQKxqR7cnRl9a_QrTolCJpSEK1X3FI15C3M-Q_9XNW16XCUoXj6eAyHo-ieHPzxyvI7T2oczUqWYElZtsBiDWqdl5X9kfrSzY2_0hqJAKJMULzLz-8rNQmOnCoSNUCtGuntro6chdlzra5rnaRwZS_V3DdNVhzUs9E5mYiuMywLAU1CzaIFYAnkwoN0dPMTz1nh2dQU5IaRXxJ5QUfzS2c72ONgWMXz-dK883qDGsbxasusFfPTOYU0rJ-2k9mnfwV8NxIWgrO88ZFcshzCDtYnXY2PS3uwwTRr_vH_C_r5Q9UD3hWNphpNxiwv72d31nRel0Ik5mJ59CZBvPCDoEyptWDeslv3uS_H1Qwi5A-zKdl3-mVvFEb-U-gxET9S4pVTYked_WiyDsg4u9Xe378BzXs1f5wDAAA\",action=\"write\"",
-      "digest": "mh=uEiDm3zWarOM0hnSVfZ3naPcoGCPSxpfER7Wv4mlA8Y8Rfg",
+      "digest": "mh=uEiDl4RaUt8c8a6KzqO3N1Q9jtSYfwz1x-EcMFBOPjJwcBA",
       "content-type": "application/json",
-      "authorization": "Signature keyId=\"did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S#z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S\",headers=\"(key-id) (created) (expires) (request-target) host capability-invocation content-type digest\",signature=\"BIob87PpC9igQKxe0TDctrXCvOceMjHRHWVVofNlO12yAQ0AM/t3T5rQQ7oklEZ2bbKvXH8Omrka0TGkd+Z5Dg==\",created=\"1646753070\",expires=\"1678289070\""
+      "authorization": "Signature keyId=\"did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S#z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S\",headers=\"(key-id) (created) (expires) (request-target) host capability-invocation content-type digest\",signature=\"WFC6syxOybw7yA2egUefY1l3iTXnBLSq6NUtg4BK/FeDV7R4fTeKQqXb7X7C7V8QBXxatvRs+uGi/1erNi9wAg==\",created=\"1646755140\",expires=\"1678291140\""
     }
   },
   "expected": {
-    "status": 200
+    "status": 400
   },
-  "row": "should verify a valid VC with an Ed25519Signature 2020",
-  "title": "should verify a valid VC with an Ed25519Signature 2020"
+  "row": "should not verify a proof with out a type",
+  "title": "should not verify a proof with out a type"
 }
