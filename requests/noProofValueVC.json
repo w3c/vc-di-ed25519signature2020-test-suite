@@ -34,27 +34,27 @@
         },
         "proof": {
           "type": "Ed25519Signature2020",
+          "created": "2022-03-08T15:59:00Z",
           "verificationMethod": "did:key:z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b#z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b",
-          "proofPurpose": "assertionMethod",
-          "proofValue": "zWiktfcs62Qj68wTBCfaCUhukJCazT8zQP9qWR8Gt7JxF8VzMgnfLynu8dJkLUPmd5mfbL1CbrXWX4ZAtwsdPNms"
+          "proofPurpose": "assertionMethod"
         }
       }
     },
     "url": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z/credentials/verify",
     "method": "POST",
     "headers": {
-      "date": "Tue, 08 Mar 2022 15:24:30 GMT",
-      "expires": "Wed, 08 Mar 2023 15:24:30 GMT",
+      "date": "Tue, 08 Mar 2022 15:59:00 GMT",
+      "expires": "Wed, 08 Mar 2023 15:59:00 GMT",
       "host": "verifier.qa.veres.app",
       "capability-invocation": "zcap capability=\"H4sIAAAAAAAAA7VSXXOiMBT9L-z0rYgExcLTilqYVTsotpbu9CGSi8YqSUNAodP_vkG7zn4-7MPO5OHOTc6559yTN-1zwjIJR6m5X7WNlDx3DeNgUdJiYm3UCeZGaWrXv1_lkBSCysrICyohN4Cgbtd0dNRG7QbyfK1RorlaITK3KChx7W5iprZN9MRpO3onBVt3rFQBwEyT1Q2xILXUoEaOYLsdCAUmCvcClVvb0xcut5gdt9V4dhu9piYJHvNDaI9wFW_CmRfXXDwMwr3vBbUTKR6OBWRygDle0Z3S-SGlceQKxqR7cnRl9a_QrTolCJpSEK1X3FI15C3M-Q_9XNW16XCUoXj6eAyHo-ieHPzxyvI7T2oczUqWYElZtsBiDWqdl5X9kfrSzY2_0hqJAKJMULzLz-8rNQmOnCoSNUCtGuntro6chdlzra5rnaRwZS_V3DdNVhzUs9E5mYiuMywLAU1CzaIFYAnkwoN0dPMTz1nh2dQU5IaRXxJ5QUfzS2c72ONgWMXz-dK883qDGsbxasusFfPTOYU0rJ-2k9mnfwV8NxIWgrO88ZFcshzCDtYnXY2PS3uwwTRr_vH_C_r5Q9UD3hWNphpNxiwv72d31nRel0Ik5mJ59CZBvPCDoEyptWDeslv3uS_H1Qwi5A-zKdl3-mVvFEb-U-gxET9S4pVTYked_WiyDsg4u9Xe378BzXs1f5wDAAA\",action=\"write\"",
-      "digest": "mh=uEiCHmi9dRt3PaxoDk3LN5gzZFqGgIzhQxEs5MdIbO3cHvA",
+      "digest": "mh=uEiDHhwdryaJPhFXF_7iAMVTMaGQzw-IjWgeNlRVuPuzouA",
       "content-type": "application/json",
-      "authorization": "Signature keyId=\"did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S#z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S\",headers=\"(key-id) (created) (expires) (request-target) host capability-invocation content-type digest\",signature=\"sfSswDns9KkIWt7QkOpvraSFZOq9Z41dq6w43See4WLzqkdctJHmWg4Xi8bGbasiLi7kbCoI9Vq+ANYYG56lAQ==\",created=\"1646753070\",expires=\"1678289070\""
+      "authorization": "Signature keyId=\"did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S#z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S\",headers=\"(key-id) (created) (expires) (request-target) host capability-invocation content-type digest\",signature=\"40Ed+veSe84vAXNYyd2Z/VDoxhJ10RvwxybxuNY1VAlLftkBAVqGSvjxG0pc8tgXC/F5IIP2vag4wMZK+0AcDA==\",created=\"1646755140\",expires=\"1678291140\""
     }
   },
   "expected": {
     "status": 400
   },
-  "row": "should not verify a proof with out a created",
-  "title": "should not verify a proof with out a created"
+  "row": "should not verify a proof with out a proofValue",
+  "title": "should not verify a proof with out a proofValue"
 }
