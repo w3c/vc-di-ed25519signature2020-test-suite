@@ -55,7 +55,6 @@ describe('Ed25519 2020 Tests', function() {
               `Expected status to be ${test.expected.status}`
             );
           }
-          // only one test is positive so far
           if(test.negative == false) {
             let error;
             let response;
@@ -70,8 +69,16 @@ describe('Ed25519 2020 Tests', function() {
               test.expected.status,
               `Expected status to be ${test.expected.status}`
             );
+            if(test.expected.data && test.expected.data.length > 0) {
+              for(const assertion of test.expected.data) {
+                if(typeof assertion === 'string') {
+                  response.data.should.have.nested.property(assertion);
+                  return;
+                }
+                response.data.should.nested.include(assertion);
+              }
+            }
           }
-
         });
       }
     });
