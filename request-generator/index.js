@@ -372,7 +372,14 @@ async function _issuerRequest() {
     endpoint: 'issuer',
     request: {body},
     expected: {
-      status: 201
+      status: 201,
+      data: [
+        {'verifiableCredential.proof.type': 'Ed25519Signature2020'},
+        {'verifiableCredential.proof.proofPurpose': 'assertionMethod'},
+        'verifiableCredential.proof.created',
+        'verifiableCredential.proof.verificationMethod',
+        'verifiableCredential.proof.proofValue'
+      ]
     },
     row: title,
     title
