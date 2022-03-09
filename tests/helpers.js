@@ -1,12 +1,3 @@
-// Javascript's default ISO timestamp is contains milliseconds.
-// This lops off the MS part of the UTC RFC3339 TimeStamp and replaces
-// it with a terminal Z.
-const ISOTimeStamp = ({date = new Date()} = {}) => {
-  return date.toISOString().replace(/\.\d+Z$/, 'Z');
-};
-
-const deepClone = data => JSON.parse(JSON.stringify(data, null, 2));
-
 //FIXME this might not be needed in this test
 const unwrapResponse = data => {
   if(data['@context']) {
@@ -26,7 +17,5 @@ const unwrapResponse = data => {
 };
 
 module.exports = {
-  ISOTimeStamp,
-  deepClone,
   unwrapResponse
 };
