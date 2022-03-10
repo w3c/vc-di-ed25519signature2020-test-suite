@@ -47,7 +47,7 @@ async function getInvocationSigner({seedMultiBase}) {
   return didKey.keyPairs.get(capabilityInvocation[0]).signer();
 }
 
-// Javascript's default ISO timestamp is contains milliseconds.
+// Javascript's default ISO timestamp contains milliseconds.
 // This lops off the MS part of the UTC RFC3339 TimeStamp and replaces
 // it with a terminal Z.
 const ISOTimeStamp = ({date = new Date()} = {}) => {
