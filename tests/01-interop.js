@@ -48,7 +48,7 @@ describe('Ed25519 2020 Tests', function() {
             } catch(e) {
               error = e;
             }
-            should.not.exist(response, 'Expected verifier to throw');
+            should.not.exist(response, 'Expected API to throw');
             should.exist(error);
             error.status.should.equal(
               test.expected.status,
@@ -63,7 +63,7 @@ describe('Ed25519 2020 Tests', function() {
             } catch(e) {
               error = e;
             }
-            should.exist(response, 'Expected verifier to return a response');
+            should.exist(response, 'Expected API to return a response');
             should.not.exist(error);
             response.status.should.equal(
               test.expected.status,
