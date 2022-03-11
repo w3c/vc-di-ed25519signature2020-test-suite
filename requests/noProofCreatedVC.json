@@ -11,45 +11,36 @@
       "verifiableCredential": {
         "@context": [
           "https://www.w3.org/2018/credentials/v1",
-          "https://www.w3.org/2018/credentials/examples/v1",
           "https://w3id.org/security/suites/ed25519-2020/v1"
         ],
         "id": "urn:uuid:86294362-4254-4f36-854f-3952fe42555d",
         "type": [
           "VerifiableCredential",
-          "UniversityDegreeCredential"
+          "TestCredential"
         ],
         "issuer": "did:key:z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b",
         "issuanceDate": "2020-03-16T22:37:26.544Z",
         "credentialSubject": {
-          "id": "did:key:z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b",
-          "degree": {
-            "degreeType": "BachelorDegree",
-            "name": "Bachelor of Science and Arts"
-          },
-          "child": {
-            "@id": "_:c1",
-            "name": "Secret Child"
-          }
+          "id": "did:key:z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b"
         },
         "proof": {
           "type": "Ed25519Signature2020",
           "verificationMethod": "did:key:z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b#z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b",
           "proofPurpose": "assertionMethod",
-          "proofValue": "z5hLA52uty4uHPMyYLxNxWZXW2cFBifQWBsPrVhmwkfHdHHPwSjzRBwvMrQwiKddj2fbyi9KiZtWsYUCf4pEEarX3"
+          "proofValue": "zV5U5M5rWxFDAb77RdJBDRkDYUXqVdE4KwfvN22eJ8zuybQp2fafZqWcFmMWfJ1AhXUJakHe91eiD1MyFPwX6Zoy"
         }
       }
     },
     "url": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z/credentials/verify",
     "method": "POST",
     "headers": {
-      "date": "Fri, 11 Mar 2022 15:37:33 GMT",
-      "expires": "Sat, 11 Mar 2023 15:37:33 GMT",
+      "date": "Fri, 11 Mar 2022 16:52:29 GMT",
+      "expires": "Sat, 11 Mar 2023 16:52:29 GMT",
       "host": "verifier.qa.veres.app",
       "capability-invocation": "zcap capability=\"H4sIAAAAAAAAA7VSXXOiMBT9L-z0rYgExcLTilqYVTsotpbu9CGSi8YqSUNAodP_vkG7zn4-7MPO5OHOTc6559yTN-1zwjIJR6m5X7WNlDx3DeNgUdJiYm3UCeZGaWrXv1_lkBSCysrICyohN4Cgbtd0dNRG7QbyfK1RorlaITK3KChx7W5iprZN9MRpO3onBVt3rFQBwEyT1Q2xILXUoEaOYLsdCAUmCvcClVvb0xcut5gdt9V4dhu9piYJHvNDaI9wFW_CmRfXXDwMwr3vBbUTKR6OBWRygDle0Z3S-SGlceQKxqR7cnRl9a_QrTolCJpSEK1X3FI15C3M-Q_9XNW16XCUoXj6eAyHo-ieHPzxyvI7T2oczUqWYElZtsBiDWqdl5X9kfrSzY2_0hqJAKJMULzLz-8rNQmOnCoSNUCtGuntro6chdlzra5rnaRwZS_V3DdNVhzUs9E5mYiuMywLAU1CzaIFYAnkwoN0dPMTz1nh2dQU5IaRXxJ5QUfzS2c72ONgWMXz-dK883qDGsbxasusFfPTOYU0rJ-2k9mnfwV8NxIWgrO88ZFcshzCDtYnXY2PS3uwwTRr_vH_C_r5Q9UD3hWNphpNxiwv72d31nRel0Ik5mJ59CZBvPCDoEyptWDeslv3uS_H1Qwi5A-zKdl3-mVvFEb-U-gxET9S4pVTYked_WiyDsg4u9Xe378BzXs1f5wDAAA\",action=\"write\"",
-      "digest": "mh=uEiAscrthMn6QQAwRM_dQd_7O_GZFd4nXLrwtwxXTrplPXg",
+      "digest": "mh=uEiAvJL3yPo7ux-9zJSaxTOokZ6tWOQsYV2zNkuFoZtYgKA",
       "content-type": "application/json",
-      "authorization": "Signature keyId=\"did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S#z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S\",headers=\"(key-id) (created) (expires) (request-target) host capability-invocation content-type digest\",signature=\"lFl9JyhRV0ZdjLEoe3lbaA2hbx5nUK9OxtaGkMU7eu0tL9aydYP3K7VExA1Eqivsv61eFaUWRn9UpoK7/c4xAQ==\",created=\"1647013053\",expires=\"1678549053\""
+      "authorization": "Signature keyId=\"did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S#z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S\",headers=\"(key-id) (created) (expires) (request-target) host capability-invocation content-type digest\",signature=\"R3VrkX6N1ASr0YYIKAtwJhGLsHB/j2ZsAm96vQjoghmxUXUC/iTGJaKs4OUGUwFVI1OJiO5YbQ+0DvhU+nR/AA==\",created=\"1647017549\",expires=\"1678553549\""
     }
   },
   "expected": {
