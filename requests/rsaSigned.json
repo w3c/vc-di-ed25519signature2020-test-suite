@@ -34,28 +34,28 @@
         },
         "proof": {
           "type": "Ed25519Signature2020",
-          "created": "2022-03-09T18:37:36Z",
+          "created": "2022-03-11T15:37:33Z",
           "verificationMethod": "did:key:z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b#z6MktKwz7Ge1Yxzr4JHavN33wiwa8y81QdcMRLXQsrH9T53b",
           "proofPurpose": "assertionMethod",
-          "proofValue": "Q2LI2ZOkD+wJp7H/Z+dENLOgTdfxM9ME4iWZj3vGVQOTUrt4RviJzs8ZZZAlvmw5dqacHGmkoI3IQKVwma20UgKCybBACCrabyJ1Ig93UeWMkcHhDw5mXLYaHDOrSK6mDq+Mbpk4nMOjxR+crjcrd927Dplu5MbLUcsgtibYIy6YPmnqITroO0WfcbhXVmczpDgLjSTiF1uayJSVQc+7Y5TwzaAxAk+fidok2UHCMNWNuTxc/E7wwp758DdUj2MePtxFImQW3U/BkCRGz+0m3H6OWztSIXRGtDj5bGipVjGY3EqWaCYQ60ImqOxgI3E1YlkWiSY7uVMiG0wjOsi8BXXox1jPl/4X632Ptrxjn2DiQEK9bxqZuULTvm00aEwBW0RyjB9xtnxCq7ZVbR2lm/sa8CtpEyj7Q46IKpFEJUygkCs7oEZ1G89xZ/cnDe9Ko8fMthkqY6MbFPjs8+IiNg01qN6c5P6zGvh3COzMJWAhei24sTGvbK+gYwXsnCF8eQ7hXPAV8At/MN2sMLgGqLUQO85eghE4vR7Jf/fkwPu7/X+ueMxbAEHDnQ8RVf/mBTWrFVvihvbQDsN2TkXFuwEeCSCjzF8eG4vxdaxEWoHv410ueQ3qfIEUY9TjyZf2yHwIPRdpECjPj3ukzjTdVmfwfbx/cPlMrmTLVnyBqH8="
+          "proofValue": "LS0sQFefGJ70QWJAbx2c0ptuZmRgb4Y2m/nsCI/UJ15phn1sKDSdyFhDV5uEJyPlLj3f5Qs0Fs3w4Q0gJOaxnXgVJ8zVUFRQEVtyQykGraJ1GE8QGE146hlYPaQV+5QOvggw2nR5TFQbiyDGGWkHSPrwwrp0DawPNHVkFY6O6G2urgneJEiDjnsM0m5WoC9coDIqD3Dpp2Q4LfVM+yInd91q60dxojOqqPCohC+fAG/u9mpj98BsYoa7UzPkAqbWj1w/6GLrvB+Xo5FpMHoypzlFZkKd4hEEydqpBr5Wgeo7wmMNNOtkkSblN7wyfAQcK7i1ed/Bd8lFCaQdRxPfhO2x51BLvmuUj4E0qERUHbe9yFFprL8d07lpGpYbFCWiQSKsYd0stad7jkdSJgj9hcmFmS48gcoZSk021YfPV4D5lEd2SLgi4AeSvelUuLDMRVsVc6AtE+S7DmDqYGm4ItLqqNjiSDWiwjJLMLQXarjs3GTV43E/tGfe4MCNUx2kXTmfHBK8IM4TEB3DCSLIrkquDfDKgppAcELM08dBCxiqlbQVdQxXIEvtFvEVQ8AzrR4IxYTEbNjo6/OF/iZPfE19dEkASy9hRAZ7h0wVUhF9Psqn0JMtFa7i5vEzOBx6QNPqsdPrpNhcVbYeP0CNN/j3oa4GxTGV7y7SfTz4FpI="
         }
       }
     },
     "url": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z/credentials/verify",
     "method": "POST",
     "headers": {
-      "date": "Wed, 09 Mar 2022 18:37:36 GMT",
-      "expires": "Thu, 09 Mar 2023 18:37:36 GMT",
+      "date": "Fri, 11 Mar 2022 15:37:33 GMT",
+      "expires": "Sat, 11 Mar 2023 15:37:33 GMT",
       "host": "verifier.qa.veres.app",
       "capability-invocation": "zcap capability=\"H4sIAAAAAAAAA7VSXXOiMBT9L-z0rYgExcLTilqYVTsotpbu9CGSi8YqSUNAodP_vkG7zn4-7MPO5OHOTc6559yTN-1zwjIJR6m5X7WNlDx3DeNgUdJiYm3UCeZGaWrXv1_lkBSCysrICyohN4Cgbtd0dNRG7QbyfK1RorlaITK3KChx7W5iprZN9MRpO3onBVt3rFQBwEyT1Q2xILXUoEaOYLsdCAUmCvcClVvb0xcut5gdt9V4dhu9piYJHvNDaI9wFW_CmRfXXDwMwr3vBbUTKR6OBWRygDle0Z3S-SGlceQKxqR7cnRl9a_QrTolCJpSEK1X3FI15C3M-Q_9XNW16XCUoXj6eAyHo-ieHPzxyvI7T2oczUqWYElZtsBiDWqdl5X9kfrSzY2_0hqJAKJMULzLz-8rNQmOnCoSNUCtGuntro6chdlzra5rnaRwZS_V3DdNVhzUs9E5mYiuMywLAU1CzaIFYAnkwoN0dPMTz1nh2dQU5IaRXxJ5QUfzS2c72ONgWMXz-dK883qDGsbxasusFfPTOYU0rJ-2k9mnfwV8NxIWgrO88ZFcshzCDtYnXY2PS3uwwTRr_vH_C_r5Q9UD3hWNphpNxiwv72d31nRel0Ik5mJ59CZBvPCDoEyptWDeslv3uS_H1Qwi5A-zKdl3-mVvFEb-U-gxET9S4pVTYked_WiyDsg4u9Xe378BzXs1f5wDAAA\",action=\"write\"",
-      "digest": "mh=uEiBk45vD8tLWjaQaYE_0x3HjGjZ_muobaPcierJ93WT78A",
+      "digest": "mh=uEiBP0B_WHf4Zk7Bz5HV-ADm5QV4cv5FmpxP-MHYEEBL5sw",
       "content-type": "application/json",
-      "authorization": "Signature keyId=\"did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S#z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S\",headers=\"(key-id) (created) (expires) (request-target) host capability-invocation content-type digest\",signature=\"hMNChUdHlAPKbI6TcZGK16NtvamHuctTjay6Yq0XSmss5tAgDocbhMTLbY5rhv6y2XfNtz2okWTNW9AR3kZeCQ==\",created=\"1646851056\",expires=\"1678387056\""
+      "authorization": "Signature keyId=\"did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S#z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S\",headers=\"(key-id) (created) (expires) (request-target) host capability-invocation content-type digest\",signature=\"WyhzZaw4SBRpbr4ZYXoi2xqj0v6rzx+tDi8iV9DjVDql7VVDFThFnfXH2NNZcrw5Vk3BwFdJ9Fdsaq/rlNZPBQ==\",created=\"1647013053\",expires=\"1678549053\""
     }
   },
   "expected": {
     "status": 400
   },
-  "row": "should not verify if signer is not Ed25519",
-  "title": "should not verify if signer is not Ed25519"
+  "row": "MUST NOT verify if signer is not Ed25519",
+  "title": "MUST NOT verify if signer is not Ed25519"
 }

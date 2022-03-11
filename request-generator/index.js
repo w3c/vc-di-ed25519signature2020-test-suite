@@ -107,7 +107,7 @@ function _incorrectCodec(credential) {
   // re-add the key material at the end
   parts.push(last);
   copy.proof.verificationMethod = parts.join(':');
-  const title = 'should not verify if key material is not ' +
+  const title = 'MOST NOT verify if key material is not ' +
     'MULTIBASE & MULTICODEC';
   const data = {
     negative: true,
@@ -146,7 +146,7 @@ async function _incorrectSigner(key) {
     documentLoader
   });
 
-  const title = 'should not verify if signer is not Ed25519';
+  const title = 'MUST NOT verify if signer is not Ed25519';
   const data = {
     negative: true,
     endpoint: 'verifier',
@@ -179,7 +179,7 @@ async function _incorrectCanonize(key) {
     suite,
     documentLoader
   });
-  const title = 'should not verify if canonize algorithm is not URDNA2015';
+  const title = 'MUST NOT verify if canonize algorithm is not URDNA2015';
   const data = {
     negative: true,
     endpoint: 'verifier',
@@ -210,7 +210,7 @@ async function _incorrectDigest(key) {
     suite,
     documentLoader
   });
-  const title = 'should not verify if digest is not sha-256';
+  const title = 'MUST NOT verify if digest is not sha-256';
   const data = {
     negative: true,
     endpoint: 'verifier',
@@ -234,7 +234,7 @@ async function _incorrectDigest(key) {
 function _noProofType(credential) {
   const copy = cloneJSON(credential);
   delete copy.proof.type;
-  const title = 'should not verify a proof with out a type';
+  const title = 'MUST NOT verify a proof with out a type';
   const data = {
     negative: true,
     endpoint: 'verifier',
@@ -258,7 +258,7 @@ function _noProofType(credential) {
 function _noProofCreated(credential) {
   const copy = cloneJSON(credential);
   delete copy.proof.created;
-  const title = 'should not verify a proof with out a created';
+  const title = 'MUST NOT verify a proof with out a created';
   const data = {
     negative: true,
     endpoint: 'verifier',
@@ -282,7 +282,7 @@ function _noProofCreated(credential) {
 function _noProofPurpose(credential) {
   const copy = cloneJSON(credential);
   delete copy.proof.proofPurpose;
-  const title = 'should not verify a proof with out a proofPurpose';
+  const title = 'MUST NOT verify a proof with out a proofPurpose';
   const data = {
     negative: true,
     endpoint: 'verifier',
@@ -306,7 +306,7 @@ function _noProofPurpose(credential) {
 function _noProofValue(credential) {
   const copy = cloneJSON(credential);
   delete copy.proof.proofValue;
-  const title = 'should not verify a proof with out a proofValue';
+  const title = 'MUST NOT verify a proof with out a proofValue';
   const data = {
     negative: true,
     endpoint: 'verifier',
@@ -334,7 +334,7 @@ async function _validVC(key) {
     suite,
     documentLoader
   });
-  const title = 'should verify a valid VC with an Ed25519Signature 2020';
+  const title = 'MUST verify a valid VC with an Ed25519Signature 2020';
   const data = {
     negative: false,
     endpoint: 'verifier',
@@ -366,7 +366,7 @@ async function _issuerRequest() {
     }
   };
   delete body.credential.id;
-  const title = 'should issue a valid VC with an Ed25519Signature 2020';
+  const title = 'MUST issue a valid VC with an Ed25519Signature 2020';
   const data = {
     negative: false,
     endpoint: 'issuer',
