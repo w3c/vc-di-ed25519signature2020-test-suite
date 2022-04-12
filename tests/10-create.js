@@ -19,6 +19,8 @@ describe('Ed25519Signature2020 (create)', function() {
   for(const [name, implementation] of implementations) {
     const issuer = implementation.issuers.find(issuer =>
       issuer.tags.has('Ed255192020'));
+    const verifier = implementation.verifiers.find(verifier =>
+      verifier.tags.has('VC-HTTP-API'));
     // if an implementation has no issuer that use the Ed25519 2020 Suite
     // don't use it.
     if(!issuer) {
@@ -30,17 +32,9 @@ describe('Ed25519Signature2020 (create)', function() {
         const body = {credential: {...validVC}};
         issuedVC = await issuer.issue({body});
       });
+      // run data integrity test suite
       checkDataIntegrityProofFormat({data: issuedVC, vendorName: name});
-      /*
-      describe('Data Integrity', function() {
-        it('`proof` field MUST exist at top-level of data object.');
-        it('`type` field MUST exist and be a string.');
-        it('`created` field MUST exist and be a valid XMLSCHEMA-11 datetime value.');
-        it('`verificationMethod` field MUST exist and be a valid URL.');
-        it('`proofPurpose` field MUST exist and be a string.');
-        it('`proofValue` field MUST exist and be a string');
-      });
-      */
+
       describe('Ed25519Signature2020', function() {
         const {proof} = issuedVC;
         const proofs = Array.isArray(proof) ? proof : [proof];
@@ -62,7 +56,16 @@ describe('Ed25519Signature2020 (create)', function() {
           'if the public key is 57 bytes in length.', function() {
 
         });
-        it('proof MUST verify when using a conformant verifier.');
+        it('proof MUST verify when using a conformant verifier.', async function() {
+          const {result, error} = await verifier.verify({body: {
+            verifiableCredential: issuedVC,
+            options: {checks: ['proof']}
+          }});
+          should.not.exist(error, 'Expected verifier to not error.');
+          should.exist(result, 'Expected verifier to return a result.');
+          result.status.should.not.equal(400, 'Expected status to not be 400.');
+          result.status.should.equal(200, 'Expected status to be 200.');
+        });
       });
       describe('eddsa-2022 cryptosuite', function() {
         it('`type` field MUST be the string `DataIntegritySignature`.');
