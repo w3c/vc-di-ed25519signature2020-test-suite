@@ -18,7 +18,7 @@
     "canonicalize": "^1.0.8",
     "chai": "^4.3.4",
     "credentials-context": "^2.0.0",
-    "data-integrity-test-suite-assertion": "github:digitalbazaar/data-integrity-test-suite-assertion#add-checkDataIntergrity-function",
+    "data-integrity-test-suite-assertion": "github:digitalbazaar/data-integrity-test-suite-assertion",
     "ed25519-signature-2018-context": "^1.1.0",
     "ed25519-signature-2020-context": "^1.1.0",
     "jsonld-document-loader": "^1.2.0",
