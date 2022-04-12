@@ -4,30 +4,31 @@
 'use strict';
 
 const chai = require('chai');
-const Implementation = require('./Implementation');
-const credentials = require('../credentials');
-const implementations = require('../implementations');
+const {implementations} = require('vc-api-test-suite-implementations');
 const validVC = require('./validVC.json');
+const {
+  checkDataIntegrityProofFormat
+} = require('data-integrity-test-suite-assertion');
 
 const should = chai.should();
-// test these implementations' issuers or verifiers
-const test = [
-  'Digital Bazaar'
-];
-
-// only test listed implementations
-const testAPIs = implementations.filter(v => test.includes(v.name));
 
 describe('Ed25519Signature2020 (create)', function() {
-  for(const implementer of testAPIs) {
-    // wrap the testApi config in an Implementation class
-    const implementation = new Implementation(implementer);
-    describe(implementer.name, function() {
+  for(const [name, implementation] of implementations) {
+    const issuer = implementation.issuers.find(issuer =>
+      issuer.tags.has('Ed255192020'));
+    // if an implementation has no issuer that use the Ed25519 2020 Suite
+    // don't use it.
+    if(!issuer) {
+      return;
+    }
+    describe(name, function() {
       let issuedVC;
       before(async function() {
-        const body = {credential: validVC};
-        issuedVC = await implementation.request({body});
+        const body = {credential: {...validVC}};
+        issuedVC = await issuer.issue({body});
       });
+      checkDataIntegrityProofFormat({data: issuedVC, vendorName: name});
+      /*
       describe('Data Integrity', function() {
         it('`proof` field MUST exist at top-level of data object.');
         it('`type` field MUST exist and be a string.');
@@ -36,6 +37,7 @@ describe('Ed25519Signature2020 (create)', function() {
         it('`proofPurpose` field MUST exist and be a string.');
         it('`proofValue` field MUST exist and be a string');
       });
+      */
       describe('Ed25519Signature2020', function() {
         it('`type` field MUST be the string `Ed25519Signature2020`.', function() {
 
