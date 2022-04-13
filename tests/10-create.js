@@ -67,7 +67,8 @@ describe('Ed25519Signature2020 (create)', function() {
           result.status.should.equal(200, 'Expected status to be 200.');
         });
       });
-      describe('eddsa-2022 cryptosuite', function() {
+      // FIXME implement once library is ready
+      describe.skip('eddsa-2022 cryptosuite', function() {
         it('`type` field MUST be the string `DataIntegritySignature`.');
         it('`cryptosuite` field MUST exist and be the string `eddsa-2022`.');
         it('`proofValue` field MUST exist and be a Multibase-encoded ' +

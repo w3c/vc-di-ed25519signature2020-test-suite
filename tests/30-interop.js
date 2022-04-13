@@ -5,7 +5,6 @@
 
 const chai = require('chai');
 const Implementation = require('./Implementation');
-const credentials = require('../credentials');
 const implementations = require('../implementations');
 
 const should = chai.should();
