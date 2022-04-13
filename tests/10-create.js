@@ -9,32 +9,32 @@ const validVC = require('./validVC.json');
 const {
   checkDataIntegrityProofFormat
 } = require('data-integrity-test-suite-assertion');
+const {filterMap} = require('./helpers');
 
+const predicate = ({value}) =>
+  value.issuers.some(issuer => issuer.tags.has('Ed25519Signature2020'));
+const filtered = filterMap({map: implementations, predicate});
 const should = chai.should();
 
 // multiple test suite names violate max-len
 /* eslint-disable max-len */
 
-describe('Ed25519Signature2020 (create)', function() {
-  for(const [name, implementation] of implementations) {
-    const issuer = implementation.issuers.find(issuer =>
-      issuer.tags.has('Ed255192020'));
-    const verifier = implementation.verifiers.find(verifier =>
-      verifier.tags.has('VC-HTTP-API'));
-    // if an implementation has no issuer that use the Ed25519 2020 Suite
-    // don't use it.
-    if(!issuer) {
-      return;
-    }
-    describe(name, function() {
-      let issuedVC;
-      before(async function() {
-        const body = {credential: {...validVC}};
-        issuedVC = await issuer.issue({body});
-      });
+describe('Ed25519Signature2020 (create)', async function() {
+  for(const [name, implementation] of filtered) {
+    let verifier;
+    let issuedVC;
+    before(async function() {
+      const issuer = implementation.issuers.find(issuer =>
+        issuer.tags.has('Ed25519Signature2020'));
+      verifier = implementation.verifiers.find(verifier =>
+        verifier.tags.has('VC-HTTP-API'));
+      const body = {credential: {...validVC}};
+      issuedVC = await issuer.issue({body});
+      console.log({issuedVC});
+    });
+    describe(name, async function() {
       // run data integrity test suite
       checkDataIntegrityProofFormat({data: issuedVC, vendorName: name});
-
       describe('Ed25519Signature2020', function() {
         const {proof} = issuedVC;
         const proofs = Array.isArray(proof) ? proof : [proof];
