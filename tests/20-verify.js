@@ -13,7 +13,7 @@ const validVC = require('./validVC.json');
 
 const should = chai.should();
 
-describe('Ed25519Signature2020 (verify)', function() {
+describe.skip('Ed25519Signature2020 (verify)', function() {
   for(const [name, implementation] of implementations) {
     // wrap the testApi config in an Implementation class
     const verifier = implementation.verifiers.find(verifier =>

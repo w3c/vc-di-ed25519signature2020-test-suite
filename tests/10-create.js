@@ -13,6 +13,7 @@ const {filterMap} = require('./helpers');
 
 const predicate = ({value}) =>
   value.issuers.some(issuer => issuer.tags.has('Ed25519Signature2020'));
+// only use implementations that use `Ed25519 2020`
 const filtered = filterMap({map: implementations, predicate});
 const should = chai.should();
 
@@ -32,12 +33,13 @@ describe('Ed25519Signature2020 (create)', function() {
       const body = {credential: {...validVC}};
       const {result} = await issuer.issue({body});
       issuedVC = result.data?.verifiableCredential;
-      checkDataIntegrityProofFormat({data: issuedVC, vendorName: name});
       const {proof} = issuedVC;
       proofs = Array.isArray(proof) ? proof : [proof];
     });
     describe(name, function() {
-      // run data integrity test suite
+
+      checkDataIntegrityProofFormat({getData: () => issuedVC, vendorName: name, proofs});
+
       describe('Ed25519Signature2020', function() {
         it('`type` field MUST be the string `Ed25519Signature2020`.', function() {
           proofs.some(proof => proof?.type === 'Ed25519Signature2020').should.equal(
