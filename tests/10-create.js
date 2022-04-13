@@ -19,36 +19,41 @@ const should = chai.should();
 // multiple test suite names violate max-len
 /* eslint-disable max-len */
 
-describe('Ed25519Signature2020 (create)', async function() {
+describe('Ed25519Signature2020 (create)', function() {
   for(const [name, implementation] of filtered) {
     let verifier;
     let issuedVC;
+    let proofs;
     before(async function() {
       const issuer = implementation.issuers.find(issuer =>
         issuer.tags.has('Ed25519Signature2020'));
       verifier = implementation.verifiers.find(verifier =>
         verifier.tags.has('VC-HTTP-API'));
       const body = {credential: {...validVC}};
-      issuedVC = await issuer.issue({body});
-      console.log({issuedVC});
-    });
-    describe(name, async function() {
-      // run data integrity test suite
+      const {result} = await issuer.issue({body});
+      issuedVC = result.data?.verifiableCredential;
       checkDataIntegrityProofFormat({data: issuedVC, vendorName: name});
+      const {proof} = issuedVC;
+      proofs = Array.isArray(proof) ? proof : [proof];
+    });
+    describe(name, function() {
+      // run data integrity test suite
       describe('Ed25519Signature2020', function() {
-        const {proof} = issuedVC;
-        const proofs = Array.isArray(proof) ? proof : [proof];
-        it('`type` field MUST be the string `Ed25519Signature2020`.', () => {
-          proofs.some(proof => proof?.type === 'Ed25519Signature2020').to.equal(
+        it('`type` field MUST be the string `Ed25519Signature2020`.', function() {
+          proofs.some(proof => proof?.type === 'Ed25519Signature2020').should.equal(
             true,
             'Expected a "proof.type" to be "Ed25519Signature2020"'
           );
         });
         it('`proofValue` field MUST exist and be a Multibase-encoded base58-btc value', function() {
-          const bs58Multibase = 'z6Mk';
-          proofs.some(proof => proof?.proofValue.startsWith(bs58Multibase)).to.equal(
+          const multibase = 'z';
+          const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
+          proofs.some(proof => {
+            const value = proof?.proofValue || '';
+            return value.startsWith(multibase) && bs58.test(value);
+          }).should.equal(
             true,
-            'Expected a "proof.proofValue" to be bs58 multibase-encoded.'
+            'Expected a "proof.proofValue" to be multibase-encoded base58-btc value.'
           );
         });
         it('`proofValue` field, when decoded to raw bytes, MUST be 64 bytes in length ' +
