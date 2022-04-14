@@ -31,9 +31,9 @@ describe('Ed25519Signature2020 (create)', function() {
       verifier = implementation.verifiers.find(verifier =>
         verifier.tags.has('VC-HTTP-API'));
       const body = {credential: {...validVC}};
-      const {result} = await issuer.issue({body});
+      const {result = {}} = await issuer.issue({body});
       issuedVC = result.data?.verifiableCredential;
-      const {proof} = issuedVC;
+      const {proof} = issuedVC || {};
       proofs = Array.isArray(proof) ? proof : [proof];
     });
     describe(name, function() {
@@ -61,7 +61,7 @@ describe('Ed25519Signature2020 (create)', function() {
         it('`proofValue` field, when decoded to raw bytes, MUST be 64 bytes in length ' +
           'if the associated public key is 32 bytes in length, or 114 bytes in length ' +
           'if the public key is 57 bytes in length.', function() {
-
+             throw new Error('IMPLEMENT THIS TEST');
         });
         it('proof MUST verify when using a conformant verifier.', async function() {
           const {result, error} = await verifier.verify({body: {

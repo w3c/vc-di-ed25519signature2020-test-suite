@@ -39,4 +39,21 @@ const testCredential = credential => {
   credential.proof.should.be.an('object');
 };
 
-module.exports = {testCredential};
+const verificationFail = async ({credential, verifier}) => {
+  const body = {
+    verifiableCredential: credential,
+    options: {
+      checks: ['proof']
+    }
+  };
+  const {result, error} = await verifier.verify({body});
+  should.not.exist(result, 'Expected no result from verifier.');
+  should.exist(error, 'Expected verifier to error.');
+  should.exist(error.status, 'Expected verifier to return an HTTP Status code');
+  error.status.should.equal(
+    400,
+    'Expected HTTP Status code 400 invalid input!'
+  );
+};
+
+module.exports = {verificationFail, testCredential};

@@ -38,7 +38,10 @@ const filterMap = ({map, predicate}) => {
   return filtered;
 };
 
+const deepClone = json => JSON.parse(JSON.stringify(json));
+
 module.exports = {
+  deepClone,
   unwrapResponse,
   filterMap
 };
