@@ -5,7 +5,11 @@
 
 const {implementations} = require('vc-api-test-suite-implementations');
 const {verificationFail} = require('./assertions');
-const {issuedVC} = require('../credentials');
+const {
+  issuedVC,
+  incorrectCannonization,
+  incorrectHash
+} = require('../credentials');
 const {deepClone} = require('./helpers');
 
 // multiple test suite names violate max-len
@@ -64,10 +68,12 @@ describe('Ed25519Signature2020 (verify)', function() {
           throw new Error('IMPLEMENT THIS TEST');
         });
         it('If a canonicalization algorithm other than URDNA2015 is used, a INVALID_PROOF_VALUE error MUST be returned.', async function() {
-
+          const credential = deepClone(incorrectCannonization);
+          await verificationFail({credential, verifier});
         });
         it('If a canonicalization data hashing algorithm SHA-2-256 is used, a INVALID_PROOF_VALUE error MUST be returned.', async function() {
-
+          const credential = deepClone(incorrectHash);
+          await verificationFail({credential, verifier});
         });
       });
       describe.skip('eddsa-2022 cryptosuite', function() {
