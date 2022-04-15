@@ -5,7 +5,7 @@
 
 const {implementations} = require('vc-api-test-suite-implementations');
 const {verificationFail} = require('./assertions');
-const issuedVC = require('./issuedVC.json');
+const {issuedVC} = require('../credentials');
 const {deepClone} = require('./helpers');
 
 // multiple test suite names violate max-len
@@ -33,7 +33,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           delete credential.proof.created;
           await verificationFail({credential, verifier});
         });
-        it('If the `verificatioNMethod` field is missing or invalid a MALFORMED error MUST be returned.', async function() {
+        it('If the `verificationMethod` field is missing or invalid a MALFORMED error MUST be returned.', async function() {
           const credential = deepClone(issuedVC);
           delete credential.proof.verificationMethod;
           await verificationFail({credential, verifier});
