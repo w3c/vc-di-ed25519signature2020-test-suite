@@ -26,6 +26,7 @@
     "mocha": "^9.1.3",
     "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter",
     "require-dir": "^1.2.0",
+    "varint": "^6.0.0",
     "vc-api-test-suite-implementations": "github:digitalbazaar/vc-api-test-suite-implementations#initial"
   },
   "devDependencies": {

@@ -1,20 +1,15 @@
-//FIXME this might not be needed in this test
-const unwrapResponse = data => {
-  if(data['@context']) {
-    return data;
-  }
-  // if the response.data is not directly jsonld unwrap it
-  for(const key of Object.keys(data)) {
-    const prop = data[key];
-    // recurse through each key looking for jsonld
-    const jsonld = unwrapResponse(prop);
-    // when we find the first context that should be the VC
-    if(jsonld) {
-      return jsonld;
-    }
-  }
-  return false;
-};
+/*!
+ * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
+ */
+
+const didKeyDriver = require('@digitalbazaar/did-method-key').driver();
+const {IdDecoder} = require('bnid');
+const varint = require('varint');
+
+const decoder = new IdDecoder({
+  encoding: 'base58',
+  multibase: true
+});
 
 /**
  * Takes in a Map and a predicate and returns a new Map
@@ -38,10 +33,26 @@ const filterMap = ({map, predicate}) => {
   return filtered;
 };
 
+const getPublicKeyBytes = async ({did}) => {
+  const didDoc = await didKeyDriver.get({did});
+  const multiCodecBytes = decoder.decode(didDoc.publicKeyMultibase);
+  // extracts the varint bytes
+  varint.decode(multiCodecBytes);
+  // how many bytes were used to specify the size of the key material
+  const varBytes = varint.decode.bytes;
+  // return just the key material
+  return multiCodecBytes.slice(varBytes, multiCodecBytes.length);
+};
+
+const bs58Bytes = ({id}) => {
+  return decoder.decode(id);
+};
+
 const deepClone = json => JSON.parse(JSON.stringify(json));
 
 module.exports = {
+  bs58Bytes,
   deepClone,
-  unwrapResponse,
-  filterMap
+  filterMap,
+  getPublicKeyBytes
 };
