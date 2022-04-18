@@ -36,7 +36,7 @@
   },
   "scripts": {
     "test": "mocha tests/ --require esm --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options body=\"$PWD/body.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Ed25519Signature 2020 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000",
-    "generate-requests": "node request-generator/index.js"
+    "generate-credentials": "node credentials-generator/index.js"
   },
   "repository": {
     "type": "git",
