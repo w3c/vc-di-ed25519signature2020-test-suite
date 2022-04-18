@@ -33,10 +33,6 @@ const main = async () => {
   const validVC = data;
   // create all of the other vcs once
   const vcs = await Promise.all([
-    _noProofValue(validVC),
-    _noProofPurpose(validVC),
-    _noProofCreated(validVC),
-    _noProofType(validVC),
     _incorrectCodec(validVC),
     _incorrectDigest(key),
     _incorrectCanonize(key),
@@ -46,7 +42,7 @@ const main = async () => {
   ]);
   console.log('writing VCs to /credentialss');
   await Promise.all(vcs.map(({path, data}) => writeJSON({path, data})));
-  console.log('credentials generated');
+  console.log(`${vcs.length} credentials generated`);
 };
 
 function _incorrectCodec(credential) {
@@ -68,6 +64,7 @@ async function _incorrectSigner(key) {
     const sign = createSign('rsa-sha256');
     sign.write(verifyData);
     sign.end();
+    // replace the proofValue with a signature generated from another key
     proof.proofValue = sign.sign(rsaKeyPair.privateKey, 'base64');
     return proof;
   };
@@ -107,30 +104,6 @@ async function _incorrectDigest(key) {
     documentLoader
   });
   return {path: `${credentialsPath}/digestSha512.json`, data: signedVC};
-}
-
-function _noProofType(credential) {
-  const copy = cloneJSON(credential);
-  delete copy.proof.type;
-  return {path: `${credentialsPath}/noProofType.json`, data: copy};
-}
-
-function _noProofCreated(credential) {
-  const copy = cloneJSON(credential);
-  delete copy.proof.created;
-  return {path: `${credentialsPath}/noProofCreatedVC.json`, data: copy};
-}
-
-function _noProofPurpose(credential) {
-  const copy = cloneJSON(credential);
-  delete copy.proof.proofPurpose;
-  return {path: `${credentialsPath}/noProofPurposeVC.json`, data: copy};
-}
-
-function _noProofValue(credential) {
-  const copy = cloneJSON(credential);
-  delete copy.proof.proofValue;
-  return {path: `${credentialsPath}/noProofValueVC.json`, data: copy};
 }
 
 async function _validVC(key) {
