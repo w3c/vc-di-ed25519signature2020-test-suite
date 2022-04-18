@@ -28,7 +28,7 @@ const main = async () => {
   console.log('generating credentials');
   const {methodFor} = await getDiDKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
-  const {path, data} = await _validVC(key);
+  const {path, data} = await _issuedVC(key);
   // use copies of the validVC in other tests
   const validVC = data;
   // create all of the other vcs once
@@ -37,6 +37,7 @@ const main = async () => {
     _incorrectDigest(key),
     _incorrectCanonize(key),
     _incorrectSigner(key),
+    _validVC(),
     // make sure the validVC is in the list of VCs
     {path, data}
   ]);
@@ -106,14 +107,18 @@ async function _incorrectDigest(key) {
   return {path: `${credentialsPath}/digestSha512.json`, data: signedVC};
 }
 
-async function _validVC(key) {
+async function _validVC() {
+  return {path: `${credentialsPath}/validVC.json`, data: cloneJSON(credential)};
+}
+
+async function _issuedVC(key) {
   const suite = new Ed25519Signature2020({key});
   const signedVC = await vc.issue({
     credential: cloneJSON(credential),
     suite,
     documentLoader
   });
-  return {path: `${credentialsPath}/validVC.json`, data: signedVC};
+  return {path: `${credentialsPath}/issuedVC.json`, data: signedVC};
 }
 
 // run main by calling node ./vc-generator

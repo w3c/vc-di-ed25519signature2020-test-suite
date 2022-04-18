@@ -7,8 +7,8 @@ const {implementations} = require('vc-api-test-suite-implementations');
 const {verificationFail} = require('./assertions');
 const {
   issuedVC,
-  incorrectCannonization,
-  incorrectHash
+  canonizeJCS: incorrectCannonization,
+  digestSha512: incorrectHash
 } = require('../credentials');
 const {deepClone} = require('./helpers');
 
