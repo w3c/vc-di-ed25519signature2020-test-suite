@@ -43,16 +43,34 @@ describe('Ed25519Signature2020 (create)', function() {
     });
     describe(name, function() {
 
-      checkDataIntegrityProofFormat({getData: () => issuedVC, vendorName: name});
+      checkDataIntegrityProofFormat({vendors: [{getData: () => issuedVC, vendorName: name}]});
 
       describe('Ed25519Signature2020', function() {
+        // column names for the matrix go here
+        const columnNames = [];
+        // this will tell the report
+        // to make an interop matrix with this suite
+        this.matrix = true;
+        this.report = true;
+        this.columns = columnNames;
+        this.rowLabel = 'Test Name';
+        this.columnLabel = 'Issuer';
+        columnNames.push(name);
         it('`type` field MUST be the string `Ed25519Signature2020`.', function() {
+          this.test.cell = {
+            columnId: name,
+            rowId: this.test.title
+          };
           proofs.some(proof => proof?.type === 'Ed25519Signature2020').should.equal(
             true,
             'Expected a "proof.type" to be "Ed25519Signature2020"'
           );
         });
         it('`proofValue` field MUST exist and be a Multibase-encoded base58-btc value', function() {
+          this.test.cell = {
+            columnId: name,
+            rowId: this.test.title
+          };
           const multibase = 'z';
           proofs.some(proof => {
             const value = proof?.proofValue || '';
@@ -65,6 +83,10 @@ describe('Ed25519Signature2020 (create)', function() {
         it('`proofValue` field, when decoded to raw bytes, MUST be 64 bytes in length ' +
           'if the associated public key is 32 bytes in length, or 114 bytes in length ' +
           'if the public key is 57 bytes in length.', async function() {
+          this.test.cell = {
+            columnId: name,
+            rowId: this.test.title
+          };
           should.exist(issuedVC, 'Expected issuer to have issued a VC.');
           should.exist(proofs, 'Expected VC to have a proof.');
           const ed25519Proofs = proofs.filter(proof => proof?.type === 'Ed25519Signature2020');
@@ -82,7 +104,11 @@ describe('Ed25519Signature2020 (create)', function() {
             }
           }
         });
-        it('proof MUST verify when using a conformant verifier.', async function() {
+        it('`proof` MUST verify when using a conformant verifier.', async function() {
+          this.test.cell = {
+            columnId: name,
+            rowId: this.test.title
+          };
           should.exist(verifier, 'Expected implementation to have a VC HTTP API compatible verifier.');
           const {result, error} = await verifier.verify({body: {
             verifiableCredential: issuedVC,
