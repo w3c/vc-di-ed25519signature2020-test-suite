@@ -5,6 +5,7 @@
 const vc = require('@digitalbazaar/vc');
 const canonicalize = require('canonicalize');
 const {createSign, generateKeyPair} = require('crypto');
+const base58btc = require('base58-universal');
 const {join} = require('path');
 const {promisify} = require('util');
 const {
@@ -46,6 +47,7 @@ const main = async () => {
   console.log(`${vcs.length} credentials generated`);
 };
 
+// removes the multibase identifier from the verificationMethod
 function _incorrectCodec(credential) {
   const copy = cloneJSON(credential);
   // break the did key verification method into parts
@@ -58,6 +60,7 @@ function _incorrectCodec(credential) {
   return {path: `${credentialsPath}/incorrectCodec.json`, data: copy};
 }
 
+// signs with an rsa key instead of an ed25519 key
 async function _incorrectSigner(key) {
   const rsaKeyPair = await generateKeyPairAsync('rsa', {modulusLength: 4096});
   const suite = new Ed25519Signature2020({key});
@@ -65,17 +68,15 @@ async function _incorrectSigner(key) {
     const sign = createSign('rsa-sha256');
     sign.write(verifyData);
     sign.end();
-    // replace the proofValue with a signature generated from another key
-    proof.proofValue = sign.sign(rsaKeyPair.privateKey, 'base64');
+    const signatureBytes = sign.sign(rsaKeyPair.privateKey);
+    proof.proofValue = `z${base58btc.encode(signatureBytes)}`;
     return proof;
   };
-
   const signedVC = await vc.issue({
     credential: cloneJSON(credential),
     suite,
     documentLoader
   });
-
   return {path: `${credentialsPath}/rsaSigned.json`, data: signedVC};
 }
 
@@ -107,7 +108,7 @@ async function _incorrectDigest(key) {
   return {path: `${credentialsPath}/digestSha512.json`, data: signedVC};
 }
 
-async function _validVC() {
+function _validVC() {
   return {path: `${credentialsPath}/validVC.json`, data: cloneJSON(credential)};
 }
 
@@ -121,5 +122,5 @@ async function _issuedVC(key) {
   return {path: `${credentialsPath}/issuedVC.json`, data: signedVC};
 }
 
-// run main by calling node ./vc-generator
+// run main by calling node ./credentials-generator
 main();

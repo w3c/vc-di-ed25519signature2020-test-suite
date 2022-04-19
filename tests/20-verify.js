@@ -10,7 +10,7 @@ const {
   canonizeJCS: incorrectCannonization,
   digestSha512: incorrectHash
 } = require('../credentials');
-const {deepClone} = require('./helpers');
+const {bs58Decode, bs58Encode, deepClone} = require('./helpers');
 
 // multiple test suite names violate max-len
 /* eslint-disable max-len */
@@ -65,7 +65,11 @@ describe('Ed25519Signature2020 (verify)', function() {
           await verificationFail({credential, verifier});
         });
         it('If the `proofValue` field, when decoded to raw bytes, is not 64 bytes in length if the associated public key is 32 bytes in length, or 114 bytes in length if the public key is 57 bytes in length, an INVALID_PROOF_LENGTH error MUST be returned.', async function() {
-          throw new Error('IMPLEMENT THIS TEST');
+          const credential = deepClone(issuedVC);
+          const proofBytes = bs58Decode({id: credential.proof.proofValue});
+          const randomBytes = new Uint8Array(32).map(() => Math.floor(Math.random() * 255));
+          credential.proof.proofValue = bs58Encode(new Uint8Array([...proofBytes, ...randomBytes]));
+          await verificationFail({credential, verifier});
         });
         it('If a canonicalization algorithm other than URDNA2015 is used, a INVALID_PROOF_VALUE error MUST be returned.', async function() {
           const credential = deepClone(incorrectCannonization);

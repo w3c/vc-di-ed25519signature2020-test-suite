@@ -3,10 +3,16 @@
  */
 
 const didKeyDriver = require('@digitalbazaar/did-method-key').driver();
-const {IdDecoder} = require('bnid');
+const {IdDecoder, IdEncoder} = require('bnid');
 const varint = require('varint');
 
 const decoder = new IdDecoder({
+  encoding: 'base58',
+  multibase: true
+});
+
+// base58, multibase, fixed-length encoder
+const encoder = new IdEncoder({
   encoding: 'base58',
   multibase: true
 });
@@ -44,14 +50,15 @@ const getPublicKeyBytes = async ({did}) => {
   return multiCodecBytes.slice(varBytes, multiCodecBytes.length);
 };
 
-const bs58Bytes = ({id}) => {
-  return decoder.decode(id);
-};
+const bs58Decode = ({id}) => decoder.decode(id);
+
+const bs58Encode = data => encoder.encode(data);
 
 const deepClone = json => JSON.parse(JSON.stringify(json));
 
 module.exports = {
-  bs58Bytes,
+  bs58Encode,
+  bs58Decode,
   deepClone,
   filterMap,
   getPublicKeyBytes
