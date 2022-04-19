@@ -12,7 +12,7 @@ const {
 const {
   filterMap,
   getPublicKeyBytes,
-  bs58Bytes
+  bs58Decode
 } = require('./helpers');
 
 const predicate = ({value}) =>
@@ -71,7 +71,7 @@ describe('Ed25519Signature2020 (create)', function() {
           ed25519Proofs.length.should.be.gte(1, 'Expected at least one Ed25519 proof.');
           for(const proof of ed25519Proofs) {
             should.exist(proof.proofValue, 'Expected a proof value on the proof.');
-            const valueBytes = bs58Bytes({id: proof.proofValue});
+            const valueBytes = bs58Decode({id: proof.proofValue});
             should.exist(proof.verificationMethod);
             const vmBytes = await getPublicKeyBytes({did: proof.verificationMethod});
             vmBytes.byteLength.should.be.oneOf([32, 57], 'Expected public key bytes to be either 32 or 57 bytes.');
