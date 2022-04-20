@@ -43,7 +43,7 @@ describe('Ed25519Signature2020 (create)', function() {
       proofs = Array.isArray(proof) ? proof : [proof];
     });
     describe(name, function() {
-
+      // FIXME move this out so it doesn't accidentally get called multiple times
       checkDataIntegrityProofFormat({vendors: [{getData: () => issuedVc, vendorName: name}]});
 
       describe('Ed25519Signature2020 (issuer)', function() {
