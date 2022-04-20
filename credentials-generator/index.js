@@ -11,7 +11,7 @@ const {promisify} = require('util');
 const {
   cloneJSON,
   getDiDKey,
-  writeJSON,
+  writeJson,
 } = require('./helpers');
 const credential = require('./testVC');
 const Ed25519Signature2020 = require('./TestEd25519Signature2020');
