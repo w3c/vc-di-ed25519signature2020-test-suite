@@ -108,7 +108,7 @@ async function _incorrectDigest(key) {
   return {path: `${credentialsPath}/digestSha512.json`, data: signedVC};
 }
 
-function _validVC() {
+function _validVc() {
   return {path: `${credentialsPath}/validVC.json`, data: klona(credential)};
 }
 
