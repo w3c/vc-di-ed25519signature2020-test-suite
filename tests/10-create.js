@@ -35,15 +35,15 @@ describe('Ed25519Signature2020 (create)', function() {
         issuer.tags.has('Ed25519Signature2020'));
       verifier = implementation.verifiers.find(verifier =>
         verifier.tags.has('VC-HTTP-API'));
-      const body = {credential: {...validVC}};
+      const body = {credential: {...validVc}};
       const {result = {}} = await issuer.issue({body});
-      issuedVC = result.data?.verifiableCredential;
-      const {proof} = issuedVC || {};
+      issuedVc = result.data?.verifiableCredential;
+      const {proof} = issuedVc || {};
       proofs = Array.isArray(proof) ? proof : [proof];
     });
     describe(name, function() {
 
-      checkDataIntegrityProofFormat({vendors: [{getData: () => issuedVC, vendorName: name}]});
+      checkDataIntegrityProofFormat({vendors: [{getData: () => issuedVc, vendorName: name}]});
 
       describe('Ed25519Signature2020 (issuer)', function() {
         // column names for the matrix go here
@@ -87,8 +87,8 @@ describe('Ed25519Signature2020 (create)', function() {
             columnId: name,
             rowId: this.test.title
           };
-          should.exist(issuedVC, 'Expected issuer to have issued a VC.');
-          should.exist(proofs, 'Expected VC to have a proof.');
+          should.exist(issuedVc, 'Expected issuer to have issued a credential.');
+          should.exist(proofs, 'Expected credential to have a proof.');
           const ed25519Proofs = proofs.filter(proof => proof?.type === 'Ed25519Signature2020');
           ed25519Proofs.length.should.be.gte(1, 'Expected at least one Ed25519 proof.');
           for(const proof of ed25519Proofs) {
@@ -111,7 +111,7 @@ describe('Ed25519Signature2020 (create)', function() {
           };
           should.exist(verifier, 'Expected implementation to have a VC HTTP API compatible verifier.');
           const {result, error} = await verifier.verify({body: {
-            verifiableCredential: issuedVC,
+            verifiableCredential: issuedVc,
             options: {checks: ['proof']}
           }});
           should.not.exist(error, 'Expected verifier to not error.');

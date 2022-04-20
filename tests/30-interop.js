@@ -5,7 +5,7 @@
 
 const chai = require('chai');
 const {implementations} = require('vc-api-test-suite-implementations');
-const {validVC} = require('../credentials');
+const {validVc} = require('../credentials');
 const {filterMap} = require('./helpers');
 
 const should = chai.should();
@@ -25,13 +25,13 @@ describe('Ed25519Signature2020 (interop)', function() {
   this.rowLabel = 'Issuer';
   this.columnLabel = 'Verifier';
   for(const [issuerName, {issuers}] of filtered) {
-    let issuedVC;
+    let issuedVc;
     before(async function() {
       const issuer = issuers.find(issuer =>
         issuer.tags.has('Ed25519Signature2020'));
-      const body = {credential: {...validVC}};
+      const body = {credential: {...validVc}};
       const {result = {}} = await issuer.issue({body});
-      issuedVC = result.data?.verifiableCredential;
+      issuedVc = result.data?.verifiableCredential;
     });
     for(const [verifierName, {verifiers}] of implementations) {
       columnNames.push(verifierName);
@@ -41,7 +41,7 @@ describe('Ed25519Signature2020 (interop)', function() {
       it(`${verifierName} should verify ${issuerName}`, async function() {
         this.test.cell = {rowId: issuerName, columnId: verifierName};
         const body = {
-          verifiableCredential: issuedVC,
+          verifiableCredential: issuedVc,
           options: {
             checks: ['proof']
           }
