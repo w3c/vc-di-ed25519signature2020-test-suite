@@ -54,12 +54,9 @@ const bs58Decode = ({id}) => decoder.decode(id);
 
 const bs58Encode = data => encoder.encode(data);
 
-const deepClone = json => JSON.parse(JSON.stringify(json));
-
 module.exports = {
   bs58Encode,
   bs58Decode,
-  deepClone,
   filterMap,
   getPublicKeyBytes
 };
