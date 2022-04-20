@@ -4,8 +4,8 @@
 'use strict';
 
 const chai = require('chai');
+const {klona} = require('klona');
 const {implementations} = require('vc-api-test-suite-implementations');
-const {validVc} = require('../credentials');
 const {
   checkDataIntegrityProofFormat
 } = require('data-integrity-test-suite-assertion');
@@ -14,6 +14,7 @@ const {
   getPublicKeyBytes,
   bs58Decode
 } = require('./helpers');
+const {validVc} = require('../credentials');
 
 const predicate = ({value}) =>
   value.issuers.some(issuer => issuer.tags.has('Ed25519Signature2020'));
@@ -35,7 +36,7 @@ describe('Ed25519Signature2020 (create)', function() {
         issuer.tags.has('Ed25519Signature2020'));
       verifier = implementation.verifiers.find(verifier =>
         verifier.tags.has('VC-HTTP-API'));
-      const body = {credential: {...validVc}};
+      const body = {credential: klona(validVc)};
       const {result = {}} = await issuer.issue({body});
       issuedVc = result.data?.verifiableCredential;
       const {proof} = issuedVc || {};
