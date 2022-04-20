@@ -9,7 +9,7 @@ const base58btc = require('base58-universal');
 const {join} = require('path');
 const {promisify} = require('util');
 const {
-  cloneJSON,
+  cloneJson,
   getDiDKey,
   writeJson,
 } = require('./helpers');
