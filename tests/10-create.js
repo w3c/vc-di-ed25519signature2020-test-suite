@@ -45,7 +45,7 @@ describe('Ed25519Signature2020 (create)', function() {
 
       checkDataIntegrityProofFormat({vendors: [{getData: () => issuedVC, vendorName: name}]});
 
-      describe('Ed25519Signature2020', function() {
+      describe('Ed25519Signature2020 (issuer)', function() {
         // column names for the matrix go here
         const columnNames = [];
         // this will tell the report
