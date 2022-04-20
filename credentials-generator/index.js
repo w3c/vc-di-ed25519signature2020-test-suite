@@ -114,7 +114,7 @@ function _validVc() {
 
 async function _issuedVC(key) {
   const suite = new Ed25519Signature2020({key});
-  const signedVC = await vc.issue({
+  const signedVc = await vc.issue({
     credential: klona(credential),
     suite,
     documentLoader
