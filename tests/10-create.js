@@ -5,7 +5,7 @@
 
 const chai = require('chai');
 const {implementations} = require('vc-api-test-suite-implementations');
-const {validVC} = require('../credentials');
+const {validVc} = require('../credentials');
 const {
   checkDataIntegrityProofFormat
 } = require('data-integrity-test-suite-assertion');
