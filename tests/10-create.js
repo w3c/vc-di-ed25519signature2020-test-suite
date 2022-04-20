@@ -28,7 +28,7 @@ const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
 describe('Ed25519Signature2020 (create)', function() {
   for(const [name, implementation] of filtered) {
     let verifier;
-    let issuedVC;
+    let issuedVc;
     let proofs;
     before(async function() {
       const issuer = implementation.issuers.find(issuer =>
