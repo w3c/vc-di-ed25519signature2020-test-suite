@@ -47,6 +47,6 @@ const ISOTimeStamp = ({date = new Date()} = {}) => {
 module.exports = {
   getDidKey,
   writeJson,
-  ISOTimeStamp
+  IsoTimestamp
 };
 
