@@ -10,7 +10,8 @@ const {
   canonizeJCS: incorrectCannonization,
   digestSha512: incorrectHash
 } = require('../credentials');
-const {bs58Decode, bs58Encode, deepClone} = require('./helpers');
+const {bs58Decode, bs58Encode} = require('./helpers');
+const {klona} = require('klona');
 
 // multiple test suite names violate max-len
 /* eslint-disable max-len */
@@ -36,7 +37,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = deepClone(issuedVC);
+        const credential = klona(issuedVC);
         delete credential.proof;
         await verificationFail({credential, verifier});
       });
@@ -45,7 +46,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = deepClone(issuedVC);
+        const credential = klona(issuedVC);
         delete credential.proof.type;
         await verificationFail({credential, verifier});
       });
@@ -54,7 +55,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = deepClone(issuedVC);
+        const credential = klona(issuedVC);
         delete credential.proof.created;
         await verificationFail({credential, verifier});
       });
@@ -63,7 +64,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = deepClone(issuedVC);
+        const credential = klona(issuedVC);
         delete credential.proof.verificationMethod;
         await verificationFail({credential, verifier});
       });
@@ -72,7 +73,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = deepClone(issuedVC);
+        const credential = klona(issuedVC);
         delete credential.proof.proofPurpose;
         await verificationFail({credential, verifier});
       });
@@ -81,7 +82,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = deepClone(issuedVC);
+        const credential = klona(issuedVC);
         delete credential.proof.proofValue;
         await verificationFail({credential, verifier});
       });
@@ -107,7 +108,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = deepClone(issuedVC);
+        const credential = klona(issuedVC);
         credential.proof.type = 'UnknownCryptoSuite';
         await verificationFail({credential, verifier});
       });
@@ -116,7 +117,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = deepClone(issuedVC);
+        const credential = klona(issuedVC);
         credential.proof.proofValue = 'not-multibase-bs58-encoded!!';
         await verificationFail({credential, verifier});
       });
@@ -125,7 +126,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = deepClone(issuedVC);
+        const credential = klona(issuedVC);
         const proofBytes = bs58Decode({id: credential.proof.proofValue});
         const randomBytes = new Uint8Array(32).map(() => Math.floor(Math.random() * 255));
         credential.proof.proofValue = bs58Encode(new Uint8Array([...proofBytes, ...randomBytes]));
@@ -136,7 +137,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = deepClone(incorrectCannonization);
+        const credential = klona(incorrectCannonization);
         await verificationFail({credential, verifier});
       });
       it('If a canonicalization data hashing algorithm SHA-2-256 is used, a INVALID_PROOF_VALUE error MUST be returned.', async function() {
@@ -144,7 +145,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = deepClone(incorrectHash);
+        const credential = klona(incorrectHash);
         await verificationFail({credential, verifier});
       });
     }

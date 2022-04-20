@@ -9,14 +9,14 @@ const base58btc = require('base58-universal');
 const {join} = require('path');
 const {promisify} = require('util');
 const {
-  cloneJson,
-  getDiDKey,
+  getDidKey,
   writeJson,
 } = require('./helpers');
 const credential = require('./testVC');
 const Ed25519Signature2020 = require('./TestEd25519Signature2020');
 const documentLoader = require('./documentLoader');
 const {hashDigest} = require('./hashDigest');
+const {klona} = require('klona');
 
 const generateKeyPairAsync = promisify(generateKeyPair);
 const credentialsPath = join(process.cwd(), 'credentials');
@@ -27,7 +27,7 @@ const main = async () => {
     throw new Error(`ENV variable CLIENT_SECRET_DB is required.`);
   }
   console.log('generating credentials');
-  const {methodFor} = await getDiDKey();
+  const {methodFor} = await getDidKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
   const {path, data} = await _issuedVC(key);
   // use copies of the validVC in other tests
@@ -43,13 +43,13 @@ const main = async () => {
     {path, data}
   ]);
   console.log('writing VCs to /credentialss');
-  await Promise.all(vcs.map(({path, data}) => writeJSON({path, data})));
+  await Promise.all(vcs.map(({path, data}) => writeJson({path, data})));
   console.log(`${vcs.length} credentials generated`);
 };
 
 // removes the multibase identifier from the verificationMethod
 function _incorrectCodec(credential) {
-  const copy = cloneJSON(credential);
+  const copy = klona(credential);
   // break the did key verification method into parts
   const parts = copy.proof.verificationMethod.split(':');
   // pop off the last part and remove the opening z
@@ -73,7 +73,7 @@ async function _incorrectSigner(key) {
     return proof;
   };
   const signedVC = await vc.issue({
-    credential: cloneJSON(credential),
+    credential: klona(credential),
     suite,
     documentLoader
   });
@@ -88,7 +88,7 @@ async function _incorrectCanonize(key) {
     return canonicalize(input);
   };
   const signedVC = await vc.issue({
-    credential: cloneJSON(credential),
+    credential: klona(credential),
     suite,
     documentLoader
   });
@@ -101,7 +101,7 @@ async function _incorrectDigest(key) {
     hash: hashDigest({algorithm: 'sha512'})
   });
   const signedVC = await vc.issue({
-    credential: cloneJSON(credential),
+    credential: klona(credential),
     suite,
     documentLoader
   });
@@ -109,13 +109,13 @@ async function _incorrectDigest(key) {
 }
 
 function _validVC() {
-  return {path: `${credentialsPath}/validVC.json`, data: cloneJSON(credential)};
+  return {path: `${credentialsPath}/validVC.json`, data: klona(credential)};
 }
 
 async function _issuedVC(key) {
   const suite = new Ed25519Signature2020({key});
   const signedVC = await vc.issue({
-    credential: cloneJSON(credential),
+    credential: klona(credential),
     suite,
     documentLoader
   });
