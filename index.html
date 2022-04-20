@@ -68,16 +68,16 @@
     </section>
     <section id="sotd">
       <p>
-      Tests passed 10/10 100%
+      Tests passed 9/76 12%
       </p>
       <p>
-      Tests failed 0/10 0%
+      Tests failed 68/76 89%
       </p>
       <p>
-      Tests skipped 0
+      Tests skipped 11
       </p>
       <p>
-      Total tests 10
+      Total tests 87
       </p>
     
        <p>
@@ -120,8 +120,8 @@
     </section>
     <section id="conformance">
       <!--- This will take the tests and display them as matrices -->
-        <section class="informative" id="Ed25519 2020 Tests">
-          <h2>Ed25519 2020 Tests</h2>
+        <section class="informative" id="Data Integrity (issuer)">
+          <h2>Data Integrity (issuer)</h2>
           <style>
             .no-wrap {
               white-space: nowrap;
@@ -155,9 +155,154 @@
            pre, code.hljs{
              overflow: auto;
            }
-           .subtest {
-             width: 70%;
+          </style>
+          <div class="row justify-center">
+            <table class="simple">
+              <thead>
+                <th width="20%">
+                  <div class="text-right small-font">
+                  Issuer &#8658;
+                  </div>
+                  <div class="text-left small-font">
+                  <span>&#8659;</span><span>Test Name</span>
+                  </div>
+                </th>
+                    <th class="no-wrap small-font">Digital Bazaar</th>
+                </thead>
+              <tbody>
+            </tbody>
+            </table>
+          </div>
+          <div>
+            <div class="flex-center">
+              <div class="row">
+              </div>
+              <div class="">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="informative" id="Ed25519Signature2020 (issuer)">
+          <h2>Ed25519Signature2020 (issuer)</h2>
+          <style>
+            .no-wrap {
+              white-space: nowrap;
             }
+            td.optional {
+              background-color: #b9b7b7;
+            }
+           .text-right {
+              text-align: right;
+            }
+           .text-left {
+              text-align: left;
+            }
+           .text-center {
+             text-align: center;
+           }
+           .qr-code {
+             margin-left: 25px;
+           }
+           .row {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+           }
+           .row.justify-center {
+             justify-content: center;
+           }
+           .small-font {
+             font-size: 0.75rem;
+           }
+           pre, code.hljs{
+             overflow: auto;
+           }
+          </style>
+          <div class="row justify-center">
+            <table class="simple">
+              <thead>
+                <th width="20%">
+                  <div class="text-right small-font">
+                  Issuer &#8658;
+                  </div>
+                  <div class="text-left small-font">
+                  <span>&#8659;</span><span>Test Name</span>
+                  </div>
+                </th>
+                    <th class="no-wrap small-font">Digital Bazaar</th>
+                </thead>
+              <tbody>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">&#x60;type&#x60; field MUST be the string &#x60;Ed25519Signature2020&#x60;.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">&#x60;proofValue&#x60; field MUST exist and be a Multibase-encoded base58-btc value</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">&#x60;proofValue&#x60; field, when decoded to raw bytes, MUST be 64 bytes in length if the associated public key is 32 bytes in length, or 114 bytes in length if the public key is 57 bytes in length.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional">❌</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">&#x60;proof&#x60; MUST verify when using a conformant verifier.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional">❌</td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+          <div>
+            <div class="flex-center">
+              <div class="row">
+              </div>
+              <div class="">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="informative" id="Data Integrity (verifier)">
+          <h2>Data Integrity (verifier)</h2>
+          <style>
+            .no-wrap {
+              white-space: nowrap;
+            }
+            td.optional {
+              background-color: #b9b7b7;
+            }
+           .text-right {
+              text-align: right;
+            }
+           .text-left {
+              text-align: left;
+            }
+           .text-center {
+             text-align: center;
+           }
+           .qr-code {
+             margin-left: 25px;
+           }
+           .row {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+           }
+           .row.justify-center {
+             justify-content: center;
+           }
+           .small-font {
+             font-size: 0.75rem;
+           }
+           pre, code.hljs{
+             overflow: auto;
+           }
           </style>
           <div class="row justify-center">
             <table class="simple">
@@ -170,68 +315,279 @@
                   <span>&#8659;</span><span>Test Name</span>
                   </div>
                 </th>
+                    <th class="no-wrap small-font">Danube Tech</th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">MATTR</th>
+                    <th class="no-wrap small-font">Mavennet</th>
+                    <th class="no-wrap small-font">mesur.io</th>
+                    <th class="no-wrap small-font">Transmute</th>
                 </thead>
               <tbody>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MUST NOT verify if canonize algorithm is not URDNA2015</td>
+                <td class="subtest">If the &#x60;proof&#x60; field is missing or invalid a MALFORMED error MUST be returned.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MUST NOT verify if digest is not sha-256</td>
+                <td class="subtest">If the &#x60;type&#x60; field is missing or invalid a MALFORMED error MUST be returned.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MOST NOT verify if key material is not MULTIBASE &amp; MULTICODEC</td>
+                <td class="subtest">If the &#x60;created&#x60; field is missing or invalid a MALFORMED error MUST be returned.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MUST issue a valid VC with an Ed25519Signature 2020</td>
+                <td class="subtest">If the &#x60;verificationMethod&#x60; field is missing or invalid a MALFORMED error MUST be returned.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MUST NOT verify a proof with out a created</td>
+                <td class="subtest">If the &#x60;proofPurpose&#x60; field is missing or invalid a MALFORMED error MUST be returned.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MUST NOT verify a proof with out a proofPurpose</td>
+                <td class="subtest">If the &#x60;proofValue&#x60; field is missing or invalid a MALFORMED error MUST be returned.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+          <div>
+            <div class="flex-center">
+              <div class="row">
+              </div>
+              <div class="">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="informative" id="Ed25519Signature2020 (verifier)">
+          <h2>Ed25519Signature2020 (verifier)</h2>
+          <style>
+            .no-wrap {
+              white-space: nowrap;
+            }
+            td.optional {
+              background-color: #b9b7b7;
+            }
+           .text-right {
+              text-align: right;
+            }
+           .text-left {
+              text-align: left;
+            }
+           .text-center {
+             text-align: center;
+           }
+           .qr-code {
+             margin-left: 25px;
+           }
+           .row {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+           }
+           .row.justify-center {
+             justify-content: center;
+           }
+           .small-font {
+             font-size: 0.75rem;
+           }
+           pre, code.hljs{
+             overflow: auto;
+           }
+          </style>
+          <div class="row justify-center">
+            <table class="simple">
+              <thead>
+                <th width="20%">
+                  <div class="text-right small-font">
+                  Verifier &#8658;
+                  </div>
+                  <div class="text-left small-font">
+                  <span>&#8659;</span><span>Test Name</span>
+                  </div>
+                </th>
+                    <th class="no-wrap small-font">Danube Tech</th>
+                    <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">MATTR</th>
+                    <th class="no-wrap small-font">Mavennet</th>
+                    <th class="no-wrap small-font">mesur.io</th>
+                    <th class="no-wrap small-font">Transmute</th>
+                </thead>
+              <tbody>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">If the &#x60;type&#x60; field is not the string &#x60;Ed25519Signature2020&#x60;, a UNKNOWN_CRYPTOSUITE_TYPE error MUST be returned.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MUST NOT verify a proof with out a type</td>
+                <td class="subtest">If the &#x60;proofValue&#x60; field is not a Multibase-encoded base58-btc value, an INVALID_PROOF_VALUE error MUST be returned.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MUST NOT verify a proof with out a proofValue</td>
+                <td class="subtest">If the &#x60;proofValue&#x60; field, when decoded to raw bytes, is not 64 bytes in length if the associated public key is 32 bytes in length, or 114 bytes in length if the public key is 57 bytes in length, an INVALID_PROOF_LENGTH error MUST be returned.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MUST NOT verify if signer is not Ed25519</td>
+                <td class="subtest">If a canonicalization algorithm other than URDNA2015 is used, a INVALID_PROOF_VALUE error MUST be returned.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MUST verify a valid VC with an Ed25519Signature 2020</td>
+                <td class="subtest">If a canonicalization data hashing algorithm SHA-2-256 is used, a INVALID_PROOF_VALUE error MUST be returned.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+          <div>
+            <div class="flex-center">
+              <div class="row">
+              </div>
+              <div class="">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="informative" id="Ed25519Signature2020 (interop)">
+          <h2>Ed25519Signature2020 (interop)</h2>
+          <style>
+            .no-wrap {
+              white-space: nowrap;
+            }
+            td.optional {
+              background-color: #b9b7b7;
+            }
+           .text-right {
+              text-align: right;
+            }
+           .text-left {
+              text-align: left;
+            }
+           .text-center {
+             text-align: center;
+           }
+           .qr-code {
+             margin-left: 25px;
+           }
+           .row {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+           }
+           .row.justify-center {
+             justify-content: center;
+           }
+           .small-font {
+             font-size: 0.75rem;
+           }
+           pre, code.hljs{
+             overflow: auto;
+           }
+          </style>
+          <div class="row justify-center">
+            <table class="simple">
+              <thead>
+                <th width="20%">
+                  <div class="text-right small-font">
+                  Verifier &#8658;
+                  </div>
+                  <div class="text-left small-font">
+                  <span>&#8659;</span><span>Issuer</span>
+                  </div>
+                </th>
+                    <th class="no-wrap small-font">Danube Tech</th>
+                    <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">MATTR</th>
+                    <th class="no-wrap small-font">Mavennet</th>
+                    <th class="no-wrap small-font">mesur.io</th>
+                    <th class="no-wrap small-font">Transmute</th>
+                </thead>
+              <tbody>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">Digital Bazaar</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
             </tbody>
             </table>
