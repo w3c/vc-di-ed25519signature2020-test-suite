@@ -6,7 +6,7 @@
 const {implementations} = require('vc-api-test-suite-implementations');
 const {verificationFail} = require('./assertions');
 const {
-  issuedVC,
+  issuedVc,
   canonizeJCS: incorrectCannonization,
   digestSha512: incorrectHash
 } = require('../credentials');
@@ -37,7 +37,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = klona(issuedVC);
+        const credential = klona(issuedVc);
         delete credential.proof;
         await verificationFail({credential, verifier});
       });
@@ -46,7 +46,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = klona(issuedVC);
+        const credential = klona(issuedVc);
         delete credential.proof.type;
         await verificationFail({credential, verifier});
       });
@@ -55,7 +55,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = klona(issuedVC);
+        const credential = klona(issuedVc);
         delete credential.proof.created;
         await verificationFail({credential, verifier});
       });
@@ -64,7 +64,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = klona(issuedVC);
+        const credential = klona(issuedVc);
         delete credential.proof.verificationMethod;
         await verificationFail({credential, verifier});
       });
@@ -73,7 +73,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = klona(issuedVC);
+        const credential = klona(issuedVc);
         delete credential.proof.proofPurpose;
         await verificationFail({credential, verifier});
       });
@@ -82,7 +82,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = klona(issuedVC);
+        const credential = klona(issuedVc);
         delete credential.proof.proofValue;
         await verificationFail({credential, verifier});
       });
@@ -108,7 +108,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = klona(issuedVC);
+        const credential = klona(issuedVc);
         credential.proof.type = 'UnknownCryptoSuite';
         await verificationFail({credential, verifier});
       });
@@ -117,7 +117,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = klona(issuedVC);
+        const credential = klona(issuedVc);
         credential.proof.proofValue = 'not-multibase-bs58-encoded!!';
         await verificationFail({credential, verifier});
       });
@@ -126,7 +126,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           columnId: name,
           rowId: this.test.title
         };
-        const credential = klona(issuedVC);
+        const credential = klona(issuedVc);
         const proofBytes = bs58Decode({id: credential.proof.proofValue});
         const randomBytes = new Uint8Array(32).map(() => Math.floor(Math.random() * 255));
         credential.proof.proofValue = bs58Encode(new Uint8Array([...proofBytes, ...randomBytes]));

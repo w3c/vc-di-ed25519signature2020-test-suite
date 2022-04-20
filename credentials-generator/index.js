@@ -12,7 +12,7 @@ const {
   getDidKey,
   writeJson,
 } = require('./helpers');
-const credential = require('./testVC');
+const credential = require('./testVc');
 const Ed25519Signature2020 = require('./TestEd25519Signature2020');
 const documentLoader = require('./documentLoader');
 const {hashDigest} = require('./hashDigest');
@@ -21,7 +21,7 @@ const {klona} = require('klona');
 const generateKeyPairAsync = promisify(generateKeyPair);
 const credentialsPath = join(process.cwd(), 'credentials');
 
-// this will generate the signed VCs for the test
+// this will generate the signed Vcs for the test
 const main = async () => {
   if(!process.env.CLIENT_SECRET_DB) {
     throw new Error(`ENV variable CLIENT_SECRET_DB is required.`);
@@ -29,20 +29,20 @@ const main = async () => {
   console.log('generating credentials');
   const {methodFor} = await getDidKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
-  const {path, data} = await _issuedVC(key);
-  // use copies of the validVC in other tests
-  const validVC = data;
+  const {path, data} = await _issuedVc(key);
+  // use copies of the validVc in other tests
+  const validVc = data;
   // create all of the other vcs once
   const vcs = await Promise.all([
-    _incorrectCodec(validVC),
+    _incorrectCodec(validVc),
     _incorrectDigest(key),
     _incorrectCanonize(key),
     _incorrectSigner(key),
-    _validVC(),
-    // make sure the validVC is in the list of VCs
+    _validVc(),
+    // make sure the validVc is in the list of Vcs
     {path, data}
   ]);
-  console.log('writing VCs to /credentialss');
+  console.log('writing Vcs to /credentialss');
   await Promise.all(vcs.map(({path, data}) => writeJson({path, data})));
   console.log(`${vcs.length} credentials generated`);
 };
@@ -72,12 +72,12 @@ async function _incorrectSigner(key) {
     proof.proofValue = `z${base58btc.encode(signatureBytes)}`;
     return proof;
   };
-  const signedVC = await vc.issue({
+  const signedVc = await vc.issue({
     credential: klona(credential),
     suite,
     documentLoader
   });
-  return {path: `${credentialsPath}/rsaSigned.json`, data: signedVC};
+  return {path: `${credentialsPath}/rsaSigned.json`, data: signedVc};
 }
 
 async function _incorrectCanonize(key) {
@@ -87,12 +87,12 @@ async function _incorrectCanonize(key) {
     // this will canonize using JCS
     return canonicalize(input);
   };
-  const signedVC = await vc.issue({
+  const signedVc = await vc.issue({
     credential: klona(credential),
     suite,
     documentLoader
   });
-  return {path: `${credentialsPath}/canonizeJCS.json`, data: signedVC};
+  return {path: `${credentialsPath}/canonizeJCS.json`, data: signedVc};
 }
 
 async function _incorrectDigest(key) {
@@ -100,26 +100,26 @@ async function _incorrectDigest(key) {
     key,
     hash: hashDigest({algorithm: 'sha512'})
   });
-  const signedVC = await vc.issue({
+  const signedVc = await vc.issue({
     credential: klona(credential),
     suite,
     documentLoader
   });
-  return {path: `${credentialsPath}/digestSha512.json`, data: signedVC};
+  return {path: `${credentialsPath}/digestSha512.json`, data: signedVc};
 }
 
 function _validVc() {
-  return {path: `${credentialsPath}/validVC.json`, data: klona(credential)};
+  return {path: `${credentialsPath}/validVc.json`, data: klona(credential)};
 }
 
-async function _issuedVC(key) {
+async function _issuedVc(key) {
   const suite = new Ed25519Signature2020({key});
   const signedVc = await vc.issue({
     credential: klona(credential),
     suite,
     documentLoader
   });
-  return {path: `${credentialsPath}/issuedVC.json`, data: signedVc};
+  return {path: `${credentialsPath}/issuedVc.json`, data: signedVc};
 }
 
 // run main by calling node ./credentials-generator
