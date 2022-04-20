@@ -24,6 +24,8 @@ jobs:
       - name: Install npm dependencies
         run: npm install
       - name: Generate Credentials
+        env:
+          CLIENT_SECRET_DB: ${{ secrets.CLIENT_SECRET_DB }}
         run: npm run generate-credentials
       - name: Run test with Node.js ${{ matrix.node-version }}
         env:
