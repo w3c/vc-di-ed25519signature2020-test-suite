@@ -16,7 +16,7 @@ const {bs58Decode, bs58Encode, deepClone} = require('./helpers');
 /* eslint-disable max-len */
 
 describe('Ed25519Signature2020 (verify)', function() {
-  describe('Data Integrity - Verification', function() {
+  describe('Data Integrity (verifier)', function() {
     // column names for the matrix go here
     const columnNames = [];
     // this will tell the report
@@ -87,7 +87,7 @@ describe('Ed25519Signature2020 (verify)', function() {
       });
     }
   });
-  describe('Ed25519Signature2020 - Verification', function() {
+  describe('Ed25519Signature2020 (verifier)', function() {
     // column names for the matrix go here
     const columnNames = [];
     // this will tell the report
