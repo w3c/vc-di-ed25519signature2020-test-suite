@@ -119,7 +119,7 @@ async function _issuedVC(key) {
     suite,
     documentLoader
   });
-  return {path: `${credentialsPath}/issuedVC.json`, data: signedVC};
+  return {path: `${credentialsPath}/issuedVC.json`, data: signedVc};
 }
 
 // run main by calling node ./credentials-generator
