@@ -32,7 +32,7 @@ const cloneJSON = data => JSON.parse(JSON.stringify(data, null, 2));
  *
  * @returns {Promise<object>} - Returns the resulting did key driver result.
  */
-const getDiDKey = async ({
+const getDidKey = async ({
   seedMultiBase = process.env.CLIENT_SECRET_DB
 } = {}) => {
   // convert multibase seed to Uint8Array
