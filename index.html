@@ -68,16 +68,16 @@
     </section>
     <section id="sotd">
       <p>
-      Tests passed 33/88 38%
+      Tests passed 45/94 48%
       </p>
       <p>
-      Tests failed 56/88 63%
+      Tests failed 49/94 52%
       </p>
       <p>
       Tests skipped 11
       </p>
       <p>
-      Total tests 99
+      Total tests 105
       </p>
     
        <p>
@@ -170,6 +170,42 @@
                     <th class="no-wrap small-font">Digital Bazaar</th>
                 </thead>
               <tbody>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">&#x60;proof&#x60; field MUST exist at top-level of data object.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">&#x60;type&#x60; field MUST exist and be a string.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">&#x60;created&#x60; field MUST exist and be a valid XMLSCHEMA-11 datetimevalue.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">&#x60;verificationMethod&#x60; field MUST exist and be a valid URL.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">&#x60;proofPurpose&#x60; field MUST exist and be a string.</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">&#x60;proofValue&#x60; field MUST exist and be a string</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
             </tbody>
             </table>
           </div>
@@ -236,25 +272,25 @@
                 <!--This is the name of the test-->
                 <td class="subtest">&#x60;type&#x60; field MUST be the string &#x60;Ed25519Signature2020&#x60;.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
                 <td class="subtest">&#x60;proofValue&#x60; field MUST exist and be a Multibase-encoded base58-btc value</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
                 <td class="subtest">&#x60;proofValue&#x60; field, when decoded to raw bytes, MUST be 64 bytes in length if the associated public key is 32 bytes in length, or 114 bytes in length if the public key is 57 bytes in length.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
                 <td class="subtest">&#x60;proof&#x60; MUST verify when using a conformant verifier.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
               </tr>
             </tbody>
             </table>
@@ -596,8 +632,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">Digital Bazaar</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
+                  <td class="passed not-optional">✓</td>
+                  <td class="passed not-optional">✓</td>
                   <td class="failed not-optional">❌</td>
                   <td class="failed not-optional">❌</td>
                   <td class="failed not-optional">❌</td>
