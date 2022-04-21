@@ -5,9 +5,10 @@
 
 const chai = require('chai');
 const {implementations} = require('vc-api-test-suite-implementations');
+const {klona} = require('klona');
+const {v4: uuidv4} = require('uuid');
 const {validVc} = require('../credentials');
 const {filterMap} = require('./helpers');
-const {klona} = require('klona');
 
 const should = chai.should();
 const predicate = ({value}) =>
@@ -31,6 +32,7 @@ describe('Ed25519Signature2020 (interop)', function() {
       const issuer = issuers.find(issuer =>
         issuer.tags.has('Ed25519Signature2020'));
       const body = {credential: klona(validVc)};
+      body.credential.id = `urn:uuid:${uuidv4()}`;
       const {result = {}} = await issuer.issue({body});
       issuedVc = result.data?.verifiableCredential;
     });
