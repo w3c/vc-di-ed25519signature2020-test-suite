@@ -5,6 +5,7 @@
 
 const chai = require('chai');
 const {klona} = require('klona');
+const {v4: uuidv4} = require('uuid');
 const {implementations} = require('vc-api-test-suite-implementations');
 const {
   checkDataIntegrityProofFormat
@@ -37,6 +38,7 @@ describe('Ed25519Signature2020 (create)', function() {
       verifier = implementation.verifiers.find(verifier =>
         verifier.tags.has('VC-HTTP-API'));
       const body = {credential: klona(validVc)};
+      body.credential.id = `urn:uuid:${uuidv4()}`;
       const {result = {}} = await issuer.issue({body});
       issuedVc = result.data?.verifiableCredential;
       const {proof} = issuedVc || {};
