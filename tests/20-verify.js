@@ -3,7 +3,7 @@
  */
 'use strict';
 
-const {implementations} = require('vc-api-test-suite-implementations');
+const {filterMap} = require('vc-api-test-suite-implementations');
 const {verificationFail} = require('./assertions');
 const {
   issuedVc,
@@ -12,6 +12,11 @@ const {
 } = require('../credentials');
 const {bs58Decode, bs58Encode} = require('./helpers');
 const {klona} = require('klona');
+
+const predicate = ({value}) =>
+  value.verifiers.some(v => v.tags.has('Ed25519Signature2020'));
+// only use implementations that use `Ed25519 2020`
+const {match, nonMatch} = filterMap({predicate});
 
 // multiple test suite names violate max-len
 /* eslint-disable max-len */
@@ -27,10 +32,12 @@ describe('Ed25519Signature2020 (verify)', function() {
     this.columns = columnNames;
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Verifier';
-    for(const [name, implementation] of implementations) {
+    this.notImplemented = [...nonMatch.keys()];
+
+    for(const [name, implementation] of match) {
       // wrap the testApi config in an Implementation class
       const verifier = implementation.verifiers.find(verifier =>
-        verifier.tags.has('VC-HTTP-API'));
+        verifier.tags.has('Ed25519Signature2020'));
       columnNames.push(name);
       it('If the `proof` field is missing or invalid a MALFORMED error MUST be returned.', async function() {
         this.test.cell = {
@@ -98,10 +105,12 @@ describe('Ed25519Signature2020 (verify)', function() {
     this.columns = columnNames;
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Verifier';
-    for(const [name, implementation] of implementations) {
+    this.notImplemented = [...nonMatch.keys()];
+
+    for(const [name, implementation] of match) {
       // wrap the testApi config in an Implementation class
       const verifier = implementation.verifiers.find(verifier =>
-        verifier.tags.has('VC-HTTP-API'));
+        verifier.tags.has('Ed25519Signature2020'));
       columnNames.push(name);
       it('If the `type` field is not the string `Ed25519Signature2020`, a UNKNOWN_CRYPTOSUITE_TYPE error MUST be returned.', async function() {
         this.test.cell = {

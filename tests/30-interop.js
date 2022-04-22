@@ -4,17 +4,19 @@
 'use strict';
 
 const chai = require('chai');
-const {implementations} = require('vc-api-test-suite-implementations');
+const {
+  filterMap,
+  implementations
+} = require('vc-api-test-suite-implementations');
 const {klona} = require('klona');
 const {v4: uuidv4} = require('uuid');
 const {validVc} = require('../credentials');
-const {filterMap} = require('./helpers');
 
 const should = chai.should();
 const predicate = ({value}) =>
   value.issuers.some(issuer => issuer.tags.has('Ed25519Signature2020'));
 // only use implementations that use `Ed25519 2020`
-const filtered = filterMap({map: implementations, predicate});
+const {match} = filterMap({predicate});
 
 describe('Ed25519Signature2020 (interop)', function() {
   // column names for the matrix go here
@@ -26,7 +28,7 @@ describe('Ed25519Signature2020 (interop)', function() {
   this.columns = columnNames;
   this.rowLabel = 'Issuer';
   this.columnLabel = 'Verifier';
-  for(const [issuerName, {issuers}] of filtered) {
+  for(const [issuerName, {issuers}] of match) {
     let issuedVc;
     before(async function() {
       const issuer = issuers.find(issuer =>

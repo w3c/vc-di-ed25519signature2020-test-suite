@@ -6,12 +6,11 @@
 const chai = require('chai');
 const {klona} = require('klona');
 const {v4: uuidv4} = require('uuid');
-const {implementations} = require('vc-api-test-suite-implementations');
+const {filterMap} = require('vc-api-test-suite-implementations');
 const {
   checkDataIntegrityProofFormat
 } = require('data-integrity-test-suite-assertion');
 const {
-  filterMap,
   getPublicKeyBytes,
   bs58Decode
 } = require('./helpers');
@@ -20,7 +19,7 @@ const {validVc} = require('../credentials');
 const predicate = ({value}) =>
   value.issuers.some(issuer => issuer.tags.has('Ed25519Signature2020'));
 // only use implementations that use `Ed25519 2020`
-const filtered = filterMap({map: implementations, predicate});
+const {match, nonMatch} = filterMap({predicate});
 const should = chai.should();
 const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
 
@@ -28,7 +27,7 @@ const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
 /* eslint-disable max-len */
 
 describe('Ed25519Signature2020 (create)', function() {
-  for(const [name, implementation] of filtered) {
+  for(const [name, implementation] of match) {
     let verifier;
     let issuedVc;
     let proofs;
@@ -36,7 +35,7 @@ describe('Ed25519Signature2020 (create)', function() {
       const issuer = implementation.issuers.find(issuer =>
         issuer.tags.has('Ed25519Signature2020'));
       verifier = implementation.verifiers.find(verifier =>
-        verifier.tags.has('VC-HTTP-API'));
+        verifier.tags.has('Ed25519Signature2020'));
       const body = {credential: klona(validVc)};
       body.credential.id = `urn:uuid:${uuidv4()}`;
       const {result = {}} = await issuer.issue({body});
@@ -58,6 +57,7 @@ describe('Ed25519Signature2020 (create)', function() {
         this.columns = columnNames;
         this.rowLabel = 'Test Name';
         this.columnLabel = 'Issuer';
+        this.notImplemented = [...nonMatch.keys()];
         columnNames.push(name);
         it('`type` field MUST be the string `Ed25519Signature2020`.', function() {
           this.test.cell = {
@@ -110,7 +110,7 @@ describe('Ed25519Signature2020 (create)', function() {
         it('`proof` MUST verify when using a conformant verifier.', async function() {
           this.test.cell = {
             columnId: name,
-            rowId: this.test.title
+            rowId: this.test.title,
           };
           should.exist(verifier, 'Expected implementation to have a VC HTTP API compatible verifier.');
           const {result, error} = await verifier.verify({body: {
