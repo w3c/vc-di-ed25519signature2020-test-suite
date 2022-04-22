@@ -68,16 +68,16 @@
     </section>
     <section id="sotd">
       <p>
-      Tests passed 45/94 48%
+      Tests passed 11/17 64%
       </p>
       <p>
-      Tests failed 49/94 52%
+      Tests failed 6/17 36%
       </p>
       <p>
       Tests skipped 11
       </p>
       <p>
-      Total tests 105
+      Total tests 28
       </p>
     
        <p>
@@ -290,7 +290,7 @@
                 <!--This is the name of the test-->
                 <td class="subtest">&#x60;proof&#x60; MUST verify when using a conformant verifier.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
             </tbody>
             </table>
@@ -351,87 +351,8 @@
                   <span>&#8659;</span><span>Test Name</span>
                   </div>
                 </th>
-                    <th class="no-wrap small-font">Danube Tech</th>
-                    <th class="no-wrap small-font">Digital Bazaar</th>
-                    <th class="no-wrap small-font">MATTR</th>
-                    <th class="no-wrap small-font">Mavennet</th>
-                    <th class="no-wrap small-font">mesur.io</th>
-                    <th class="no-wrap small-font">SecureKey</th>
-                    <th class="no-wrap small-font">Transmute</th>
                 </thead>
               <tbody>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">If the &#x60;proof&#x60; field is missing or invalid a MALFORMED error MUST be returned.</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">If the &#x60;type&#x60; field is missing or invalid a MALFORMED error MUST be returned.</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">If the &#x60;created&#x60; field is missing or invalid a MALFORMED error MUST be returned.</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">If the &#x60;verificationMethod&#x60; field is missing or invalid a MALFORMED error MUST be returned.</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">If the &#x60;proofPurpose&#x60; field is missing or invalid a MALFORMED error MUST be returned.</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">If the &#x60;proofValue&#x60; field is missing or invalid a MALFORMED error MUST be returned.</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
             </tbody>
             </table>
           </div>
@@ -491,75 +412,8 @@
                   <span>&#8659;</span><span>Test Name</span>
                   </div>
                 </th>
-                    <th class="no-wrap small-font">Danube Tech</th>
-                    <th class="no-wrap small-font">Digital Bazaar</th>
-                    <th class="no-wrap small-font">MATTR</th>
-                    <th class="no-wrap small-font">Mavennet</th>
-                    <th class="no-wrap small-font">mesur.io</th>
-                    <th class="no-wrap small-font">SecureKey</th>
-                    <th class="no-wrap small-font">Transmute</th>
                 </thead>
               <tbody>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">If the &#x60;type&#x60; field is not the string &#x60;Ed25519Signature2020&#x60;, a UNKNOWN_CRYPTOSUITE_TYPE error MUST be returned.</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">If the &#x60;proofValue&#x60; field is not a Multibase-encoded base58-btc value, an INVALID_PROOF_VALUE error MUST be returned.</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">If the &#x60;proofValue&#x60; field, when decoded to raw bytes, is not 64 bytes in length if the associated public key is 32 bytes in length, or 114 bytes in length if the public key is 57 bytes in length, an INVALID_PROOF_LENGTH error MUST be returned.</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">If a canonicalization algorithm other than URDNA2015 is used, a INVALID_PROOF_VALUE error MUST be returned.</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">If a canonicalization data hashing algorithm SHA-2-256 is used, a INVALID_PROOF_VALUE error MUST be returned.</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional">✓</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="failed not-optional">❌</td>
-                  <td class="passed not-optional">✓</td>
-                  <td class="failed not-optional">❌</td>
-              </tr>
             </tbody>
             </table>
           </div>
