@@ -68,16 +68,16 @@
     </section>
     <section id="sotd">
       <p>
-      Tests passed 45/50 90%
+      Tests passed 45/94 48%
       </p>
       <p>
-      Tests failed 5/50 10%
+      Tests failed 49/94 52%
       </p>
       <p>
       Tests skipped 11
       </p>
       <p>
-      Total tests 61
+      Total tests 105
       </p>
     
        <p>
@@ -266,12 +266,6 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
-                    <th class="no-wrap small-font">Danube Tech</th>
-                    <th class="no-wrap small-font">MATTR</th>
-                    <th class="no-wrap small-font">Mavennet</th>
-                    <th class="no-wrap small-font">mesur.io</th>
-                    <th class="no-wrap small-font">SecureKey</th>
-                    <th class="no-wrap small-font">Transmute</th>
                 </thead>
               <tbody>
               <tr>
@@ -279,48 +273,24 @@
                 <td class="subtest">&#x60;type&#x60; field MUST be the string &#x60;Ed25519Signature2020&#x60;.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
                 <td class="subtest">&#x60;proofValue&#x60; field MUST exist and be a Multibase-encoded base58-btc value</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
                 <td class="subtest">&#x60;proofValue&#x60; field, when decoded to raw bytes, MUST be 64 bytes in length if the associated public key is 32 bytes in length, or 114 bytes in length if the public key is 57 bytes in length.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
                 <td class="subtest">&#x60;proof&#x60; MUST verify when using a conformant verifier.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
               </tr>
             </tbody>
             </table>
@@ -383,10 +353,10 @@
                 </th>
                     <th class="no-wrap small-font">Danube Tech</th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
-                    <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">MATTR</th>
                     <th class="no-wrap small-font">Mavennet</th>
                     <th class="no-wrap small-font">mesur.io</th>
+                    <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">Transmute</th>
                 </thead>
               <tbody>
@@ -396,11 +366,11 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -408,11 +378,11 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -420,11 +390,11 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -432,11 +402,11 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -444,11 +414,11 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -456,11 +426,11 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
             </tbody>
             </table>
@@ -523,10 +493,10 @@
                 </th>
                     <th class="no-wrap small-font">Danube Tech</th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
-                    <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">MATTR</th>
                     <th class="no-wrap small-font">Mavennet</th>
                     <th class="no-wrap small-font">mesur.io</th>
+                    <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">Transmute</th>
                 </thead>
               <tbody>
@@ -536,11 +506,11 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -548,11 +518,11 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -560,11 +530,11 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -572,11 +542,11 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -584,11 +554,11 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="passed not-optional">✓</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
+                  <td class="failed not-optional">❌</td>
                   <td class="passed not-optional">✓</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
-                  <td class="notImplemented not-optional">—</td>
+                  <td class="failed not-optional">❌</td>
               </tr>
             </tbody>
             </table>
