@@ -3,7 +3,7 @@
  */
 'use strict';
 
-const {filterMap} = require('vc-api-test-suite-implementations');
+const {filterByTag} = require('vc-api-test-suite-implementations');
 const {verificationFail} = require('./assertions');
 const {
   issuedVc,
@@ -13,10 +13,8 @@ const {
 const {bs58Decode, bs58Encode} = require('./helpers');
 const {klona} = require('klona');
 
-const predicate = ({value}) =>
-  value.verifiers.some(v => v.tags.has('Ed25519Signature2020'));
-// only use implementations that use `Ed25519 2020`
-const {match, nonMatch} = filterMap({predicate});
+// only use implementations with `Ed25519 2020` verifiers.
+const {match, nonMatch} = filterByTag({verifierTags: ['Ed25519Signature2020']});
 
 // multiple test suite names violate max-len
 /* eslint-disable max-len */

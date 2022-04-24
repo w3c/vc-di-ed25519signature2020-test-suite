@@ -6,7 +6,7 @@
 const chai = require('chai');
 const {klona} = require('klona');
 const {v4: uuidv4} = require('uuid');
-const {filterMap} = require('vc-api-test-suite-implementations');
+const {filterByTag} = require('vc-api-test-suite-implementations');
 const {
   checkDataIntegrityProofFormat
 } = require('data-integrity-test-suite-assertion');
@@ -16,10 +16,8 @@ const {
 } = require('./helpers');
 const {validVc} = require('../credentials');
 
-const predicate = ({value}) =>
-  value.issuers.some(issuer => issuer.tags.has('Ed25519Signature2020'));
-// only use implementations that use `Ed25519 2020`
-const {match, nonMatch} = filterMap({predicate});
+// only use implementations with `Ed25519 2020` issuers.
+const {match, nonMatch} = filterByTag({issuerTags: ['Ed25519Signature2020']});
 const should = chai.should();
 const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
 
