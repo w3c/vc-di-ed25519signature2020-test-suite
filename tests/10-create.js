@@ -17,7 +17,8 @@ const {
 const {validVc} = require('../credentials');
 
 // only use implementations with `Ed25519 2020` issuers.
-const {match, nonMatch} = filterByTag({issuerTags: ['Ed25519Signature2020']});
+const tag = 'Ed25519Signature2020';
+const {match, nonMatch} = filterByTag({issuerTags: [tag]});
 const should = chai.should();
 const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
 
@@ -25,6 +26,8 @@ const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
 /* eslint-disable max-len */
 
 describe('Ed25519Signature2020 (create)', function() {
+  checkDataIntegrityProofFormat({implemented: match, notImplemented: nonMatch, tag});
+
   for(const [name, implementation] of match) {
     let verifier;
     let issuedVc;
@@ -42,8 +45,6 @@ describe('Ed25519Signature2020 (create)', function() {
       proofs = Array.isArray(proof) ? proof : [proof];
     });
     describe(name, function() {
-      // FIXME move this out so it doesn't accidentally get called multiple times
-      checkDataIntegrityProofFormat({vendors: [{getData: () => issuedVc, vendorName: name}]});
 
       describe('Ed25519Signature2020 (issuer)', function() {
         // column names for the matrix go here
