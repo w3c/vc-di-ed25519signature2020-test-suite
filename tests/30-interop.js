@@ -5,7 +5,7 @@
 
 const chai = require('chai');
 const {
-  filterMap,
+  filterByTag,
   implementations
 } = require('vc-api-test-suite-implementations');
 const {klona} = require('klona');
@@ -13,10 +13,10 @@ const {v4: uuidv4} = require('uuid');
 const {validVc} = require('../credentials');
 
 const should = chai.should();
-const predicate = ({value}) =>
-  value.issuers.some(issuer => issuer.tags.has('Ed25519Signature2020'));
-// only use implementations that use `Ed25519 2020`
-const {match} = filterMap({predicate});
+// only use implementations with `Ed25519 2020` issuers.
+const {
+  match: issuerMatches
+} = filterByTag({issuerTags: ['Ed25519Signature2020']});
 
 describe('Ed25519Signature2020 (interop)', function() {
   // column names for the matrix go here
@@ -28,7 +28,7 @@ describe('Ed25519Signature2020 (interop)', function() {
   this.columns = columnNames;
   this.rowLabel = 'Issuer';
   this.columnLabel = 'Verifier';
-  for(const [issuerName, {issuers}] of match) {
+  for(const [issuerName, {issuers}] of issuerMatches) {
     let issuedVc;
     before(async function() {
       const issuer = issuers.find(issuer =>
@@ -44,6 +44,7 @@ describe('Ed25519Signature2020 (interop)', function() {
         verifier.tags.has('VC-HTTP-API'));
 
       it(`${verifierName} should verify ${issuerName}`, async function() {
+
         this.test.cell = {rowId: issuerName, columnId: verifierName};
         const body = {
           verifiableCredential: issuedVc,
