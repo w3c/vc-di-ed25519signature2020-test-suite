@@ -17,6 +17,9 @@ const should = chai.should();
 const {
   match: issuerMatches
 } = filterByTag({issuerTags: ['Ed25519Signature2020']});
+const {
+  match: verifierMatches
+} = filterByTag({issuerTags: ['VC-API']});
 
 describe('Ed25519Signature2020 (interop)', function() {
   // column names for the matrix go here
@@ -38,11 +41,10 @@ describe('Ed25519Signature2020 (interop)', function() {
       const {result = {}} = await issuer.issue({body});
       issuedVc = result.data?.verifiableCredential;
     });
-    for(const [verifierName, {verifiers}] of implementations) {
+    for(const [verifierName, {verifiers}] of verifierMatches) {
       columnNames.push(verifierName);
       const verifier = verifiers.find(verifier =>
-        verifier.tags.has('VC-HTTP-API'));
-
+        verifier.tags.has('VC-API'));
       it(`${verifierName} should verify ${issuerName}`, async function() {
 
         this.test.cell = {rowId: issuerName, columnId: verifierName};
