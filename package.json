@@ -29,7 +29,7 @@
     "require-dir": "^1.2.0",
     "uuid": "^8.3.2",
     "varint": "^6.0.0",
-    "vc-api-test-suite-implementations": "github:digitalbazaar/vc-api-test-suite-implementations"
+    "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations"
   },
   "devDependencies": {
     "eslint": "^8.6.0",
@@ -42,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/digitalbazaar/di-ed25519-test-suite.git"
+    "url": "git+https://github.com/w3c-ccg/di-ed25519-test-suite.git"
   },
   "keywords": [
     "Test",
@@ -53,7 +53,7 @@
   ],
   "author": "Digital Bazaar",
   "bugs": {
-    "url": "https://github.com/digitalbazaar/di-ed25519-test-suite/issues"
+    "url": "https://github.com/w3c-ccg/di-ed25519-test-suite/issues"
   },
-  "homepage": "https://github.com/digitalbazaar/di-ed25519-test-suite#readme"
+  "homepage": "https://github.com/w3c-ccg/di-ed25519-test-suite#readme"
 }

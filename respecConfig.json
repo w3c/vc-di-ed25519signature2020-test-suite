@@ -2,8 +2,8 @@
   "specStatus": "unofficial",
   "shortName": "di-ed25519-test-suite",
   "subtitle": "Test Interoperability Report for Verifiable Credentials",
-  "github": "https://github.com/digitalbazaar/di-ed25519-test-suite",
-  "edDraftURI": "https://digitalbazaar.github.io/di-ed25519-test-suite",
+  "github": "https://github.com/w3c-ccg/di-ed25519-test-suite",
+  "edDraftURI": "https://w3c-ccg.github.io/di-ed25519-test-suite",
   "doJsonLd": true,
   "includePermalinks": false,
   "editors": [
