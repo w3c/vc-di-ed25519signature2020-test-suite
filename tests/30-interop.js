@@ -4,10 +4,7 @@
 'use strict';
 
 const chai = require('chai');
-const {
-  filterByTag,
-  implementations
-} = require('vc-api-test-suite-implementations');
+const {filterByTag} = require('vc-api-test-suite-implementations');
 const {klona} = require('klona');
 const {v4: uuidv4} = require('uuid');
 const {validVc} = require('../credentials');
