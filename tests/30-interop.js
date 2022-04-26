@@ -43,7 +43,6 @@ describe('Ed25519Signature2020 (interop)', function() {
       const verifier = verifiers.find(verifier =>
         verifier.tags.has('VC-API'));
       it(`${verifierName} should verify ${issuerName}`, async function() {
-
         this.test.cell = {rowId: issuerName, columnId: verifierName};
         const body = {
           verifiableCredential: issuedVc,
