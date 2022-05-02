@@ -129,7 +129,7 @@ describe('Ed25519Signature2020 (create)', function() {
     it('`type` field MUST be the string `DataIntegritySignature`.');
     it('`cryptosuite` field MUST exist and be the string `eddsa-2022`.');
     it('`proofValue` field MUST exist and be a Multibase-encoded ' +
-        'base58-btc value', function() {
+      'base58-btc value', function() {
 
     });
     it('`proofValue` field, when decoded to raw bytes, MUST be 64' +
