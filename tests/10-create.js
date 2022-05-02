@@ -134,8 +134,8 @@ describe('Ed25519Signature2020 (create)', function() {
     });
     it('`proofValue` field, when decoded to raw bytes, MUST be 64' +
       'bytes in length if the associated public key is 32 bytes in ' +
-      'length, or 114 bytes in length if the public key is 57 bytes' +
-        ' in length.', function() {
+      'length, or 114 bytes in length if the public key is 57 bytes ' +
+      'in length.', function() {
 
     });
     it('proof MUST verify when using a conformant verifier.', async function() {
