@@ -28,36 +28,36 @@ const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
 describe('Ed25519Signature2020 (create)', function() {
   checkDataIntegrityProofFormat({implemented: match, notImplemented: nonMatch, tag});
 
-  for(const [name, implementation] of match) {
-    let verifier;
-    let issuedVc;
-    let proofs;
-    before(async function() {
-      const issuer = implementation.issuers.find(issuer =>
-        issuer.tags.has('Ed25519Signature2020'));
-      verifier = implementation.verifiers.find(verifier =>
-        verifier.tags.has('Ed25519Signature2020'));
-      const body = {credential: klona(validVc)};
-      body.credential.id = `urn:uuid:${uuidv4()}`;
-      const {result = {}} = await issuer.issue({body});
-      issuedVc = result.data?.verifiableCredential;
-      const {proof} = issuedVc || {};
-      proofs = Array.isArray(proof) ? proof : [proof];
-    });
-    describe(name, function() {
+  describe('Ed25519Signature2020 (issuer)', function() {
+    // column names for the matrix go here
+    const columnNames = [];
+    // this will tell the report
+    // to make an interop matrix with this suite
+    this.matrix = true;
+    this.report = true;
+    this.columns = columnNames;
+    this.rowLabel = 'Test Name';
+    this.columnLabel = 'Issuer';
+    this.notImplemented = [...nonMatch.keys()];
+    for(const [name, implementation] of match) {
+      columnNames.push(name);
+      describe(name, function() {
+        let verifier;
+        let issuedVc;
+        let proofs;
+        before(async function() {
+          const issuer = implementation.issuers.find(issuer =>
+            issuer.tags.has('Ed25519Signature2020'));
+          verifier = implementation.verifiers.find(verifier =>
+            verifier.tags.has('Ed25519Signature2020'));
+          const body = {credential: klona(validVc)};
+          body.credential.id = `urn:uuid:${uuidv4()}`;
+          const {result = {}} = await issuer.issue({body});
+          issuedVc = result.data?.verifiableCredential;
+          const {proof} = issuedVc || {};
+          proofs = Array.isArray(proof) ? proof : [proof];
+        });
 
-      describe('Ed25519Signature2020 (issuer)', function() {
-        // column names for the matrix go here
-        const columnNames = [];
-        // this will tell the report
-        // to make an interop matrix with this suite
-        this.matrix = true;
-        this.report = true;
-        this.columns = columnNames;
-        this.rowLabel = 'Test Name';
-        this.columnLabel = 'Issuer';
-        this.notImplemented = [...nonMatch.keys()];
-        columnNames.push(name);
         it('`type` field MUST be the string `Ed25519Signature2020`.', function() {
           this.test.cell = {
             columnId: name,
@@ -122,24 +122,24 @@ describe('Ed25519Signature2020 (create)', function() {
           result.status.should.equal(200, 'Expected status to be 200.');
         });
       });
-      // FIXME implement once library is ready
-      describe.skip('eddsa-2022 cryptosuite', function() {
-        it('`type` field MUST be the string `DataIntegritySignature`.');
-        it('`cryptosuite` field MUST exist and be the string `eddsa-2022`.');
-        it('`proofValue` field MUST exist and be a Multibase-encoded ' +
-            'base58-btc value', function() {
+    }
+  });
+  // FIXME implement once library is ready
+  describe.skip('eddsa-2022 cryptosuite', function() {
+    it('`type` field MUST be the string `DataIntegritySignature`.');
+    it('`cryptosuite` field MUST exist and be the string `eddsa-2022`.');
+    it('`proofValue` field MUST exist and be a Multibase-encoded ' +
+        'base58-btc value', function() {
 
-        });
-        it('`proofValue` field, when decoded to raw bytes, MUST be 64' +
-          'bytes in length if the associated public key is 32 bytes in ' +
-          'length, or 114 bytes in length if the public key is 57 bytes' +
-            ' in length.', function() {
-
-        });
-        it('proof MUST verify when using a conformant verifier.', async function() {
-
-        });
-      });
     });
-  }
+    it('`proofValue` field, when decoded to raw bytes, MUST be 64' +
+      'bytes in length if the associated public key is 32 bytes in ' +
+      'length, or 114 bytes in length if the public key is 57 bytes' +
+        ' in length.', function() {
+
+    });
+    it('proof MUST verify when using a conformant verifier.', async function() {
+
+    });
+  });
 });
