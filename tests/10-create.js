@@ -29,18 +29,15 @@ describe('Ed25519Signature2020 (create)', function() {
   checkDataIntegrityProofFormat({implemented: match, notImplemented: nonMatch, tag});
 
   describe('Ed25519Signature2020 (issuer)', function() {
-    // column names for the matrix go here
-    const columnNames = [];
     // this will tell the report
     // to make an interop matrix with this suite
     this.matrix = true;
     this.report = true;
-    this.columns = columnNames;
+    this.implemented = [...match.keys()];
+    this.notImplemented = [...nonMatch.keys()];
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Issuer';
-    this.notImplemented = [...nonMatch.keys()];
     for(const [name, implementation] of match) {
-      columnNames.push(name);
       describe(name, function() {
         let verifier;
         let issuedVc;

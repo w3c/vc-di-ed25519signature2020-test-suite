@@ -21,22 +21,18 @@ const {match, nonMatch} = filterByTag({verifierTags: ['Ed25519Signature2020']});
 
 describe('Ed25519Signature2020 (verify)', function() {
   describe('Data Integrity (verifier)', function() {
-    // column names for the matrix go here
-    const columnNames = [];
     // this will tell the report
     // to make an interop matrix with this suite
     this.matrix = true;
     this.report = true;
-    this.columns = columnNames;
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Verifier';
+    this.implemented = [...match.keys()];
     this.notImplemented = [...nonMatch.keys()];
-
     for(const [name, implementation] of match) {
       // wrap the testApi config in an Implementation class
       const verifier = implementation.verifiers.find(verifier =>
         verifier.tags.has('Ed25519Signature2020'));
-      columnNames.push(name);
       it('If the `proof` field is missing or invalid a MALFORMED error MUST be returned.', async function() {
         this.test.cell = {
           columnId: name,
@@ -94,22 +90,19 @@ describe('Ed25519Signature2020 (verify)', function() {
     }
   });
   describe('Ed25519Signature2020 (verifier)', function() {
-    // column names for the matrix go here
-    const columnNames = [];
     // this will tell the report
     // to make an interop matrix with this suite
     this.matrix = true;
     this.report = true;
-    this.columns = columnNames;
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Verifier';
+    this.implemented = [...match.keys()];
     this.notImplemented = [...nonMatch.keys()];
 
     for(const [name, implementation] of match) {
       // wrap the testApi config in an Implementation class
       const verifier = implementation.verifiers.find(verifier =>
         verifier.tags.has('Ed25519Signature2020'));
-      columnNames.push(name);
       it('If the `type` field is not the string `Ed25519Signature2020`, a UNKNOWN_CRYPTOSUITE_TYPE error MUST be returned.', async function() {
         this.test.cell = {
           columnId: name,
