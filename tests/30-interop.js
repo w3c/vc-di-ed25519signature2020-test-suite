@@ -19,13 +19,11 @@ const {
 } = filterByTag({issuerTags: ['VC-API']});
 
 describe('Ed25519Signature2020 (interop)', function() {
-  // column names for the matrix go here
-  const columnNames = [];
   // this will tell the report
   // to make an interop matrix with this suite
   this.matrix = true;
   this.report = true;
-  this.columns = columnNames;
+  this.implemented = [...verifierMatches.keys()];
   this.rowLabel = 'Issuer';
   this.columnLabel = 'Verifier';
   for(const [issuerName, {issuers}] of issuerMatches) {
@@ -39,7 +37,6 @@ describe('Ed25519Signature2020 (interop)', function() {
       issuedVc = result.data?.verifiableCredential;
     });
     for(const [verifierName, {verifiers}] of verifierMatches) {
-      columnNames.push(verifierName);
       const verifier = verifiers.find(verifier =>
         verifier.tags.has('VC-API'));
       it(`${verifierName} should verify ${issuerName}`, async function() {
