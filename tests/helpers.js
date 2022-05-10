@@ -1,6 +1,7 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
+'use strict';
 
 const didKeyDriver = require('@digitalbazaar/did-method-key').driver();
 const {IdDecoder, IdEncoder} = require('bnid');

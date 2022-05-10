@@ -1,6 +1,7 @@
 /*!
  * Copyright (c) 2020-2021 Digital Bazaar, Inc. All rights reserved.
  */
+'use strict';
 
 const base58btc = require('base58-universal');
 const TestLinkedDataSignature = require('./TestLinkedDataSignature');

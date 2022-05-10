@@ -2,6 +2,7 @@
  *
  *  Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
 */
+'use strict';
 
 const ed25519Ctx = require('ed25519-signature-2020-context');
 const didCtx = require('@digitalcredentials/did-context');
