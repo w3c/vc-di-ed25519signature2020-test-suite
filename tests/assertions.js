@@ -56,4 +56,22 @@ const verificationFail = async ({credential, verifier}) => {
   );
 };
 
-module.exports = {verificationFail, testCredential};
+const verificationSuccess = async ({credential, verifier}) => {
+  const body = {
+    verifiableCredential: credential,
+    options: {
+      checks: ['proof']
+    }
+  };
+  const {result, error} = await verifier.verify({body});
+  should.exist(result, 'Expected a result from verifier.');
+  should.not.exist(error, 'Expected verifier to not error.');
+  should.exist(result.status,
+    'Expected verifier to return an HTTP Status code');
+  result.status.should.equal(
+    200,
+    'Expected HTTP Status code 200.'
+  );
+};
+
+module.exports = {verificationFail, verificationSuccess, testCredential};
