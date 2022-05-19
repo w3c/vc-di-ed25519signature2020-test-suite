@@ -43,7 +43,7 @@ const main = async () => {
     // make sure the validVc is in the list of Vcs
     {path, data}
   ]);
-  console.log('writing Vcs to /credentialss');
+  console.log('writing Vcs to /credentials');
   await Promise.all(vcs.map(({path, data}) => writeJson({path, data})));
   console.log(`${vcs.length} credentials generated`);
 };
