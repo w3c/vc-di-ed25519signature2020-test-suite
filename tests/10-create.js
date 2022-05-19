@@ -47,8 +47,10 @@ describe('Ed25519Signature2020 (create)', function() {
             issuer.tags.has('Ed25519Signature2020'));
           verifier = implementation.verifiers.find(verifier =>
             verifier.tags.has('Ed25519Signature2020'));
-          const body = {credential: klona(validVc)};
+          const {issuer: {id: issuerId, options}} = issuer;
+          const body = {credential: klona(validVc), options};
           body.credential.id = `urn:uuid:${uuidv4()}`;
+          body.credential.issuer = issuerId;
           const {result = {}} = await issuer.issue({body});
           issuedVc = result.data?.verifiableCredential;
           const {proof} = issuedVc || {};
