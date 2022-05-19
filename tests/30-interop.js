@@ -35,8 +35,8 @@ describe('Ed25519Signature2020 (interop)', function() {
       const body = {credential: klona(validVc), options};
       body.credential.id = `urn:uuid:${uuidv4()}`;
       body.credential.issuer = issuerId;
-      const {result = {}} = await issuer.issue({body});
-      issuedVc = result.data?.verifiableCredential;
+      const {data} = await issuer.issue({body});
+      issuedVc = data;
     });
     for(const [verifierName, {verifiers}] of verifierMatches) {
       const verifier = verifiers.find(verifier =>
