@@ -11,7 +11,7 @@
     "@digitalbazaar/ed25519-verification-key-2020": "^3.2.0",
     "@digitalbazaar/http-client": "^2.0.1",
     "@digitalbazaar/http-signature-zcap-invoke": "^5.0.3",
-    "@digitalbazaar/mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#add-publish-date-respec",
+    "@digitalbazaar/mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#add-new-test-statistics-template",
     "@digitalbazaar/vc": "^2.1.0",
     "@digitalcredentials/did-context": "^1.0.0",
     "base58-universal": "^1.0.0",
@@ -37,7 +37,7 @@
     "eslint-plugin-jsdoc": "^37.9.7"
   },
   "scripts": {
-    "test": "mocha tests/ --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options body=\"$PWD/body.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Ed25519Signature 2020 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000 --preserve-symlinks",
+    "test": "mocha tests/ --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options abstract=\"$PWD/abstract.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Ed25519Signature 2020 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000 --preserve-symlinks",
     "generate-credentials": "node credentials-generator/index.js",
     "lint": "eslint ."
   },
