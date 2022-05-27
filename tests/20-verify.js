@@ -16,9 +16,6 @@ const {klona} = require('klona');
 // only use implementations with `Ed25519 2020` verifiers.
 const {match, nonMatch} = filterByTag({verifierTags: ['Ed25519Signature2020']});
 
-// multiple test suite names violate max-len
-/* eslint-disable max-len */
-
 describe('Ed25519Signature2020 (verify)', function() {
   describe('Data Integrity (verifier)', function() {
     // this will tell the report
@@ -34,7 +31,8 @@ describe('Ed25519Signature2020 (verify)', function() {
       // wrap the testApi config in an Implementation class
         const verifier = implementation.verifiers.find(verifier =>
           verifier.tags.has('Ed25519Signature2020'));
-        it('If the `proof` field is missing or invalid a MALFORMED error MUST be returned.', async function() {
+        it('If the "proof" field is missing or invalid, a MALFORMED error ' +
+          'MUST be returned.', async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
@@ -43,7 +41,8 @@ describe('Ed25519Signature2020 (verify)', function() {
           delete credential.proof;
           await verificationFail({credential, verifier});
         });
-        it('If the `type` field is missing or invalid a MALFORMED error MUST be returned.', async function() {
+        it('If the "type" field is missing or invalid, a MALFORMED error ' +
+          'MUST be returned.', async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
@@ -52,7 +51,8 @@ describe('Ed25519Signature2020 (verify)', function() {
           delete credential.proof.type;
           await verificationFail({credential, verifier});
         });
-        it('If the `created` field is missing or invalid a MALFORMED error MUST be returned.', async function() {
+        it('If the "created" field is missing or invalid, a MALFORMED error ' +
+          'MUST be returned.', async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
@@ -61,7 +61,8 @@ describe('Ed25519Signature2020 (verify)', function() {
           delete credential.proof.created;
           await verificationFail({credential, verifier});
         });
-        it('If the `verificationMethod` field is missing or invalid a MALFORMED error MUST be returned.', async function() {
+        it('If the "verificationMethod" field is missing or invalid, ' +
+          'a MALFORMED error MUST be returned.', async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
@@ -70,7 +71,8 @@ describe('Ed25519Signature2020 (verify)', function() {
           delete credential.proof.verificationMethod;
           await verificationFail({credential, verifier});
         });
-        it('If the `proofPurpose` field is missing or invalid a MALFORMED error MUST be returned.', async function() {
+        it('If the "proofPurpose" field is missing or invalid, ' +
+          'a MALFORMED error MUST be returned.', async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
@@ -79,7 +81,8 @@ describe('Ed25519Signature2020 (verify)', function() {
           delete credential.proof.proofPurpose;
           await verificationFail({credential, verifier});
         });
-        it('If the `proofValue` field is missing or invalid a MALFORMED error MUST be returned.', async function() {
+        it('If the "proofValue" field is missing or invalid, ' +
+          'a MALFORMED error MUST be returned.', async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
@@ -107,15 +110,17 @@ describe('Ed25519Signature2020 (verify)', function() {
       // wrap the testApi config in an Implementation class
         const verifier = implementation.verifiers.find(verifier =>
           verifier.tags.has('Ed25519Signature2020'));
-        it('MUST verify a valid VC with an Ed25519Signature 2020 proof', async function() {
-          this.test.cell = {
-            columnId: name,
-            rowId: this.test.title
-          };
-          const credential = klona(issuedVc);
-          await verificationSuccess({credential, verifier});
-        });
-        it('If the `type` field is not the string `Ed25519Signature2020`, a UNKNOWN_CRYPTOSUITE_TYPE error MUST be returned.', async function() {
+        it('MUST verify a valid VC with an Ed25519Signature2020 proof',
+          async function() {
+            this.test.cell = {
+              columnId: name,
+              rowId: this.test.title
+            };
+            const credential = klona(issuedVc);
+            await verificationSuccess({credential, verifier});
+          });
+        it('If the "type" field is not the string "Ed25519Signature2020", an ' +
+          'UNKNOWN_CRYPTOSUITE_TYPE error MUST be returned.', async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
@@ -124,7 +129,9 @@ describe('Ed25519Signature2020 (verify)', function() {
           credential.proof.type = 'UnknownCryptoSuite';
           await verificationFail({credential, verifier});
         });
-        it('If the `proofValue` field is not a Multibase-encoded base58-btc value, an INVALID_PROOF_VALUE error MUST be returned.', async function() {
+        it('If the "proofValue" field is not a multibase-encoded base58-btc ' +
+          'value, an INVALID_PROOF_VALUE error MUST be returned.',
+        async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
@@ -133,18 +140,25 @@ describe('Ed25519Signature2020 (verify)', function() {
           credential.proof.proofValue = 'not-multibase-bs58-encoded!!';
           await verificationFail({credential, verifier});
         });
-        it('If the `proofValue` field, when decoded to raw bytes, is not 64 bytes in length if the associated public key is 32 bytes in length, or 114 bytes in length if the public key is 57 bytes in length, an INVALID_PROOF_LENGTH error MUST be returned.', async function() {
+        it('If the "proofValue" field, when decoded to raw bytes, is not ' +
+          '64 bytes in length if the associated public key is 32 bytes ' +
+          'in length, or 114 bytes in length if the public key is 57 bytes ' +
+          'in length, an INVALID_PROOF_LENGTH error MUST be returned.',
+        async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
           };
           const credential = klona(issuedVc);
           const proofBytes = bs58Decode({id: credential.proof.proofValue});
-          const randomBytes = new Uint8Array(32).map(() => Math.floor(Math.random() * 255));
-          credential.proof.proofValue = bs58Encode(new Uint8Array([...proofBytes, ...randomBytes]));
+          const randomBytes = new Uint8Array(32).map(
+            () => Math.floor(Math.random() * 255));
+          credential.proof.proofValue = bs58Encode(
+            new Uint8Array([...proofBytes, ...randomBytes]));
           await verificationFail({credential, verifier});
         });
-        it('If a canonicalization algorithm other than URDNA2015 is used, a INVALID_PROOF_VALUE error MUST be returned.', async function() {
+        it('If a canonicalization algorithm other than URDNA2015 is used, ' +
+          'a INVALID_PROOF_VALUE error MUST be returned.', async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
@@ -152,7 +166,8 @@ describe('Ed25519Signature2020 (verify)', function() {
           const credential = klona(incorrectCannonization);
           await verificationFail({credential, verifier});
         });
-        it('If a canonicalization data hashing algorithm SHA-2-256 is used, a INVALID_PROOF_VALUE error MUST be returned.', async function() {
+        it('If a canonicalization data hashing algorithm SHA-2-256 is used, ' +
+          'a INVALID_PROOF_VALUE error MUST be returned.', async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
@@ -164,11 +179,19 @@ describe('Ed25519Signature2020 (verify)', function() {
     }
   });
   describe.skip('eddsa-2022 cryptosuite', function() {
-    it('If the `type` field is not the string `DataIntegritySignature`, a UNKNOWN_PROOF_TYPE error MUST be returned.');
-    it('If the `cryptosuite` field is not the string `eddsa-2022`, a UNKNOWN_CRYPTOSUITE_TYPE error MUST be returned.');
-    it('If the `proofValue` field is not a Multibase-encoded base58-btc value, an INVALID_PROOF_VALUE error MUST be returned.');
-    it('If the `proofValue` field, when decoded to raw bytes, is not 64 bytes in length if the associated public key is 32 bytes in length, or 114 bytes in length if the public key is 57 bytes in length, an INVALID_PROOF_LENGTH error MUST be returned.');
-    it('If a canonicalization algorithm other than URDNA2015 is used, a INVALID_PROOF_VALUE error MUST be returned.');
-    it('If a canonicalization data hashing algorithm SHA-2-256 is used, a INVALID_PROOF_VALUE error MUST be returned.');
+    it('If the "type" field is not the string "DataIntegritySignature", ' +
+      'a UNKNOWN_PROOF_TYPE error MUST be returned.');
+    it('If the "cryptosuite" field is not the string "eddsa-2022", ' +
+      'an UNKNOWN_CRYPTOSUITE_TYPE error MUST be returned.');
+    it('If the "proofValue" field is not a multibase-encoded base58-btc ' +
+      'value, an INVALID_PROOF_VALUE error MUST be returned.');
+    it('If the "proofValue" field, when decoded to raw bytes, is not 64 ' +
+      'bytes in length if the associated public key is 32 bytes in length, ' +
+      'or 114 bytes in length if the public key is 57 bytes in length, ' +
+      'an INVALID_PROOF_LENGTH error MUST be returned.');
+    it('If a canonicalization algorithm other than URDNA2015 is used, ' +
+      'a INVALID_PROOF_VALUE error MUST be returned.');
+    it('If a canonicalization data hashing algorithm SHA-2-256 is used, ' +
+      'a INVALID_PROOF_VALUE error MUST be returned.');
   });
 });
