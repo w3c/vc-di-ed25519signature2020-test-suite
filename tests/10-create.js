@@ -22,11 +22,9 @@ const {match, nonMatch} = filterByTag({issuerTags: [tag]});
 const should = chai.should();
 const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
 
-// multiple test suite names violate max-len
-/* eslint-disable max-len */
-
 describe('Ed25519Signature2020 (create)', function() {
-  checkDataIntegrityProofFormat({implemented: match, notImplemented: nonMatch, tag});
+  checkDataIntegrityProofFormat(
+    {implemented: match, notImplemented: nonMatch, tag});
 
   describe('Ed25519Signature2020 (issuer)', function() {
     // this will tell the report
@@ -43,10 +41,10 @@ describe('Ed25519Signature2020 (create)', function() {
         let issuedVc;
         let proofs;
         before(async function() {
-          const issuer = implementation.issuers.find(issuer =>
-            issuer.tags.has('Ed25519Signature2020'));
-          verifier = implementation.verifiers.find(verifier =>
-            verifier.tags.has('Ed25519Signature2020'));
+          const issuer = implementation.issuers.find(
+            issuer => issuer.tags.has('Ed25519Signature2020'));
+          verifier = implementation.verifiers.find(
+            verifier => verifier.tags.has('Ed25519Signature2020'));
           const {issuer: {id: issuerId, options}} = issuer;
           const body = {credential: klona(validVc), options};
           body.credential.id = `urn:uuid:${uuidv4()}`;
@@ -56,18 +54,20 @@ describe('Ed25519Signature2020 (create)', function() {
           const {proof} = issuedVc || {};
           proofs = Array.isArray(proof) ? proof : [proof];
         });
-
-        it('`type` field MUST be the string `Ed25519Signature2020`.', function() {
-          this.test.cell = {
-            columnId: name,
-            rowId: this.test.title
-          };
-          proofs.some(proof => proof?.type === 'Ed25519Signature2020').should.equal(
-            true,
-            'Expected a "proof.type" to be "Ed25519Signature2020"'
-          );
-        });
-        it('`proofValue` field MUST exist and be a Multibase-encoded base58-btc value', function() {
+        it('"type" field MUST be the string "Ed25519Signature2020".',
+          function() {
+            this.test.cell = {
+              columnId: name,
+              rowId: this.test.title
+            };
+            proofs.some(
+              proof => proof?.type === 'Ed25519Signature2020').should.equal(
+              true,
+              'Expected "proof.type" to be "Ed25519Signature2020"'
+            );
+          });
+        it('"proofValue" field MUST exist and be a multibase-encoded ' +
+          'base58-btc encoded value', function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
@@ -78,62 +78,74 @@ describe('Ed25519Signature2020 (create)', function() {
             return value.startsWith(multibase) && bs58.test(value);
           }).should.equal(
             true,
-            'Expected a "proof.proofValue" to be multibase-encoded base58-btc value.'
+            'Expected "proof.proofValue" to be multibase-encoded base58-btc ' +
+            'value.'
           );
         });
-        it('`proofValue` field, when decoded to raw bytes, MUST be 64 bytes in length ' +
-          'if the associated public key is 32 bytes in length, or 114 bytes in length ' +
-          'if the public key is 57 bytes in length.', async function() {
+        it('"proofValue" field when decoded to raw bytes, MUST be 64 bytes ' +
+          'in length if the associated public key is 32 bytes or 114 bytes ' +
+          'in length if the public key is 57 bytes.', async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
           };
-          should.exist(issuedVc, 'Expected issuer to have issued a credential.');
+          should.exist(issuedVc, 'Expected issuer to have issued a ' +
+            'credential.');
           should.exist(proofs, 'Expected credential to have a proof.');
-          const ed25519Proofs = proofs.filter(proof => proof?.type === 'Ed25519Signature2020');
-          ed25519Proofs.length.should.be.gte(1, 'Expected at least one Ed25519 proof.');
+          const ed25519Proofs = proofs.filter(
+            proof => proof?.type === 'Ed25519Signature2020');
+          ed25519Proofs.length.should.be.gte(1, 'Expected at least one ' +
+            'Ed25519 proof.');
           for(const proof of ed25519Proofs) {
-            should.exist(proof.proofValue, 'Expected a proof value on the proof.');
+            should.exist(proof.proofValue, 'Expected a proof value on ' +
+              'the proof.');
             const valueBytes = bs58Decode({id: proof.proofValue});
             should.exist(proof.verificationMethod);
-            const vmBytes = await getPublicKeyBytes({did: proof.verificationMethod});
-            vmBytes.byteLength.should.be.oneOf([32, 57], 'Expected public key bytes to be either 32 or 57 bytes.');
+            const vmBytes = await getPublicKeyBytes({
+              did: proof.verificationMethod});
+            vmBytes.byteLength.should.be.oneOf([32, 57], 'Expected public ' +
+              'key bytes to be either 32 or 57 bytes.');
             if(vmBytes.byteLength === 32) {
-              valueBytes.byteLength.should.equal(64, 'Expected 64 byte proofValue for 32 byte key.');
+              valueBytes.byteLength.should.equal(64, 'Expected 64 bytes ' +
+                'proofValue for 32 bytes key.');
             } else {
-              valueBytes.byteLength.should.equal(114, 'Expected 114 byte proofValue for 57 byte key.');
+              valueBytes.byteLength.should.equal(114, 'Expected 114 bytes ' +
+                'proofValue for 57 bytes key.');
             }
           }
         });
-        it('`proof` MUST verify when using a conformant verifier.', async function() {
-          this.test.cell = {
-            columnId: name,
-            rowId: this.test.title,
-          };
-          should.exist(verifier, 'Expected implementation to have a VC HTTP API compatible verifier.');
-          const {result, error} = await verifier.verify({body: {
-            verifiableCredential: issuedVc,
-            options: {checks: ['proof']}
-          }});
-          should.not.exist(error, 'Expected verifier to not error.');
-          should.exist(result, 'Expected verifier to return a result.');
-          result.status.should.not.equal(400, 'Expected status to not be 400.');
-          result.status.should.equal(200, 'Expected status to be 200.');
-        });
+        it('"proof" MUST verify when using a conformant verifier.',
+          async function() {
+            this.test.cell = {
+              columnId: name,
+              rowId: this.test.title,
+            };
+            should.exist(verifier, 'Expected implementation to have a VC ' +
+              'HTTP API compatible verifier.');
+            const {result, error} = await verifier.verify({body: {
+              verifiableCredential: issuedVc,
+              options: {checks: ['proof']}
+            }});
+            should.not.exist(error, 'Expected verifier to not error.');
+            should.exist(result, 'Expected verifier to return a result.');
+            result.status.should.not.equal(400, 'Expected status code to not ' +
+              'be 400.');
+            result.status.should.equal(200, 'Expected status code to be 200.');
+          });
       });
     }
   });
   // FIXME implement once library is ready
   describe.skip('eddsa-2022 cryptosuite', function() {
-    it('`type` field MUST be the string `DataIntegritySignature`.');
-    it('`cryptosuite` field MUST exist and be the string `eddsa-2022`.');
-    it('`proofValue` field MUST exist and be a Multibase-encoded ' +
-      'base58-btc value', function() {
+    it('"type" field MUST be the string "DataIntegritySignature".');
+    it('"cryptosuite" field MUST exist and be the string `eddsa-2022`.');
+    it('"proofValue" field MUST exist and be a multibase-encoded base58-btc ' +
+      'value', function() {
 
     });
-    it('`proofValue` field, when decoded to raw bytes, MUST be 64' +
-      'bytes in length if the associated public key is 32 bytes in ' +
-      'length, or 114 bytes in length if the public key is 57 bytes ' +
+    it('"proofValue" field, when decoded to raw bytes, MUST be 64 bytes ' +
+      'in length if the associated public key is 32 bytes in length, or ' +
+      '114 bytes in length if the public key is 57 bytes ' +
       'in length.', function() {
 
     });

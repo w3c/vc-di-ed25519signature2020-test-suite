@@ -53,11 +53,8 @@ describe('Ed25519Signature2020 (interop)', function() {
         should.not.exist(error, 'Expected verifier to not error.');
         should.exist(result, 'Expected result from verifier.');
         should.exist(result.status, 'Expected verifier to return an HTTP' +
-          'Status code');
-        result.status.should.equal(
-          200,
-          'Expected HTTP Status code 200.'
-        );
+          'status code');
+        result.status.should.equal(200, 'Expected HTTP status code to be 200.');
       });
     }
   }
