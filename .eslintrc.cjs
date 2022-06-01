@@ -8,7 +8,8 @@ module.exports = {
   },
   extends: [
     'eslint-config-digitalbazaar',
-    'eslint-config-digitalbazaar/jsdoc'
+    'eslint-config-digitalbazaar/jsdoc',
+    'digitalbazaar/module',
   ],
   rules: {
     'jsdoc/check-examples': 0

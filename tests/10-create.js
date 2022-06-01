@@ -1,21 +1,17 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const chai = require('chai');
-const {klona} = require('klona');
-const {v4: uuidv4} = require('uuid');
-const {filterByTag} = require('vc-api-test-suite-implementations');
-const {
+import chai from 'chai';
+import {klona} from 'klona';
+import {v4 as uuidv4} from 'uuid';
+import {filterByTag} from 'vc-api-test-suite-implementations';
+import {
   checkDataIntegrityProofFormat
-} = require('data-integrity-test-suite-assertion');
-const {
-  getPublicKeyBytes,
-  bs58Decode
-} = require('./helpers');
-const {validVc} = require('../credentials');
+} from 'data-integrity-test-suite-assertion';
+import {getPublicKeyBytes, bs58Decode} from './helpers.js';
+import credentials from '../credentials/index.js';
 
+const {validVc} = credentials;
 // only use implementations with `Ed25519 2020` issuers.
 const tag = 'Ed25519Signature2020';
 const {match, nonMatch} = filterByTag({tags: [tag], property: 'issuers'});

@@ -1,14 +1,13 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
+import chai from 'chai';
+import {filterByTag} from 'vc-api-test-suite-implementations';
+import {klona} from 'klona';
+import {v4 as uuidv4} from 'uuid';
+import credentials from '../credentials/index.js';
 
-const chai = require('chai');
-const {filterByTag} = require('vc-api-test-suite-implementations');
-const {klona} = require('klona');
-const {v4: uuidv4} = require('uuid');
-const {validVc} = require('../credentials');
-
+const {validVc} = credentials;
 const should = chai.should();
 // only use implementations with `Ed25519 2020` issuers.
 const {

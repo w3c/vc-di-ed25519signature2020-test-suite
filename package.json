@@ -2,18 +2,19 @@
   "name": "di-ed25519-test-suite",
   "version": "0.1.0",
   "description": "Conformance Tests for Ed25519 2020",
-  "main": "index.js",
+  "main": "/tests",
   "directories": {
     "test": "tests"
   },
+  "type": "module",
   "dependencies": {
-    "@digitalbazaar/did-method-key": "^2.0.0",
-    "@digitalbazaar/ed25519-verification-key-2020": "^3.2.0",
+    "@digitalbazaar/did-method-key": "github:digitalbazaar/did-method-key#convert-to-module",
+    "@digitalbazaar/ed25519-verification-key-2020": "github:digitalbazaar/ed25519-verification-key-2020#convert-to-module",
     "@digitalbazaar/mocha-w3c-interop-reporter": "^1.2.0",
-    "@digitalbazaar/vc": "^2.1.0",
+    "@digitalbazaar/vc": "github:digitalbazaar/vc-js#export-contexts",
     "@digitalcredentials/did-context": "^1.0.0",
-    "base58-universal": "^1.0.0",
-    "bnid": "^2.1.0",
+    "base58-universal": "github:digitalbazaar/base58-universal#fix-esm",
+    "bnid": "github:digitalbazaar/bnid#convert-to-module",
     "canonicalize": "^1.0.8",
     "chai": "^4.3.4",
     "credentials-context": "^2.0.0",
@@ -28,12 +29,13 @@
     "require-dir": "^1.2.0",
     "uuid": "^8.3.2",
     "varint": "^6.0.0",
-    "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations"
+    "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations#convert-to-module"
   },
   "devDependencies": {
-    "eslint": "^8.6.0",
-    "eslint-config-digitalbazaar": "^2.8.0",
-    "eslint-plugin-jsdoc": "^37.9.7"
+    "eslint": "^8.16.0",
+    "eslint-config-digitalbazaar": "^3.0.0",
+    "eslint-plugin-jsdoc": "^39.3.2",
+    "eslint-plugin-unicorn": "^42.0.0"
   },
   "scripts": {
     "test": "mocha tests/ --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options abstract=\"$PWD/abstract.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Ed25519Signature 2020 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000 --preserve-symlinks",

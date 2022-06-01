@@ -1,15 +1,14 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
+import ed25519Ctx from 'ed25519-signature-2020-context';
+import didCtx from '@digitalcredentials/did-context';
+import credentialsCtx from 'credentials-context';
+import {contexts} from '@digitalbazaar/vc';
 
-const ed25519Ctx = require('ed25519-signature-2020-context');
-const didCtx = require('@digitalcredentials/did-context');
-const credentialsCtx = require('credentials-context');
-const credentialExamplesCtx = require(
-  '@digitalbazaar/vc/lib/contexts/vc-examples-v1');
-const odrlCtx = require(
-  '@digitalbazaar/vc/lib/contexts/odrl');
+const credentialExamplesCtx = contexts[
+  'https://www.w3.org/2018/credentials/examples/v1'];
+const odrlCtx = contexts['https://www.w3.org/ns/odrl.jsonld'];
 
 const contextMap = new Map();
 
@@ -34,4 +33,4 @@ contextMap.set(
   odrlCtx
 );
 
-module.exports = {contextMap};
+export {contextMap};

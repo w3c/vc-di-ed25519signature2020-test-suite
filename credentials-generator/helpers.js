@@ -1,13 +1,12 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
+import * as didKey from '@digitalbazaar/did-method-key';
+import {writeFile} from 'fs';
+import {promisify} from 'util';
+import {decodeSecretKeySeed} from 'bnid';
 
-const didKeyDriver = require('@digitalbazaar/did-method-key').driver();
-const {writeFile} = require('fs');
-const {promisify} = require('util');
-const {decodeSecretKeySeed} = require('bnid');
-
+const didKeyDriver = didKey.driver();
 const asyncWriteFile = promisify(writeFile);
 
 /**
@@ -19,7 +18,7 @@ const asyncWriteFile = promisify(writeFile);
  *
  * @returns {Promise} Resolves on write.
  */
-const writeJson = async ({path, data}) => {
+export const writeJson = async ({path, data}) => {
   return asyncWriteFile(path, JSON.stringify(data, null, 2));
 };
 
@@ -31,15 +30,10 @@ const writeJson = async ({path, data}) => {
  *
  * @returns {Promise<object>} - Returns the resulting did key driver result.
  */
-const getDidKey = async ({
+export const getDidKey = async ({
   seedMultiBase = process.env.CLIENT_SECRET_DB
 } = {}) => {
   // convert multibase seed to Uint8Array
   const seed = decodeSecretKeySeed({secretKeySeed: seedMultiBase});
   return didKeyDriver.generate({seed});
-};
-
-module.exports = {
-  getDidKey,
-  writeJson
 };
