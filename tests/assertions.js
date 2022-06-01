@@ -1,9 +1,7 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const chai = require('chai');
+import chai from 'chai';
 
 const should = chai.should();
 
@@ -14,7 +12,7 @@ const should = chai.should();
  *
  * @returns {undefined} Just returns on success.
  */
-const testCredential = credential => {
+export const testCredential = credential => {
   should.exist(credential, 'expected credential to exist');
   credential.should.be.an('object');
   credential.should.have.property('@context');
@@ -39,7 +37,7 @@ const testCredential = credential => {
   credential.proof.should.be.an('object');
 };
 
-const verificationFail = async ({credential, verifier}) => {
+export const verificationFail = async ({credential, verifier}) => {
   const body = {
     verifiableCredential: credential,
     options: {
@@ -56,7 +54,7 @@ const verificationFail = async ({credential, verifier}) => {
   );
 };
 
-const verificationSuccess = async ({credential, verifier}) => {
+export const verificationSuccess = async ({credential, verifier}) => {
   const body = {
     verifiableCredential: credential,
     options: {
@@ -73,5 +71,3 @@ const verificationSuccess = async ({credential, verifier}) => {
     'Expected HTTP Status code 200.'
   );
 };
-
-module.exports = {verificationFail, verificationSuccess, testCredential};

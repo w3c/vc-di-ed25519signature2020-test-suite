@@ -1,18 +1,17 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
+import {filterByTag} from 'vc-api-test-suite-implementations';
+import {verificationSuccess, verificationFail} from './assertions.js';
+import credentials from '../credentials/index.js';
+import {bs58Decode, bs58Encode} from './helpers.js';
+import {klona} from 'klona';
 
-const {filterByTag} = require('vc-api-test-suite-implementations');
-const {verificationSuccess, verificationFail} = require('./assertions');
 const {
   issuedVc,
   canonizeJCS: incorrectCannonization,
   digestSha512: incorrectHash
-} = require('../credentials');
-const {bs58Decode, bs58Encode} = require('./helpers');
-const {klona} = require('klona');
-
+} = credentials;
 // only use implementations with `Ed25519 2020` verifiers.
 const {match, nonMatch} = filterByTag({
   tags: ['Ed25519Signature2020'],

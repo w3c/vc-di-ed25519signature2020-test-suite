@@ -1,17 +1,15 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const jsonld = require('jsonld');
-const util = require('./util');
-const {hashDigest} = require('./hashDigest');
-const jsigs = require('jsonld-signatures');
+import jsonld from 'jsonld';
+import {api} from './util.js';
+import {hashDigest} from './hashDigest.js';
+import jsigs from 'jsonld-signatures';
 
 const constants = jsigs;
 const {suites: {LinkedDataProof}} = jsigs;
 
-module.exports = class LinkedDataSignature extends LinkedDataProof {
+export class LinkedDataSignature extends LinkedDataProof {
   /**
    * Parent class from which the various LinkDataSignature suites (such as
    * `Ed25519Signature2020`) inherit.
@@ -125,7 +123,7 @@ module.exports = class LinkedDataSignature extends LinkedDataProof {
 
     // ensure date is in string format
     if(date && typeof date !== 'string') {
-      date = util.w3cDate(date);
+      date = api.w3cDate(date);
     }
 
     // add API overrides
@@ -274,7 +272,7 @@ module.exports = class LinkedDataSignature extends LinkedDataProof {
     ]);
 
     // concatenate hash of c14n proof options and hash of c14n document
-    return util.concat(proofHash, docHash);
+    return api.concat(proofHash, docHash);
   }
 
   /**
@@ -370,7 +368,7 @@ module.exports = class LinkedDataSignature extends LinkedDataProof {
     document['@context'] = Array.isArray(existingContext) ?
       [...existingContext, contextUrl] : [existingContext, contextUrl];
   }
-};
+}
 
 /**
  * Tests whether a provided JSON-LD document includes a context URL in its

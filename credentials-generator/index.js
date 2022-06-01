@@ -1,23 +1,20 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const vc = require('@digitalbazaar/vc');
-const canonicalize = require('canonicalize');
-const {createSign, generateKeyPair} = require('crypto');
-const base58btc = require('base58-universal');
-const {join} = require('path');
-const {promisify} = require('util');
-const {
-  getDidKey,
-  writeJson,
-} = require('./helpers');
-const credential = require('./testVc');
-const Ed25519Signature2020 = require('./TestEd25519Signature2020');
-const documentLoader = require('./documentLoader');
-const {hashDigest} = require('./hashDigest');
-const {klona} = require('klona');
+import * as vc from '@digitalbazaar/vc';
+import canonicalize from 'canonicalize';
+import {createSign, generateKeyPair} from 'crypto';
+import * as base58btc from 'base58-universal';
+import {join} from 'path';
+import {promisify} from 'util';
+import {getDidKey, writeJson} from './helpers.js';
+import {Ed25519Signature2020} from './TestEd25519Signature2020.js';
+import documentLoader from './documentLoader.js';
+import {hashDigest} from './hashDigest.js';
+import {klona} from 'klona';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
+const credential = require('./testVc.json');
 
 const generateKeyPairAsync = promisify(generateKeyPair);
 const credentialsPath = join(process.cwd(), 'credentials');

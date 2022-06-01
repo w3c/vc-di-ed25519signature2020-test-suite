@@ -1,10 +1,7 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const api = {};
-module.exports = api;
+export const api = {};
 
 /**
  * Converts the given date into W3C datetime format (eg: 2011-03-09T21:55:41Z).

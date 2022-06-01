@@ -1,11 +1,11 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
+import * as didKey from '@digitalbazaar/did-method-key';
+import {IdDecoder, IdEncoder} from 'bnid';
+import varint from 'varint';
 
-const didKeyDriver = require('@digitalbazaar/did-method-key').driver();
-const {IdDecoder, IdEncoder} = require('bnid');
-const varint = require('varint');
+const didKeyDriver = didKey.driver();
 
 const decoder = new IdDecoder({
   encoding: 'base58',
@@ -29,7 +29,7 @@ const encoder = new IdEncoder({
  *
  * @returns {Map} Returns a map.
  */
-const filterMap = ({map, predicate}) => {
+export const filterMap = ({map, predicate}) => {
   const filtered = new Map();
   for(const [key, value] of map) {
     const result = predicate({key, value});
@@ -40,7 +40,7 @@ const filterMap = ({map, predicate}) => {
   return filtered;
 };
 
-const getPublicKeyBytes = async ({did}) => {
+export const getPublicKeyBytes = async ({did}) => {
   const didDoc = await didKeyDriver.get({did});
   const multiCodecBytes = decoder.decode(didDoc.publicKeyMultibase);
   // extracts the varint bytes
@@ -51,13 +51,6 @@ const getPublicKeyBytes = async ({did}) => {
   return multiCodecBytes.slice(varBytes, multiCodecBytes.length);
 };
 
-const bs58Decode = ({id}) => decoder.decode(id);
+export const bs58Decode = ({id}) => decoder.decode(id);
 
-const bs58Encode = data => encoder.encode(data);
-
-module.exports = {
-  bs58Encode,
-  bs58Decode,
-  filterMap,
-  getPublicKeyBytes
-};
+export const bs58Encode = data => encoder.encode(data);

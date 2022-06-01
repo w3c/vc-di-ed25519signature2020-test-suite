@@ -1,10 +1,10 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
 const requireDir = require('require-dir');
 
 const dir = requireDir('.');
 
-module.exports = dir;
+export default dir;
