@@ -1,14 +1,14 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-import {contexts} from '@digitalbazaar/vc';
+// import {contexts} from '@digitalbazaar/vc';
 import credentialsCtx from 'credentials-context';
 import didCtx from '@digitalcredentials/did-context';
 import ed25519Ctx from 'ed25519-signature-2020-context';
 
-const credentialExamplesCtx = contexts[
-  'https://www.w3.org/2018/credentials/examples/v1'];
-const odrlCtx = contexts['https://www.w3.org/ns/odrl.jsonld'];
+// const credentialExamplesCtx = contexts[
+//   'https://www.w3.org/2018/credentials/examples/v1'];
+// const odrlCtx = contexts['https://www.w3.org/ns/odrl.jsonld'];
 
 const contextMap = new Map();
 
@@ -24,13 +24,13 @@ contextMap.set(
   credentialsCtx.contexts.get(
     credentialsCtx.constants.CONTEXT_URL)
 );
-contextMap.set(
-  'https://www.w3.org/2018/credentials/examples/v1',
-  credentialExamplesCtx
-);
-contextMap.set(
-  'https://www.w3.org/ns/odrl.jsonld',
-  odrlCtx
-);
+// contextMap.set(
+//   'https://www.w3.org/2018/credentials/examples/v1',
+//   credentialExamplesCtx
+// );
+// contextMap.set(
+//   'https://www.w3.org/ns/odrl.jsonld',
+//   odrlCtx
+// );
 
 export {contextMap};
