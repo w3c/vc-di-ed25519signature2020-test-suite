@@ -2,14 +2,14 @@
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
 import chai from 'chai';
-import {klona} from 'klona';
-import {v4 as uuidv4} from 'uuid';
-import {filterByTag} from 'vc-api-test-suite-implementations';
 import {
   checkDataIntegrityProofFormat
 } from 'data-integrity-test-suite-assertion';
+import {credentials} from '../credentials/index.js';
+import {filterByTag} from 'vc-api-test-suite-implementations';
 import {getPublicKeyBytes, bs58Decode} from './helpers.js';
-import credentials from '../credentials/index.js';
+import {klona} from 'klona';
+import {v4 as uuidv4} from 'uuid';
 
 const {validVc} = credentials;
 // only use implementations with `Ed25519 2020` issuers.

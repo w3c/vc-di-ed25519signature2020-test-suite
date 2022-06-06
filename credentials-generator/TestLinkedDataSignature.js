@@ -1,10 +1,10 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-import jsonld from 'jsonld';
 import {api} from './util.js';
 import {hashDigest} from './hashDigest.js';
 import jsigs from 'jsonld-signatures';
+import jsonld from 'jsonld';
 
 const constants = jsigs;
 const {suites: {LinkedDataProof}} = jsigs;
