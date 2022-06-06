@@ -5,6 +5,6 @@ import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
 const requireDir = require('require-dir');
 
-const dir = requireDir('.');
+const credentials = requireDir('.');
 
-export default dir;
+export {credentials};

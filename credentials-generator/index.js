@@ -1,17 +1,17 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
+import * as base58btc from 'base58-universal';
 import * as vc from '@digitalbazaar/vc';
 import canonicalize from 'canonicalize';
 import {createSign, generateKeyPair} from 'crypto';
-import * as base58btc from 'base58-universal';
-import {join} from 'path';
-import {promisify} from 'util';
-import {getDidKey, writeJson} from './helpers.js';
+import {documentLoader} from './documentLoader.js';
 import {Ed25519Signature2020} from './TestEd25519Signature2020.js';
-import documentLoader from './documentLoader.js';
+import {getDidKey, writeJson} from './helpers.js';
 import {hashDigest} from './hashDigest.js';
+import {join} from 'path';
 import {klona} from 'klona';
+import {promisify} from 'util';
 import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
 const credential = require('./testVc.json');

@@ -2,12 +2,12 @@
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
 import * as base58btc from 'base58-universal';
-import {LinkedDataSignature} from './TestLinkedDataSignature.js';
 import {
   Ed25519VerificationKey2020
 } from '@digitalbazaar/ed25519-verification-key-2020';
-import suiteContext2020 from 'ed25519-signature-2020-context';
+import {LinkedDataSignature} from './TestLinkedDataSignature.js';
 import suiteContext2018 from 'ed25519-signature-2018-context';
+import suiteContext2020 from 'ed25519-signature-2020-context';
 
 // 'https://w3id.org/security/suites/ed25519-2020/v1'
 const SUITE_CONTEXT_URL = suiteContext2020.constants.CONTEXT_URL;

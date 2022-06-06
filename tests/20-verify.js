@@ -1,11 +1,11 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-import {filterByTag} from 'vc-api-test-suite-implementations';
-import {verificationSuccess, verificationFail} from './assertions.js';
-import credentials from '../credentials/index.js';
 import {bs58Decode, bs58Encode} from './helpers.js';
+import {credentials} from '../credentials/index.js';
+import {filterByTag} from 'vc-api-test-suite-implementations';
 import {klona} from 'klona';
+import {verificationSuccess, verificationFail} from './assertions.js';
 
 const {
   issuedVc,

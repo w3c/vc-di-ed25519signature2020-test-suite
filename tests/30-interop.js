@@ -2,10 +2,10 @@
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
 import chai from 'chai';
+import {credentials} from '../credentials/index.js';
 import {filterByTag} from 'vc-api-test-suite-implementations';
 import {klona} from 'klona';
 import {v4 as uuidv4} from 'uuid';
-import credentials from '../credentials/index.js';
 
 const {validVc} = credentials;
 const should = chai.should();
