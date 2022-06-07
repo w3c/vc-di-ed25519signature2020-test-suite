@@ -3,8 +3,10 @@
  */
 import {api} from './util.js';
 import {hashDigest} from './hashDigest.js';
-import jsonld from 'jsonld';
-import jsigs from 'jsonld-signatures';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
+const jsonld = require('jsonld');
+const jsigs = require('jsonld-signatures');
 
 const constants = jsigs;
 const {suites: {LinkedDataProof}} = jsigs;
