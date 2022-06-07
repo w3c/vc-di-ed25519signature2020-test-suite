@@ -54,6 +54,9 @@
     "Interoperability"
   ],
   "author": "Digital Bazaar",
+  "engines": {
+    "node": ">=14.18.0"
+  },
   "bugs": {
     "url": "https://github.com/w3c-ccg/di-ed25519-test-suite/issues"
   },
