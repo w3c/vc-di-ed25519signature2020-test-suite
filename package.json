@@ -11,7 +11,7 @@
     "@digitalbazaar/did-method-key": "^3.0.0",
     "@digitalbazaar/ed25519-verification-key-2020": "^4.0.0",
     "@digitalbazaar/mocha-w3c-interop-reporter": "^1.2.0",
-    "@digitalbazaar/vc": "github:digitalbazaar/vc-js#convert-to-module",
+    "@digitalbazaar/vc": "^3.0.0",
     "@digitalcredentials/did-context": "^1.0.0",
     "base58-universal": "^2.0.0",
     "bnid": "^3.0.0",
