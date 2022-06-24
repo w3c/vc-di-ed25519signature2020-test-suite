@@ -2,8 +2,8 @@
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
 import {api} from './util.js';
-import {hashDigest} from './hashDigest.js';
 import {createRequire} from 'node:module';
+import {hashDigest} from './hashDigest.js';
 const require = createRequire(import.meta.url);
 const jsonld = require('jsonld');
 const jsigs = require('jsonld-signatures');

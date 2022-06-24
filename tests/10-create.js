@@ -1,13 +1,13 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
+import {bs58Decode, getPublicKeyBytes} from './helpers.js';
 import chai from 'chai';
 import {
   checkDataIntegrityProofFormat
 } from 'data-integrity-test-suite-assertion';
 import {credentials} from '../credentials/index.js';
 import {filterByTag} from 'vc-api-test-suite-implementations';
-import {getPublicKeyBytes, bs58Decode} from './helpers.js';
 import {klona} from 'klona';
 import {v4 as uuidv4} from 'uuid';
 
