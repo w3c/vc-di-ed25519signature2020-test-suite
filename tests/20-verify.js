@@ -2,10 +2,10 @@
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
 import {bs58Decode, bs58Encode} from './helpers.js';
+import {verificationFail, verificationSuccess} from './assertions.js';
 import {credentials} from '../credentials/index.js';
 import {filterByTag} from 'vc-api-test-suite-implementations';
 import {klona} from 'klona';
-import {verificationSuccess, verificationFail} from './assertions.js';
 
 const {
   issuedVc,
