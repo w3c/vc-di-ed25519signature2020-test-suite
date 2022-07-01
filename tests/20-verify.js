@@ -14,7 +14,10 @@ const {bs58Decode, bs58Encode} = require('./helpers');
 const {klona} = require('klona');
 
 // only use implementations with `Ed25519 2020` verifiers.
-const {match, nonMatch} = filterByTag({verifierTags: ['Ed25519Signature2020']});
+const {match, nonMatch} = filterByTag({
+  tags: ['Ed25519Signature2020'],
+  property: 'verifiers'
+});
 
 describe('Ed25519Signature2020 (verify)', function() {
   describe('Data Integrity (verifier)', function() {

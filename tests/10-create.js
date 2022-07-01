@@ -18,7 +18,7 @@ const {validVc} = require('../credentials');
 
 // only use implementations with `Ed25519 2020` issuers.
 const tag = 'Ed25519Signature2020';
-const {match, nonMatch} = filterByTag({issuerTags: [tag]});
+const {match, nonMatch} = filterByTag({tags: [tag], property: 'issuers'});
 const should = chai.should();
 const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
 
@@ -45,11 +45,11 @@ describe('Ed25519Signature2020 (create)', function() {
             issuer => issuer.tags.has('Ed25519Signature2020'));
           verifier = implementation.verifiers.find(
             verifier => verifier.tags.has('Ed25519Signature2020'));
-          const {issuer: {id: issuerId, options}} = issuer;
+          const {settings: {id: issuerId, options}} = issuer;
           const body = {credential: klona(validVc), options};
           body.credential.id = `urn:uuid:${uuidv4()}`;
           body.credential.issuer = issuerId;
-          const {data} = await issuer.issue({body});
+          const {data} = await issuer.post({json: body});
           issuedVc = data;
           const {proof} = issuedVc || {};
           proofs = Array.isArray(proof) ? proof : [proof];
@@ -122,7 +122,7 @@ describe('Ed25519Signature2020 (create)', function() {
             };
             should.exist(verifier, 'Expected implementation to have a VC ' +
               'HTTP API compatible verifier.');
-            const {result, error} = await verifier.verify({body: {
+            const {result, error} = await verifier.post({json: {
               verifiableCredential: issuedVc,
               options: {checks: ['proof']}
             }});
