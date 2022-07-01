@@ -46,7 +46,7 @@ const verificationFail = async ({credential, verifier}) => {
       checks: ['proof']
     }
   };
-  const {result, error} = await verifier.verify({body});
+  const {result, error} = await verifier.post({json: body});
   should.not.exist(result, 'Expected no result from verifier.');
   should.exist(error, 'Expected verifier to error.');
   should.exist(error.status, 'Expected verifier to return an HTTP Status code');
@@ -63,7 +63,7 @@ const verificationSuccess = async ({credential, verifier}) => {
       checks: ['proof']
     }
   };
-  const {result, error} = await verifier.verify({body});
+  const {result, error} = await verifier.post({json: body});
   should.exist(result, 'Expected a result from verifier.');
   should.not.exist(error, 'Expected verifier to not error.');
   should.exist(result.status,

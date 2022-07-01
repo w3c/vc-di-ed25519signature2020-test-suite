@@ -13,10 +13,10 @@ const should = chai.should();
 // only use implementations with `Ed25519 2020` issuers.
 const {
   match: issuerMatches
-} = filterByTag({issuerTags: ['Ed25519Signature2020']});
+} = filterByTag({tags: ['Ed25519Signature2020'], property: 'issuers'});
 const {
   match: verifierMatches
-} = filterByTag({issuerTags: ['VC-API']});
+} = filterByTag({tags: ['VC-API'], property: 'verifiers'});
 
 describe('Ed25519Signature2020 (interop)', function() {
   // this will tell the report
@@ -31,11 +31,11 @@ describe('Ed25519Signature2020 (interop)', function() {
     before(async function() {
       const issuer = issuers.find(issuer =>
         issuer.tags.has('Ed25519Signature2020'));
-      const {issuer: {id: issuerId, options}} = issuer;
+      const {settings: {id: issuerId, options}} = issuer;
       const body = {credential: klona(validVc), options};
       body.credential.id = `urn:uuid:${uuidv4()}`;
       body.credential.issuer = issuerId;
-      const {data} = await issuer.issue({body});
+      const {data} = await issuer.post({json: body});
       issuedVc = data;
     });
     for(const [verifierName, {verifiers}] of verifierMatches) {
@@ -49,7 +49,7 @@ describe('Ed25519Signature2020 (interop)', function() {
             checks: ['proof']
           }
         };
-        const {result, error} = await verifier.verify({body});
+        const {result, error} = await verifier.post({json: body});
         should.not.exist(error, 'Expected verifier to not error.');
         should.exist(result, 'Expected result from verifier.');
         should.exist(result.status, 'Expected verifier to return an HTTP' +
