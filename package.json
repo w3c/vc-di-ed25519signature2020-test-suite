@@ -29,7 +29,7 @@
     "require-dir": "^1.2.0",
     "uuid": "^8.3.2",
     "varint": "^6.0.0",
-    "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations#convert-to-module"
+    "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations"
   },
   "devDependencies": {
     "eslint": "^8.19.0",
