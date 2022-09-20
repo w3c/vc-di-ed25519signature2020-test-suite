@@ -52,7 +52,11 @@
     "Conformance",
     "Interoperability"
   ],
-  "author": "Digital Bazaar",
+  "author": {
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "https://digitalbazaar.com/"
+  },
   "engines": {
     "node": ">=16.0.0"
   },
