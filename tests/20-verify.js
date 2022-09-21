@@ -3,15 +3,10 @@
  */
 import {bs58Decode, bs58Encode} from './helpers.js';
 import {verificationFail, verificationSuccess} from './assertions.js';
-import {credentials} from '../credentials/index.js';
 import {filterByTag} from 'vc-api-test-suite-implementations';
+import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
 
-const {
-  issuedVc,
-  canonizeJCS: incorrectCannonization,
-  digestSha512: incorrectHash
-} = credentials;
 // only use implementations with `Ed25519 2020` verifiers.
 const {match, nonMatch} = filterByTag({
   tags: ['Ed25519Signature2020'],
@@ -19,6 +14,15 @@ const {match, nonMatch} = filterByTag({
 });
 
 describe('Ed25519Signature2020 (verify)', function() {
+  let issuedVc;
+  let incorrectCannonization;
+  let incorrectHash;
+  before(async function() {
+    const credentials = await generateTestData();
+    issuedVc = credentials.get('issuedVc');
+    incorrectCannonization = credentials.get('canonizeJCS');
+    incorrectHash = credentials.get('digestSha512');
+  });
   describe('Data Integrity (verifier)', function() {
     // this will tell the report
     // to make an interop matrix with this suite

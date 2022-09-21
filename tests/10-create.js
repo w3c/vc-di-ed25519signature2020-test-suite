@@ -6,12 +6,10 @@ import chai from 'chai';
 import {
   checkDataIntegrityProofFormat
 } from 'data-integrity-test-suite-assertion';
-import {credentials} from '../credentials/index.js';
 import {filterByTag} from 'vc-api-test-suite-implementations';
+import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
 import {v4 as uuidv4} from 'uuid';
-
-const {validVc} = credentials;
 // only use implementations with `Ed25519 2020` issuers.
 const tag = 'Ed25519Signature2020';
 const {match, nonMatch} = filterByTag({tags: [tag], property: 'issuers'});
@@ -19,6 +17,11 @@ const should = chai.should();
 const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
 
 describe('Ed25519Signature2020 (create)', function() {
+  let validVc;
+  before(async function() {
+    const credentials = await generateTestData();
+    validVc = credentials.get('validVc');
+  });
   checkDataIntegrityProofFormat(
     {implemented: match, notImplemented: nonMatch, tag});
 

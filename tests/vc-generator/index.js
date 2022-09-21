@@ -4,30 +4,27 @@
 import * as base58btc from 'base58-universal';
 import * as vc from '@digitalbazaar/vc';
 import {createSign, generateKeyPair} from 'crypto';
-import {getDidKey, writeJson} from './helpers.js';
 import canonicalize from 'canonicalize';
 import {createRequire} from 'node:module';
 import {documentLoader} from './documentLoader.js';
 import {Ed25519Signature2020} from './TestEd25519Signature2020.js';
+import {getDidKey} from './helpers.js';
 import {hashDigest} from './hashDigest.js';
-import {join} from 'path';
 import {klona} from 'klona';
 import {promisify} from 'util';
 const require = createRequire(import.meta.url);
 const credential = require('./testVc.json');
 
 const generateKeyPairAsync = promisify(generateKeyPair);
-const credentialsPath = join(process.cwd(), 'credentials');
 
 // this will generate the signed Vcs for the test
-const main = async () => {
+export async function generateTestData() {
   if(!process.env.CLIENT_SECRET_DB) {
     throw new Error(`ENV variable CLIENT_SECRET_DB is required.`);
   }
-  console.log('generating credentials');
   const {methodFor} = await getDidKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
-  const {path, data} = await _issuedVc(key);
+  const {name, data} = await _issuedVc(key);
   // use copies of the validVc in other tests
   const validVc = data;
   // create all of the other vcs once
@@ -38,12 +35,11 @@ const main = async () => {
     _incorrectSigner(key),
     _validVc(),
     // make sure the validVc is in the list of Vcs
-    {path, data}
+    {name, data}
   ]);
-  console.log('writing Vcs to /credentials');
-  await Promise.all(vcs.map(({path, data}) => writeJson({path, data})));
-  console.log(`${vcs.length} credentials generated`);
-};
+  // store in a map with name and value
+  return vcs.reduce((map, vc) => map.set(vc.name, vc.data), new Map());
+}
 
 // removes the multibase identifier from the verificationMethod
 function _incorrectCodec(credential) {
@@ -55,7 +51,7 @@ function _incorrectCodec(credential) {
   // re-add the key material at the end
   parts.push(last);
   copy.proof.verificationMethod = parts.join(':');
-  return {path: `${credentialsPath}/incorrectCodec.json`, data: copy};
+  return {name: `incorrectCodec`, data: copy};
 }
 
 // signs with an rsa key instead of an ed25519 key
@@ -75,7 +71,7 @@ async function _incorrectSigner(key) {
     suite,
     documentLoader
   });
-  return {path: `${credentialsPath}/rsaSigned.json`, data: signedVc};
+  return {name: `rsaSigned`, data: signedVc};
 }
 
 async function _incorrectCanonize(key) {
@@ -90,7 +86,7 @@ async function _incorrectCanonize(key) {
     suite,
     documentLoader
   });
-  return {path: `${credentialsPath}/canonizeJCS.json`, data: signedVc};
+  return {name: `canonizeJCS`, data: signedVc};
 }
 
 async function _incorrectDigest(key) {
@@ -103,11 +99,11 @@ async function _incorrectDigest(key) {
     suite,
     documentLoader
   });
-  return {path: `${credentialsPath}/digestSha512.json`, data: signedVc};
+  return {name: `digestSha512`, data: signedVc};
 }
 
 function _validVc() {
-  return {path: `${credentialsPath}/validVc.json`, data: klona(credential)};
+  return {name: `validVc`, data: klona(credential)};
 }
 
 async function _issuedVc(key) {
@@ -117,8 +113,5 @@ async function _issuedVc(key) {
     suite,
     documentLoader
   });
-  return {path: `${credentialsPath}/issuedVc.json`, data: signedVc};
+  return {name: `issuedVc`, data: signedVc};
 }
-
-// run main by calling node ./credentials-generator
-main();
