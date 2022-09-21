@@ -14,6 +14,8 @@ import {klona} from 'klona';
 import {promisify} from 'util';
 
 const generateKeyPairAsync = promisify(generateKeyPair);
+// The Vcs don't expire so cache them with out ttl
+const vcCache = new Map();
 
 // this will generate the signed Vcs for the test
 export async function generateTestData() {
@@ -22,21 +24,24 @@ export async function generateTestData() {
   }
   const {methodFor} = await getDidKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
-  const {name, data} = await _issuedVc(key);
   // use copies of the validVc in other tests
-  const validVc = data;
-  // create all of the other vcs once
-  const vcs = await Promise.all([
-    _incorrectCodec(validVc),
-    _incorrectDigest(key),
-    _incorrectCanonize(key),
-    _incorrectSigner(key),
-    _validVc(),
-    // make sure the validVc is in the list of Vcs
-    {name, data}
+  const issuedVc = await _issuedVc(key);
+  const generators = new Map([
+    ['incorrectCodec', () => _incorrectCodec(issuedVc)],
+    ['digestSha512', async () => _incorrectDigest(key)],
+    ['canonizeJCS', () => _incorrectCanonize(key)],
+    ['rsaSigned', async () => _incorrectSigner(key)],
+    ['validVc', () => _validVc()]
   ]);
+  for(const [name, generator] of generators) {
+    if(vcCache.get(name)) {
+      continue;
+    }
+    const data = await generator();
+    vcCache.set(name, data);
+  }
   // store in a map with name and value
-  return vcs.reduce((map, vc) => map.set(vc.name, vc.data), new Map());
+  return vcCache;
 }
 
 // removes the multibase identifier from the verificationMethod
@@ -49,7 +54,7 @@ function _incorrectCodec(credential) {
   // re-add the key material at the end
   parts.push(last);
   copy.proof.verificationMethod = parts.join(':');
-  return {name: `incorrectCodec`, data: copy};
+  return copy;
 }
 
 // signs with an rsa key instead of an ed25519 key
@@ -69,7 +74,7 @@ async function _incorrectSigner(key) {
     suite,
     documentLoader
   });
-  return {name: `rsaSigned`, data: signedVc};
+  return signedVc;
 }
 
 async function _incorrectCanonize(key) {
@@ -84,7 +89,7 @@ async function _incorrectCanonize(key) {
     suite,
     documentLoader
   });
-  return {name: `canonizeJCS`, data: signedVc};
+  return signedVc;
 }
 
 async function _incorrectDigest(key) {
@@ -97,19 +102,25 @@ async function _incorrectDigest(key) {
     suite,
     documentLoader
   });
-  return {name: `digestSha512`, data: signedVc};
+  return signedVc;
 }
 
 function _validVc() {
-  return {name: `validVc`, data: klona(credential)};
+  return klona(credential);
 }
 
 async function _issuedVc(key) {
+  const name = 'issuedVc';
+  const data = vcCache.get(name);
+  if(data) {
+    return data;
+  }
   const suite = new Ed25519Signature2020({key});
   const signedVc = await vc.issue({
     credential: klona(credential),
     suite,
     documentLoader
   });
-  return {name: `issuedVc`, data: signedVc};
+  vcCache.set(name, signedVc);
+  return signedVc;
 }
