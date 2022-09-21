@@ -2,12 +2,11 @@
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
 import chai from 'chai';
-import {credentials} from '../credentials/index.js';
 import {filterByTag} from 'vc-api-test-suite-implementations';
+import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
 import {v4 as uuidv4} from 'uuid';
 
-const {validVc} = credentials;
 const should = chai.should();
 // only use implementations with `Ed25519 2020` issuers.
 const {
@@ -18,6 +17,11 @@ const {
 } = filterByTag({tags: ['VC-API'], property: 'verifiers'});
 
 describe('Ed25519Signature2020 (interop)', function() {
+  let validVc;
+  before(async function() {
+    const credentials = await generateTestData();
+    validVc = credentials.get('validVc');
+  });
   // this will tell the report
   // to make an interop matrix with this suite
   this.matrix = true;

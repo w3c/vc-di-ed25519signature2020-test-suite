@@ -39,7 +39,6 @@
   },
   "scripts": {
     "test": "mocha tests/ --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options abstract=\"$PWD/abstract.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Ed25519Signature 2020 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000 --preserve-symlinks",
-    "generate-credentials": "node credentials-generator/index.js",
     "lint": "eslint ."
   },
   "repository": {
