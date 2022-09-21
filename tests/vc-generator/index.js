@@ -5,15 +5,13 @@ import * as base58btc from 'base58-universal';
 import * as vc from '@digitalbazaar/vc';
 import {createSign, generateKeyPair} from 'crypto';
 import canonicalize from 'canonicalize';
-import {createRequire} from 'node:module';
+import {testVc as credential} from './testVc.js';
 import {documentLoader} from './documentLoader.js';
 import {Ed25519Signature2020} from './TestEd25519Signature2020.js';
 import {getDidKey} from './helpers.js';
 import {hashDigest} from './hashDigest.js';
 import {klona} from 'klona';
 import {promisify} from 'util';
-const require = createRequire(import.meta.url);
-const credential = require('./testVc.json');
 
 const generateKeyPairAsync = promisify(generateKeyPair);
 
