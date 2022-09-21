@@ -5,7 +5,6 @@
 - [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
-- [Generator](#generator)
 - [Implementation](#implementation)
 
 
@@ -22,26 +21,8 @@ npm i
 ## Usage
 
 ```
-npm test
+CLIENT_SECRET_DB=zMultibaseMultiencoded npm test
 ```
-
-## Generator
-
-To generate new test data you need a seed for a key to sign
-the credentials with.
-
-You must set this environment variable:
-
-```
-CLIENT_SECRET_DB=zMultibaseMultiencoded
-```
-
-Then use this command:
-
-```js
-npm run generate-credentials
-```
-
 
 ## Implementation
 To add your implementation to this test suite see the [README here.](https://github.com/w3c-ccg/vc-api-test-suite-implementations)
