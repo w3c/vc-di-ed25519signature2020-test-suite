@@ -9,13 +9,15 @@ import {v4 as uuidv4} from 'uuid';
 
 const {validVc} = credentials;
 const should = chai.should();
+const tag = 'vc-api';
+
 // only use implementations with `Ed25519 2020` issuers.
 const {
   match: issuerMatches
 } = filterByTag({tags: ['Ed25519Signature2020'], property: 'issuers'});
 const {
   match: verifierMatches
-} = filterByTag({tags: ['VC-API'], property: 'verifiers'});
+} = filterByTag({tags: [tag], property: 'verifiers'});
 
 describe('Ed25519Signature2020 (interop)', function() {
   // this will tell the report
@@ -39,7 +41,7 @@ describe('Ed25519Signature2020 (interop)', function() {
     });
     for(const [verifierName, {verifiers}] of verifierMatches) {
       const verifier = verifiers.find(verifier =>
-        verifier.tags.has('VC-API'));
+        verifier.tags.has(tag));
       it(`${verifierName} should verify ${issuerName}`, async function() {
         this.test.cell = {rowId: issuerName, columnId: verifierName};
         const body = {
