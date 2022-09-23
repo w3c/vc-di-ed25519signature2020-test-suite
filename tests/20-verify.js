@@ -20,7 +20,7 @@ describe('Ed25519Signature2020 (verify)', function() {
   before(async function() {
     const credentials = await generateTestData();
     issuedVc = credentials.get('issuedVc');
-    incorrectCannonization = credentials.get('canonizeJCS');
+    incorrectCannonization = credentials.get('canonizeJcs');
     incorrectHash = credentials.get('digestSha512');
   });
   describe('Data Integrity (verifier)', function() {
