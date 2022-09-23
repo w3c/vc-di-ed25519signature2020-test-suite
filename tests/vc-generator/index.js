@@ -29,7 +29,7 @@ export async function generateTestData() {
   const generators = new Map([
     ['incorrectCodec', () => _incorrectCodec(issuedVc)],
     ['digestSha512', async () => _incorrectDigest(key)],
-    ['canonizeJCS', () => _incorrectCanonize(key)],
+    ['canonizeJcs', () => _incorrectCanonize(key)],
     ['rsaSigned', async () => _incorrectSigner(key)],
     ['validVc', () => _validVc()]
   ]);
