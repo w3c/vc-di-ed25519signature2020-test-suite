@@ -134,22 +134,4 @@ describe('Ed25519Signature2020 (create)', function() {
       });
     }
   });
-  // FIXME implement once library is ready
-  describe.skip('eddsa-2022 cryptosuite', function() {
-    it('"type" field MUST be the string "DataIntegritySignature".');
-    it('"cryptosuite" field MUST exist and be the string `eddsa-2022`.');
-    it('"proofValue" field MUST exist and be a multibase-encoded base58-btc ' +
-      'value', function() {
-
-    });
-    it('"proofValue" field, when decoded to raw bytes, MUST be 64 bytes ' +
-      'in length if the associated public key is 32 bytes in length, or ' +
-      '114 bytes in length if the public key is 57 bytes ' +
-      'in length.', function() {
-
-    });
-    it('proof MUST verify when using a conformant verifier.', async function() {
-
-    });
-  });
 });
