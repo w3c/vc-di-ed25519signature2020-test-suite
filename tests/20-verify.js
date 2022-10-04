@@ -184,20 +184,4 @@ describe('Ed25519Signature2020 (verify)', function() {
       });
     }
   });
-  describe.skip('eddsa-2022 cryptosuite', function() {
-    it('If the "type" field is not the string "DataIntegritySignature", ' +
-      'a UNKNOWN_PROOF_TYPE error MUST be returned.');
-    it('If the "cryptosuite" field is not the string "eddsa-2022", ' +
-      'an UNKNOWN_CRYPTOSUITE_TYPE error MUST be returned.');
-    it('If the "proofValue" field is not a multibase-encoded base58-btc ' +
-      'value, an INVALID_PROOF_VALUE error MUST be returned.');
-    it('If the "proofValue" field, when decoded to raw bytes, is not 64 ' +
-      'bytes in length if the associated public key is 32 bytes in length, ' +
-      'or 114 bytes in length if the public key is 57 bytes in length, ' +
-      'an INVALID_PROOF_LENGTH error MUST be returned.');
-    it('If a canonicalization algorithm other than URDNA2015 is used, ' +
-      'a INVALID_PROOF_VALUE error MUST be returned.');
-    it('If a canonicalization data hashing algorithm SHA-2-256 is used, ' +
-      'a INVALID_PROOF_VALUE error MUST be returned.');
-  });
 });
