@@ -90,7 +90,7 @@ export class LinkedDataSignature extends LinkedDataProof {
   /**
    * @param {object} options - Options to use.
    * @param {object} options.document - Document to be signed.
-   * @param {object} options.purpose -  A JSON-LD purpose of the proof.
+   * @param {object} options.purpose -  The purpose of the proof.
    * @param {Function} options.documentLoader - A JSON-LD document loader.
    * @param {Function} options.expansionMap - A JSON-LD Expansion map.
    *
