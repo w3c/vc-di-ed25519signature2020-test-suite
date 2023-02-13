@@ -256,11 +256,11 @@ export class LinkedDataSignature extends LinkedDataProof {
   }
 
   /**
-   * @param document - {object} To be signed.
-   * @param document.proof
-   * @param proof - {object}.
-   * @param documentLoader - {function}.
-   * @param document.documentLoader
+   * @param {object} options - Options.
+   * @param {object} options.proof - A JSON-LD proof.
+   * @param {Function} options.documentLoader - A JSON-LD documentLoader.
+   *
+   * @returns {Promise<object>} The verification method.
    */
   async getVerificationMethod({proof, documentLoader}) {
     let {verificationMethod} = proof;
@@ -292,29 +292,10 @@ export class LinkedDataSignature extends LinkedDataProof {
     return framed;
   }
 
-  /**
-   * @param verifyData - {Uint8Array}.
-   * @param document - {object} To be signed.
-   * @param proof - {object}.
-   * @param documentLoader - {function}.
-   * @param expansionMap - {function}.
-   *
-   * @returns {Promise<{object}>} The proof containing the signature value.
-   */
   async sign() {
     throw new Error('Must be implemented by a derived class.');
   }
 
-  /**
-   * @param verifyData - {Uint8Array}.
-   * @param verificationMethod - {object}.
-   * @param document - {object} To be signed.
-   * @param proof - {object}.
-   * @param documentLoader - {function}.
-   * @param expansionMap - {function}.
-   *
-   * @returns {Promise<boolean>}
-   */
   async verifySignature() {
     throw new Error('Must be implemented by a derived class.');
   }
