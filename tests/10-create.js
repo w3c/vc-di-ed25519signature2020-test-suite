@@ -48,7 +48,10 @@ describe('Ed25519Signature2020 (create)', function() {
           const body = {credential: klona(validVc), options};
           body.credential.id = `urn:uuid:${uuidv4()}`;
           body.credential.issuer = issuerId;
-          const {data} = await issuer.post({json: body});
+          const {data, error} = await issuer.post({json: body});
+          if(error) {
+            throw error;
+          }
           issuedVc = data;
           const {proof} = issuedVc || {};
           proofs = Array.isArray(proof) ? proof : [proof];
