@@ -18,10 +18,9 @@ const MULTIBASE_BASE58BTC_HEADER = 'z';
 
 export class Ed25519Signature2020 extends LinkedDataSignature {
   /**
+   * Either a `key` OR at least one of `signer`/`verifier` is required.
+   *
    * @param {object} options - Options hashmap.
-   *
-   * Either a `key` OR at least one of `signer`/`verifier` is required:
-   *
    * @param {object} [options.key] - An optional key object (containing an
    *   `id` property, and either `signer` or `verifier`, depending on the
    *   intended operation. Useful for when the application is managing keys
@@ -32,13 +31,9 @@ export class Ed25519Signature2020 extends LinkedDataSignature {
    *   with a KMS (since you don't get access to the private key and its
    *   `signer()`, the KMS client gives you only the signer function to use).
    * @param {Function} [options.verifier] - Verifier function that returns
-   *   an object with an async `verify()` method. Useful when working with a
-   *   KMS-provided verifier function.
-   *
-   * Advanced optional parameters and overrides:
-   *
+   *   an object with an async `verify()` method.
    * @param {object} [options.proof] - A JSON-LD document with options to use
-   *   for the `proof` node (e.g. any other custom fields can be provided here
+   *   for the `proof` node (e.g. Any other custom fields can be provided here
    *   using a context different from security-v2).
    * @param {string|Date} [options.date] - Signing date to use if not passed.
    * @param {boolean} [options.useNativeCanonize] - Whether to use a native
