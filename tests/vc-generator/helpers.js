@@ -15,7 +15,7 @@ const didKeyDriver = didKey.driver();
  * @returns {Promise<object>} - Returns the resulting did key driver result.
  */
 export const getDidKey = async ({
-  seedMultiBase = process.env.CLIENT_SECRET_DB
+  seedMultiBase = process.env.KEY_SEED_DB
 } = {}) => {
   // convert multibase seed to Uint8Array
   const seed = decodeSecretKeySeed({secretKeySeed: seedMultiBase});
