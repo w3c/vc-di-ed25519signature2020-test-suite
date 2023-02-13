@@ -13,8 +13,8 @@ const {suites: {LinkedDataProof}} = jsigs;
 
 export class LinkedDataSignature extends LinkedDataProof {
   /**
-   * Parent class from which the various LinkDataSignature suites (such as
-   * `Ed25519Signature2020`) inherit.
+   * Abstract Parent class from which the various LinkDataSignature suites
+   * (such as `Ed25519Signature2020`) inherit.
    * NOTE: Developers are never expected to use this class directly, but to
    * only work with individual suites.
    *
@@ -49,12 +49,8 @@ export class LinkedDataSignature extends LinkedDataProof {
    *
    * @param {{verify: Function, id: string}} [options.verifier] - Verifier
    *   object that has two properties: an async `verify()` method, and an `id`.
-   *   Useful when working with a KMS-provided verifier.
-   *
-   * Advanced optional parameters and overrides:
-   *
    * @param {object} [options.proof] - A JSON-LD document with options to use
-   *   for the `proof` node (e.g. any other custom fields can be provided here
+   *   for the `proof` node (e.g. Any other custom fields can be provided here
    *   using a context different from security-v2). If not provided, this is
    *   constructed during signing.
    * @param {string|Date} [options.date] - Signing date to use (otherwise
@@ -92,15 +88,12 @@ export class LinkedDataSignature extends LinkedDataProof {
   }
 
   /**
-   * @param document.document
-   * @param {object} document - Document to be signed.
-   * @param purpose - {ProofPurpose}.
-   * @param documentLoader - {function}.
-   * @param expansionMap - {function}.
+   * @param {object} options - Options to use.
+   * @param {object} options.document - Document to be signed.
+   * @param {object} options.purpose -  A JSON-LD purpose of the proof.
+   * @param {Function} options.documentLoader - A JSON-LD document loader.
+   * @param {Function} options.expansionMap - A JSON-LD Expansion map.
    *
-   * @param document.purpose
-   * @param document.documentLoader
-   * @param document.expansionMap
    * @returns {Promise<object>} Resolves with the created proof object.
    */
   async createProof({document, purpose, documentLoader, expansionMap}) {
@@ -158,30 +151,18 @@ export class LinkedDataSignature extends LinkedDataProof {
     return proof;
   }
 
-  /**
-   * @param document - {object} To be signed.
-   * @param purpose - {ProofPurpose}.
-   * @param documentLoader - {function}.
-   * @param expansionMap - {function}.
-   *
-   * @param document.proof
-   * @returns {Promise<object>} Resolves with the created proof object.
-   */
   async updateProof({proof}) {
     // extending classes may do more
     return proof;
   }
 
   /**
-   * @param proof.proof
-   * @param proof - {object} The proof to be verified.
-   * @param document - {object} The document the proof applies to.
-   * @param documentLoader - {function}.
-   * @param expansionMap - {function}.
+   * @param {object} options - Options to use.
+   * @param {object} options.proof - The proof to be verified.
+   * @param {object} options.document - The document the proof applies to.
+   * @param {Function} options.documentLoader - A JSON-LD document loader.
+   * @param {Function} options.expansionMap - A JSON-LD expansion map.
    *
-   * @param proof.document
-   * @param proof.documentLoader
-   * @param proof.expansionMap
    * @returns {Promise<{object}>} Resolves with the verification result.
    */
   async verifyProof({proof, document, documentLoader, expansionMap}) {
@@ -237,16 +218,13 @@ export class LinkedDataSignature extends LinkedDataProof {
   }
 
   /**
-   * @param document.document
-   * @param document - {object} To be signed/verified.
-   * @param proof - {object}.
-   * @param documentLoader - {function}.
-   * @param expansionMap - {function}.
+   * @param {object} options - Options to use.
+   * @param {object} options.document - To be signed/verified.
+   * @param {object} options.proof - A JSON-LD proof.
+   * @param {Function} options.documentLoader - A JSON-LD documentLoader.
+   * @param {Function} options.expansionMap - A JSON-LD expansionMap.
    *
-   * @param document.proof
-   * @param document.documentLoader
-   * @param document.expansionMap
-   * @returns {Promise<{Uint8Array}>}.
+   * @returns {Promise<{Uint8Array}>} - The verification data.
    */
   async createVerifyData({document, proof, documentLoader, expansionMap}) {
     // get cached document hash
