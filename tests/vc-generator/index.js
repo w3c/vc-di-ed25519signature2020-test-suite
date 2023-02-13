@@ -19,8 +19,8 @@ const vcCache = new Map();
 
 // this will generate the signed Vcs for the test
 export async function generateTestData() {
-  if(!process.env.CLIENT_SECRET_DB) {
-    throw new Error(`ENV variable CLIENT_SECRET_DB is required.`);
+  if(!process.env.KEY_SEED_DB) {
+    throw new Error(`ENV variable KEY_SEED_DB is required.`);
   }
   const {methodFor} = await getDidKey();
   const key = methodFor({purpose: 'capabilityInvocation'});
