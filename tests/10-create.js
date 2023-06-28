@@ -6,13 +6,16 @@ import chai from 'chai';
 import {
   checkDataIntegrityProofFormat
 } from 'data-integrity-test-suite-assertion';
-import {filterByTag} from 'vc-api-test-suite-implementations';
+import {endpoints} from 'vc-api-test-suite-implementations';
 import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
 import {v4 as uuidv4} from 'uuid';
 // only use implementations with `Ed25519 2020` issuers.
 const tag = 'Ed25519Signature2020';
-const {match, nonMatch} = filterByTag({tags: [tag], property: 'issuers'});
+const {
+  match,
+  nonMatch
+} = endpoints.filterByTag({tags: [tag], property: 'issuers'});
 const should = chai.should();
 const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
 
@@ -34,14 +37,13 @@ describe('Ed25519Signature2020 (create)', function() {
     this.notImplemented = [...nonMatch.keys()];
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Issuer';
-    for(const [name, implementation] of match) {
+    for(const [name, {endpoints, implementation}] of match) {
       describe(name, function() {
         let verifier;
         let issuedVc;
         let proofs;
         before(async function() {
-          const issuer = implementation.issuers.find(
-            issuer => issuer.tags.has('Ed25519Signature2020'));
+          const [issuer] = endpoints;
           verifier = implementation.verifiers.find(
             verifier => verifier.tags.has('Ed25519Signature2020'));
           const {settings: {id: issuerId, options}} = issuer;
