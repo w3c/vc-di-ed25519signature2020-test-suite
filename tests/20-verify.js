@@ -28,7 +28,8 @@ describe('Ed25519Signature2020 (verify)', function() {
   });
   checkDataIntegrityProofVerifyErrors({
     implemented: match,
-    notImplemented: nonMatch
+    notImplemented: nonMatch,
+    expectedProofType: 'Ed25519Signature2020'
   });
 
   describe('Ed25519Signature2020 (verifier)', function() {
