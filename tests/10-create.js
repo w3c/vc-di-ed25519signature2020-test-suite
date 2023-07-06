@@ -17,7 +17,6 @@ const {
   nonMatch
 } = endpoints.filterByTag({tags: [tag], property: 'issuers'});
 const should = chai.should();
-const bs58 = /^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]+$/;
 
 describe('Ed25519Signature2020 (create)', function() {
   let validVc;
@@ -25,8 +24,11 @@ describe('Ed25519Signature2020 (create)', function() {
     const credentials = await generateTestData();
     validVc = credentials.get('validVc');
   });
-  checkDataIntegrityProofFormat(
-    {implemented: match, notImplemented: nonMatch, tag});
+  checkDataIntegrityProofFormat({
+    implemented: match, notImplemented: nonMatch, tag,
+    expectedProofTypes: ['Ed25519Signature2020'],
+    expectedCryptoSuite: false
+  });
 
   describe('Ed25519Signature2020 (issuer)', function() {
     // this will tell the report
@@ -57,34 +59,6 @@ describe('Ed25519Signature2020 (create)', function() {
           issuedVc = data;
           const {proof} = issuedVc || {};
           proofs = Array.isArray(proof) ? proof : [proof];
-        });
-        it('"type" field MUST be the string "Ed25519Signature2020".',
-          function() {
-            this.test.cell = {
-              columnId: name,
-              rowId: this.test.title
-            };
-            proofs.some(
-              proof => proof?.type === 'Ed25519Signature2020').should.equal(
-              true,
-              'Expected "proof.type" to be "Ed25519Signature2020"'
-            );
-          });
-        it('"proofValue" field MUST exist and be a multibase-encoded ' +
-          'base58-btc encoded value', function() {
-          this.test.cell = {
-            columnId: name,
-            rowId: this.test.title
-          };
-          const multibase = 'z';
-          proofs.some(proof => {
-            const value = proof?.proofValue || '';
-            return value.startsWith(multibase) && bs58.test(value);
-          }).should.equal(
-            true,
-            'Expected "proof.proofValue" to be multibase-encoded base58-btc ' +
-            'value.'
-          );
         });
         it('"proofValue" field when decoded to raw bytes, MUST be 64 bytes ' +
           'in length if the associated public key is 32 bytes or 114 bytes ' +
