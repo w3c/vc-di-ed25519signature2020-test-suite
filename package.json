@@ -1,5 +1,5 @@
 {
-  "name": "di-ed25519-test-suite",
+  "name": "di-ed25519signature2020-test-suite",
   "version": "0.1.0",
   "description": "Conformance Tests for Ed25519 2020",
   "main": "/tests",
@@ -43,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/w3c-ccg/di-ed25519-test-suite.git"
+    "url": "git+https://github.com/w3c-ccg/di-ed25519signature2020-test-suite.git"
   },
   "keywords": [
     "Test",
@@ -61,7 +61,7 @@
     "node": ">=16.0.0"
   },
   "bugs": {
-    "url": "https://github.com/w3c-ccg/di-ed25519-test-suite/issues"
+    "url": "https://github.com/w3c-ccg/di-ed25519signature2020-test-suite/issues"
   },
-  "homepage": "https://github.com/w3c-ccg/di-ed25519-test-suite#readme"
+  "homepage": "https://github.com/w3c-ccg/di-ed25519signature2020-test-suite#readme"
 }
