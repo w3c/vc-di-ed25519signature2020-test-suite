@@ -1,9 +1,9 @@
 {
   "specStatus": "unofficial",
-  "shortName": "di-ed25519-test-suite",
+  "shortName": "di-ed25519signature2020-test-suite",
   "subtitle": "Interoperability Report for Ed25519",
-  "github": "https://github.com/w3c-ccg/di-ed25519-test-suite",
-  "edDraftURI": "https://w3c-ccg.github.io/di-ed25519-test-suite",
+  "github": "https://github.com/w3c-ccg/di-ed25519signature2020-test-suite",
+  "edDraftURI": "https://w3c-ccg.github.io/di-ed25519signature2020-test-suite",
   "doJsonLd": true,
   "includePermalinks": false,
   "editors": [
