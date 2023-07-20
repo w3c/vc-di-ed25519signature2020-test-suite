@@ -12,10 +12,7 @@ import {klona} from 'klona';
 import {v4 as uuidv4} from 'uuid';
 // only use implementations with `Ed25519 2020` issuers.
 const tag = 'Ed25519Signature2020';
-const {
-  match,
-  nonMatch
-} = endpoints.filterByTag({tags: [tag], property: 'issuers'});
+const {match} = endpoints.filterByTag({tags: [tag], property: 'issuers'});
 const should = chai.should();
 
 describe('Ed25519Signature2020 (create)', function() {
@@ -25,7 +22,7 @@ describe('Ed25519Signature2020 (create)', function() {
     validVc = credentials.get('validVc');
   });
   checkDataIntegrityProofFormat({
-    implemented: match, notImplemented: nonMatch, tag,
+    implemented: match, tag,
     expectedProofTypes: ['Ed25519Signature2020'],
     expectedCryptoSuite: false
   });
@@ -36,7 +33,6 @@ describe('Ed25519Signature2020 (create)', function() {
     this.matrix = true;
     this.report = true;
     this.implemented = [...match.keys()];
-    this.notImplemented = [...nonMatch.keys()];
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Issuer';
     for(const [name, {endpoints, implementation}] of match) {

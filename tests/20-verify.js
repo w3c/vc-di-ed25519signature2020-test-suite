@@ -11,7 +11,7 @@ import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
 
 // only use implementations with `Ed25519 2020` verifiers.
-const {match, nonMatch} = endpoints.filterByTag({
+const {match} = endpoints.filterByTag({
   tags: ['Ed25519Signature2020'],
   property: 'verifiers'
 });
@@ -28,7 +28,6 @@ describe('Ed25519Signature2020 (verify)', function() {
   });
   checkDataIntegrityProofVerifyErrors({
     implemented: match,
-    notImplemented: nonMatch,
     expectedProofType: 'Ed25519Signature2020'
   });
 
@@ -40,7 +39,6 @@ describe('Ed25519Signature2020 (verify)', function() {
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Verifier';
     this.implemented = [...match.keys()];
-    this.notImplemented = [...nonMatch.keys()];
 
     for(const [name, {implementation}] of match) {
       describe(name, function() {
