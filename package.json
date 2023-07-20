@@ -18,7 +18,7 @@
     "canonicalize": "^1.0.8",
     "chai": "^4.3.6",
     "credentials-context": "^2.0.0",
-    "data-integrity-test-suite-assertion": "github:w3c-ccg/data-integrity-test-suite-assertion",
+    "data-integrity-test-suite-assertion": "github:w3c-ccg/data-integrity-test-suite-assertion#remove-not-implemented",
     "ed25519-signature-2018-context": "^1.1.0",
     "ed25519-signature-2020-context": "^1.1.0",
     "jsonld": "^8.1.0",
