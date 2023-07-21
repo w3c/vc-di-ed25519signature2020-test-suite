@@ -8,12 +8,12 @@ import {klona} from 'klona';
 import {v4 as uuidv4} from 'uuid';
 
 const should = chai.should();
-const tag = 'vc-api';
+const tag = 'Ed25519Signature2020';
 
 // only use implementations with `Ed25519 2020` issuers.
 const {
   match: issuerMatches
-} = filterByTag({tags: ['Ed25519Signature2020'], property: 'issuers'});
+} = filterByTag({tags: [tag], property: 'issuers'});
 const {
   match: verifierMatches
 } = filterByTag({tags: [tag], property: 'verifiers'});
