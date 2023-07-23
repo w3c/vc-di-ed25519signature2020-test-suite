@@ -84,22 +84,22 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 227/258 87%
+      Tests passed 203/240 84%
       </p>
       <p>
-      Tests failed 31/258 13%
+      Tests failed 37/240 16%
       </p>
       <p>
-      Failures 31
+      Failures 37
       </p>
       <p>
       Tests skipped 0
       </p>
       <p>
-      Total tests 258
+      Total tests 240
       </p>
       <p>
-        These tests were run on <time>21 July 2023 at 5:42 pm UTC</time>
+        These tests were run on <time>23 July 2023 at 5:10 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -148,9 +148,6 @@
              justify-content: space-between;
              align-items: center;
            }
-           .row.justify-center {
-             justify-content: center;
-           }
            .small-font {
              font-size: 0.75rem;
            }
@@ -174,7 +171,7 @@
              display: block;
            }
           </style>
-          <div class="row justify-center">
+          <div class="row">
             <table class="simple">
               <thead>
                 <th width="20%">
@@ -2616,9 +2613,6 @@
              justify-content: space-between;
              align-items: center;
            }
-           .row.justify-center {
-             justify-content: center;
-           }
            .small-font {
              font-size: 0.75rem;
            }
@@ -2642,7 +2636,7 @@
              display: block;
            }
           </style>
-          <div class="row justify-center">
+          <div class="row">
             <table class="simple">
               <thead>
                 <th width="20%">
@@ -2901,8 +2895,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -2931,6 +2925,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/10-create.js:99:37)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -3100,9 +3101,6 @@
              justify-content: space-between;
              align-items: center;
            }
-           .row.justify-center {
-             justify-content: center;
-           }
            .small-font {
              font-size: 0.75rem;
            }
@@ -3126,7 +3124,7 @@
              display: block;
            }
           </style>
-          <div class="row justify-center">
+          <div class="row">
             <table class="simple">
               <thead>
                 <th width="20%">
@@ -4173,8 +4171,8 @@
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -4203,6 +4201,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/helpers.js:51:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/index.js:280:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -4370,8 +4375,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -4400,6 +4405,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/helpers.js:51:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/index.js:286:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -4567,8 +4579,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -4597,6 +4609,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/helpers.js:51:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/index.js:292:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -4771,8 +4790,8 @@
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -4801,6 +4820,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/helpers.js:51:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/index.js:299:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -4975,8 +5001,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -5005,6 +5031,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/helpers.js:51:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/index.js:314:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -5172,8 +5205,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -5202,6 +5235,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/helpers.js:51:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/index.js:322:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -5369,8 +5409,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -5399,6 +5439,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/helpers.js:51:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/index.js:331:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -5573,8 +5620,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -5603,6 +5650,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/helpers.js:51:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/index.js:339:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -5777,8 +5831,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -5807,6 +5861,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/helpers.js:51:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/index.js:348:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -5974,8 +6035,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -6004,6 +6065,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/helpers.js:51:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/index.js:355:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -6178,8 +6246,8 @@
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -6208,6 +6276,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/helpers.js:51:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/index.js:366:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -6377,9 +6452,6 @@
              justify-content: space-between;
              align-items: center;
            }
-           .row.justify-center {
-             justify-content: center;
-           }
            .small-font {
              font-size: 0.75rem;
            }
@@ -6403,7 +6475,7 @@
              display: block;
            }
           </style>
-          <div class="row justify-center">
+          <div class="row">
             <table class="simple">
               <thead>
                 <th width="20%">
@@ -6458,8 +6530,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -6488,6 +6560,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationSuccess (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/assertions.js:64:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/20-verify.js:54:13)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -6655,8 +6734,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -6685,6 +6764,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/assertions.js:47:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/20-verify.js:71:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -6852,8 +6938,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -6882,6 +6968,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/assertions.js:47:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/20-verify.js:80:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -7049,8 +7142,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -7079,6 +7172,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async verificationFail (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/assertions.js:47:27)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/20-verify.js:89:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -7248,9 +7348,6 @@
              justify-content: space-between;
              align-items: center;
            }
-           .row.justify-center {
-             justify-content: center;
-           }
            .small-font {
              font-size: 0.75rem;
            }
@@ -7274,7 +7371,7 @@
              display: block;
            }
           </style>
-          <div class="row justify-center">
+          <div class="row">
             <table class="simple">
               <thead>
                 <th width="20%">
@@ -7290,9 +7387,6 @@
                     <th class="no-wrap small-font">Digital Bazaar</th>
                     <th class="no-wrap small-font">EWF</th>
                     <th class="no-wrap small-font">LearnCard</th>
-                    <th class="no-wrap small-font">Mavennet</th>
-                    <th class="no-wrap small-font">mesur.io</th>
-                    <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">SpruceID</th>
                 </thead>
               <tbody>
@@ -7332,8 +7426,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -7362,6 +7456,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:60:33)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -7474,116 +7575,6 @@
                       </span>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Unauthorized { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Unauthorized { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -7653,134 +7644,6 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
                   <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
@@ -7813,15 +7676,15 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Unauthorized { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Unauthorized { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:60:33)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -7850,13 +7713,38 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -7960,134 +7848,6 @@
                       </style>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
                   <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
@@ -8120,15 +7880,15 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Unauthorized { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Unauthorized { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:60:33)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -8157,13 +7917,38 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -8274,134 +8059,6 @@
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
                   <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
@@ -8434,15 +8091,15 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Unauthorized { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Unauthorized { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:60:33)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -8471,13 +8128,38 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -8613,9 +8295,9 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:60:33)"
                     }</pre>
                       </span>
                     </div>
@@ -8721,123 +8403,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Unauthorized { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Unauthorized { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -8941,9 +8506,9 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "name": "TypeError",
+                      "message": "Cannot construct a Request with a Request object that has already been used.",
+                      "stack": "TypeError: Cannot construct a Request with a Request object that has already been used.\n    at new Request (node:internal/deps/undici/undici:7333:19)\n    at _sanitizeErrorHeaders (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:131:21)\n    at makeHttpsRequest (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/node_modules/vc-api-test-suite-implementations/lib/requests.js:50:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:60:33)"
                     }</pre>
                       </span>
                     </div>
@@ -9049,123 +8614,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Unauthorized { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Unauthorized { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/di-ed25519signature2020-test-suite/di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
