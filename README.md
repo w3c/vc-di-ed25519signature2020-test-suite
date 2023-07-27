@@ -1,4 +1,4 @@
-# Test Suite for [Ed25519Signature2020](https://w3c-ccg.github.io/lds-ed25519-2020/)
+# Test Suite for [Ed25519Signature2020](https://www.w3.org/TR/vc-di-eddsa/#the-ed25519signature2020-suite)
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@
 
 ## Background
 Provides interoperability tests for verifiable credential processors
-(issuers and verifiers) that support [Ed25519Signature2020](https://w3c-ccg.github.io/lds-ed25519-2020/).
+(issuers and verifiers) that support [Ed25519Signature2020](https://www.w3.org/TR/vc-di-eddsa/#the-ed25519signature2020-suite).
 
 ## Install
 
