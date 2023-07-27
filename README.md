@@ -1,6 +1,4 @@
-# di-ed25519signature2020-test-suite
-
-> Test Suite for [Ed25519Signature2020](https://w3c-ccg.github.io/lds-ed25519-2020/).
+# Test Suite for [Ed25519Signature2020](https://w3c-ccg.github.io/lds-ed25519-2020/)
 
 ## Table of Contents
 
@@ -13,7 +11,7 @@
 
 ## Background
 Provides interoperability tests for verifiable credential processors
-(issuers/verifiers) that support [Ed25519Signature2020](https://w3c-ccg.github.io/lds-ed25519-2020/).
+(issuers and verifiers) that support [Ed25519Signature2020](https://w3c-ccg.github.io/lds-ed25519-2020/).
 
 ## Install
 
@@ -35,9 +33,9 @@ with `Ed25519Signature2020` proof type.
 
 To add your implementation to this test suite, you will need to add 2 endpoints
 to your implementation manifest.
-- A credentials issuer endpoint (`/credentials/issue`) in the `issuers`
+- A credential issuer endpoint (`/credentials/issue`) in the `issuers`
   property.
-- A credentials verifier endpoint (`/credentials/verify`) in the `verifiers`
+- A credential verifier endpoint (`/credentials/verify`) in the `verifiers`
   property.
 
 All endpoints will need the tag `Ed25519Signature2020`.
@@ -63,22 +61,22 @@ A simplified manifest would look like this:
 }
 ```
 
-The example above represents an unauthenticated endpoint. You may add zcap or
-oauth authentication to your endpoints. You can find an example in the
-[vc-api-test-suite-implementations README here](https://github.com/w3c-ccg/vc-api-test-suite-implementations#adding-a-new-implementation).
+The example above represents an unauthenticated endpoint. You may add ZCAP or
+OAuth authentication to your endpoints. You can find an example in the
+[vc-api-test-suite-implementations README](https://github.com/w3c-ccg/vc-api-test-suite-implementations#adding-a-new-implementation).
 
 To run the tests, some implementations may require client secrets that can be
-passed as env variables to the test script. To see which ones require client
-secrets, please check the implementation manifest within the
+passed as environment variables to the test script. To see which implementations
+require client secrets, please check the implementation manifest within the
 [vc-api-test-suite-implementations](https://github.com/w3c-ccg/vc-api-test-suite-implementations/tree/main/implementations) library.
 
 ## Docker Integration (TODO)
 
 We are presently working on implementing a new feature that will enable the
-utilization of Docker images instead of live endpoints. The docker image that
-you provide will be started when the test suite is run. The image is expected
-to expose the API provided above, which will be utilized in the same way that
-live HTTP endpoints are used above.
+use of Docker images instead of live endpoints. The Docker image that you
+provide will be started when the test suite is run. The image is expected to
+expose the API provided above, which will be used in the same way that live
+HTTP endpoints are used above.
 
 ## License
 
