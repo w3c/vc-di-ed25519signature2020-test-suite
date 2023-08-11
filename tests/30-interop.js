@@ -2,7 +2,7 @@
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
 import chai from 'chai';
-import {filterByTag} from 'vc-api-test-suite-implementations';
+import {filterByTag} from 'vc-test-suite-implementations';
 import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
 import {v4 as uuidv4} from 'uuid';
