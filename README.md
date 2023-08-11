@@ -1,8 +1,8 @@
-# [Ed25519Signature2020](https://www.w3.org/TR/vc-di-eddsa/#the-ed25519signature2020-suite) Test Suite
+# [Ed25519Signature2020](https://www.w3.org/TR/vc-di-eddsa/#the-ed25519signature2020-suite) Cryptosuite Test Suite
 
 ## Table of Contents
 
-- [Ed25519Signature2020 Test Suite](#ed25519signature2020-test-suite)
+- [Ed25519Signature2020 Cryptosuite Test Suite](#ed25519signature2020-cryptosuite-test-suite)
   - [Table of Contents](#table-of-contents)
   - [Background](#background)
   - [Install](#install)
