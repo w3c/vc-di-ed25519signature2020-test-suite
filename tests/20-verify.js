@@ -56,7 +56,7 @@ describe('Ed25519Signature2020 (verify)', function() {
         it('If the "proofValue" field, when decoded to raw bytes, is not ' +
           '64 bytes in length if the associated public key is 32 bytes ' +
           'in length, or 114 bytes in length if the public key is 57 bytes ' +
-          'in length, an INVALID_PROOF_LENGTH error MUST be returned.',
+          'in length, an error MUST be raised.',
         async function() {
           this.test.cell = {
             columnId: name,
@@ -71,7 +71,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           await verificationFail({credential, verifier});
         });
         it('If a canonicalization algorithm other than URDNA2015 is used, ' +
-          'a INVALID_PROOF_VALUE error MUST be returned.', async function() {
+          'an error MUST be raised.', async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
@@ -80,7 +80,7 @@ describe('Ed25519Signature2020 (verify)', function() {
           await verificationFail({credential, verifier});
         });
         it('If a canonicalization data hashing algorithm SHA-2-256 is used, ' +
-          'a INVALID_PROOF_VALUE error MUST be returned.', async function() {
+          'an error MUST be raised.', async function() {
           this.test.cell = {
             columnId: name,
             rowId: this.test.title
