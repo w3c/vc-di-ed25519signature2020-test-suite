@@ -1,7 +1,7 @@
 {
-  "name": "di-ed25519signature2020-test-suite",
-  "version": "0.1.0",
-  "description": "Conformance Tests for Ed25519 2020",
+  "name": "vc-di-ed25519signature2020-test-suite",
+  "version": "2.0.0",
+  "description": "Test suite for the Ed25519Signature2020",
   "main": "/tests",
   "directories": {
     "test": "tests"
@@ -29,7 +29,7 @@
     "require-dir": "^1.2.0",
     "uuid": "^8.3.2",
     "varint": "^6.0.0",
-    "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations"
+    "vc-test-suite-implementations": "github:w3c/vc-test-suite-implementations"
   },
   "devDependencies": {
     "eslint": "^8.19.0",
@@ -43,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/w3c-ccg/di-ed25519signature2020-test-suite.git"
+    "url": "git+https://github.com/w3c/vc-di-ed25519signature2020-test-suite.git"
   },
   "keywords": [
     "Test",
@@ -53,15 +53,15 @@
     "Interoperability"
   ],
   "author": {
-    "name": "Digital Bazaar, Inc.",
-    "email": "support@digitalbazaar.com",
-    "url": "https://digitalbazaar.com/"
+    "name": "W3C Verifiable Credentials Working Group",
+    "email": "public-vc-wg@w3.org",
+    "url": "https://www.w3.org/groups/wg/vc/"
   },
   "engines": {
     "node": ">=18"
   },
   "bugs": {
-    "url": "https://github.com/w3c-ccg/di-ed25519signature2020-test-suite/issues"
+    "url": "https://github.com/w3c/vc-di-ed25519signature2020-test-suite/issues"
   },
-  "homepage": "https://github.com/w3c-ccg/di-ed25519signature2020-test-suite#readme"
+  "homepage": "https://github.com/w3c/vc-di-ed25519signature2020-test-suite#readme"
 }
