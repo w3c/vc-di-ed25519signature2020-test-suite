@@ -84,13 +84,13 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 240/266 90%
+      Tests passed 248/266 93%
       </p>
       <p>
-      Tests failed 26/266 10%
+      Tests failed 18/266 7%
       </p>
       <p>
-      Failures 26
+      Failures 18
       </p>
       <p>
       Tests skipped 0
@@ -99,7 +99,7 @@
       Total tests 266
       </p>
       <p>
-        These tests were run on <time>13 August 2023 at 5:06 am UTC</time>
+        These tests were run on <time>20 August 2023 at 5:02 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -952,8 +952,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -982,13 +982,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "expected false to equal true",
-                      "stack": "AssertionError: expected false to equal true\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/index.js:96:38)\n    at process.processImmediate (node:internal/timers:478:21)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
               </tr>
@@ -2833,8 +2826,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -2863,13 +2856,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected at least one Ed25519 proof.: expected +0 to be at least 1",
-                      "stack": "AssertionError: Expected at least one Ed25519 proof.: expected +0 to be at least 1\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/10-create.js:71:42)\n    at process.processImmediate (node:internal/timers:478:21)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
               </tr>
@@ -7113,8 +7099,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -7143,19 +7129,12 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected a result from verifier.: expected undefined to exist",
-                      "stack": "AssertionError: Expected a result from verifier.: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at verificationSuccess (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:65:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/20-verify.js:54:13)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">If the &quot;proofValue&quot; field, when decoded to raw bytes, is not 64 bytes in length if the associated public key is 32 bytes in length, or 114 bytes in length if the public key is 57 bytes in length, an INVALID_PROOF_LENGTH error MUST be returned.</td>
+                <td class="subtest">If the &quot;proofValue&quot; field, when decoded to raw bytes, is not 64 bytes in length if the associated public key is 32 bytes in length, or 114 bytes in length if the public key is 57 bytes in length, an error MUST be raised.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
@@ -7384,7 +7363,7 @@
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">If a canonicalization algorithm other than URDNA2015 is used, a INVALID_PROOF_VALUE error MUST be returned.</td>
+                <td class="subtest">If a canonicalization algorithm other than URDNA2015 is used, an error MUST be raised.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
@@ -7613,7 +7592,7 @@
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">If a canonicalization data hashing algorithm SHA-2-256 is used, a INVALID_PROOF_VALUE error MUST be returned.</td>
+                <td class="subtest">If a canonicalization data hashing algorithm SHA-2-256 is used, an error MUST be raised.</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
@@ -8131,8 +8110,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -8161,13 +8140,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
               </tr>
@@ -8367,8 +8339,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -8397,13 +8369,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
               </tr>
@@ -8860,8 +8825,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -8890,13 +8855,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
               </tr>
@@ -9110,8 +9068,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -9140,13 +9098,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
               </tr>
@@ -9186,8 +9137,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -9216,13 +9167,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:61:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
