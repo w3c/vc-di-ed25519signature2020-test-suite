@@ -7,3 +7,7 @@
 
 ### Changed
 - Use `@digitalbazaar/mocha-w3c-interop-reporter@1.5.0`.
+
+## Before 1.0.0
+
+- See git history for changes.
