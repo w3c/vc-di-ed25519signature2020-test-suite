@@ -10,7 +10,7 @@
   "dependencies": {
     "@digitalbazaar/did-method-key": "^3.0.0",
     "@digitalbazaar/ed25519-verification-key-2020": "^4.0.0",
-    "@digitalbazaar/mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#add-report-context-option",
+    "@digitalbazaar/mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter",
     "@digitalbazaar/vc": "^6.0.0",
     "@digitalcredentials/did-context": "^1.0.0",
     "base58-universal": "^2.0.0",
