@@ -16,3 +16,4 @@ config.json
 reports/**
 !.gitkeep
 credentials/*.json
+.vscode
