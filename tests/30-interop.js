@@ -33,6 +33,7 @@ describe('Ed25519Signature2020 (interop)', function() {
   this.columnLabel = 'Verifier';
   for(const [issuerName, {issuers}] of issuerMatches) {
     let issuedVc;
+    let issuerError;
     before(async function() {
       const issuer = issuers.find(issuer =>
         issuer.tags.has('Ed25519Signature2020'));
@@ -41,9 +42,7 @@ describe('Ed25519Signature2020 (interop)', function() {
       body.credential.id = `urn:uuid:${uuidv4()}`;
       body.credential.issuer = issuerId;
       const {data, error} = await issuer.post({json: body});
-      if(error) {
-        throw error;
-      }
+      issuerError = error;
       issuedVc = data;
     });
     for(const [verifierName, {verifiers}] of verifierMatches) {
@@ -51,6 +50,11 @@ describe('Ed25519Signature2020 (interop)', function() {
         verifier.tags.has(tag));
       it(`${verifierName} should verify ${issuerName}`, async function() {
         this.test.cell = {rowId: issuerName, columnId: verifierName};
+        should.not.exist(
+          issuerError,
+          `Expected issuer: ${issuerName} to not error`
+        );
+        should.exist(issuedVc, `Expected issuer: ${issuerName} to issue a VC`);
         const body = {
           verifiableCredential: issuedVc,
           options: {
