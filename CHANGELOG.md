@@ -5,6 +5,9 @@
 ### Added
 - Add a default key seed for test data generation.
 
+### Fixed
+- Interop test reports results more accurately.
+
 ## 1.0.0 - 2023-11-09
 
 ### Added
