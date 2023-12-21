@@ -1,5 +1,10 @@
 # w3c/vc-di-ed25519signature2020-test-suite ChangeLog
 
+## 1.1.0 - 2023-12-21
+
+### Added
+- Add a default key seed for test data generation.
+
 ## 1.0.0 - 2023-11-09
 
 ### Added
