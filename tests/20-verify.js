@@ -9,10 +9,11 @@ import {
 import {endpoints} from 'vc-test-suite-implementations';
 import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
+import {tag} from './test-config.js';
 
 // only use implementations with `Ed25519 2020` verifiers.
 const {match} = endpoints.filterByTag({
-  tags: ['Ed25519Signature2020'],
+  tags: [tag],
   property: 'verifiers'
 });
 
@@ -43,7 +44,7 @@ describe('Ed25519Signature2020 (verify)', function() {
     for(const [name, {implementation}] of match) {
       describe(name, function() {
         const verifier = implementation.verifiers.find(
-          verifier => verifier.tags.has('Ed25519Signature2020'));
+          verifier => verifier.tags.has(tag));
         it('MUST verify a valid VC with an Ed25519Signature2020 proof',
           async function() {
             this.test.cell = {
