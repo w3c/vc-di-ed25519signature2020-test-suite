@@ -1,5 +1,8 @@
 export const testVc = {
-  '@context': ['https://www.w3.org/2018/credentials/v1'],
+  '@context': [
+    'https://www.w3.org/2018/credentials/v1',
+    'https://w3id.org/security/suites/ed25519-2020/v1'
+  ],
   id: 'urn:uuid:86294362-4254-4f36-854f-3952fe42555d',
   type: ['VerifiableCredential'],
   issuer: 'did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S',
