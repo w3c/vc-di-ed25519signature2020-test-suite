@@ -24,6 +24,7 @@ describe('Ed25519Signature2020 (create)', function() {
   checkDataIntegrityProofFormat({
     implemented: match, tag,
     expectedProofTypes: ['Ed25519Signature2020'],
+    expectedSuiteContext: 'https://w3id.org/security/suites/ed25519-2020/v1',
     expectedCryptoSuite: false
   });
 
