@@ -1,5 +1,5 @@
 {
-  "specStatus": "unofficial",
+  "specStatus": "base",
   "shortName": "di-ed25519signature2020-test-suite",
   "subtitle": "Interoperability Report for Ed25519",
   "github": "https://github.com/w3c-ccg/di-ed25519signature2020-test-suite",
