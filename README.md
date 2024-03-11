@@ -2,15 +2,13 @@
 
 ## Table of Contents
 
-- [Ed25519Signature2020 Cryptosuite Test Suite](#ed25519signature2020-cryptosuite-test-suite)
-  - [Table of Contents](#table-of-contents)
-  - [Background](#background)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Implementation](#implementation)
-  - [Docker Integration (TODO)](#docker-integration-todo)
-  - [Contribute](#contribute)
-  - [License](#license)
+- [Background](#background)
+- [Install](#install)
+- [Usage](#usage)
+- [Implementation](#implementation)
+- [Docker Integration (TODO)](#docker-integration-todo)
+- [Contribute](#contribute)
+- [License](#license)
 
 ## Background
 Provides interoperability tests for verifiable credential processors
@@ -18,13 +16,13 @@ Provides interoperability tests for verifiable credential processors
 
 ## Install
 
-```js
+```sh
 npm i
 ```
 
 ## Usage
 
-```
+```sh
 npm test
 ```
 
@@ -46,7 +44,7 @@ All endpoints will need the tag `Ed25519Signature2020`.
 
 A simplified manifest would look like this:
 
-```js
+```json
 {
   "name": "My Company",
   "implementation": "My implementation",
