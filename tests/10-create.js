@@ -1,5 +1,6 @@
 /*!
- * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2022-2024 Digital Bazaar, Inc.
+ * SPDX-License-Identifier: BSD-3-Clause
  */
 import {bs58Decode, getPublicKeyBytes} from './helpers.js';
 import chai from 'chai';
@@ -9,9 +10,10 @@ import {
 import {endpoints} from 'vc-test-suite-implementations';
 import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
+import {tag} from './test-config.js';
 import {v4 as uuidv4} from 'uuid';
+
 // only use implementations with `Ed25519 2020` issuers.
-const tag = 'Ed25519Signature2020';
 const {match} = endpoints.filterByTag({tags: [tag], property: 'issuers'});
 const should = chai.should();
 
@@ -43,7 +45,7 @@ describe('Ed25519Signature2020 (create)', function() {
         before(async function() {
           const [issuer] = endpoints;
           verifier = implementation.verifiers.find(
-            verifier => verifier.tags.has('Ed25519Signature2020'));
+            verifier => verifier.tags.has(tag));
           const {settings: {id: issuerId, options}} = issuer;
           const body = {credential: klona(validVc), options};
           body.credential.id = `urn:uuid:${uuidv4()}`;

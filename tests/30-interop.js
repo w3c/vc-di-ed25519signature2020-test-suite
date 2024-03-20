@@ -1,14 +1,15 @@
 /*!
- * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2022-2024 Digital Bazaar, Inc.
+ * SPDX-License-Identifier: BSD-3-Clause
  */
 import chai from 'chai';
 import {filterByTag} from 'vc-test-suite-implementations';
 import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
+import {tag} from './test-config.js';
 import {v4 as uuidv4} from 'uuid';
 
 const should = chai.should();
-const tag = 'Ed25519Signature2020';
 
 // only use implementations with `Ed25519 2020` issuers.
 const {
@@ -36,7 +37,7 @@ describe('Ed25519Signature2020 (interop)', function() {
     let issuerError;
     before(async function() {
       const issuer = issuers.find(issuer =>
-        issuer.tags.has('Ed25519Signature2020'));
+        issuer.tags.has(tag));
       const {settings: {id: issuerId, options}} = issuer;
       const body = {credential: klona(validVc), options};
       body.credential.id = `urn:uuid:${uuidv4()}`;
