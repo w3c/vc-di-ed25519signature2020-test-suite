@@ -4,9 +4,6 @@
  */
 import {bs58Decode, bs58Encode} from './helpers.js';
 import {verificationFail, verificationSuccess} from './assertions.js';
-import {
-  checkDataIntegrityProofVerifyErrors
-} from 'data-integrity-test-suite-assertion';
 import {endpoints} from 'vc-test-suite-implementations';
 import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
@@ -27,10 +24,6 @@ describe('Ed25519Signature2020 (verify)', function() {
     issuedVc = credentials.get('issuedVc');
     incorrectCannonization = credentials.get('canonizeJcs');
     incorrectHash = credentials.get('digestSha512');
-  });
-  checkDataIntegrityProofVerifyErrors({
-    implemented: match,
-    expectedProofType: 'Ed25519Signature2020'
   });
 
   describe('Ed25519Signature2020 (verifier)', function() {

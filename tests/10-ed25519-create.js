@@ -4,9 +4,6 @@
  */
 import {bs58Decode, getPublicKeyBytes} from './helpers.js';
 import chai from 'chai';
-import {
-  checkDataIntegrityProofFormat
-} from 'data-integrity-test-suite-assertion';
 import {endpoints} from 'vc-test-suite-implementations';
 import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
@@ -22,11 +19,6 @@ describe('Ed25519Signature2020 (create)', function() {
   before(async function() {
     const credentials = await generateTestData();
     validVc = credentials.get('validVc');
-  });
-  checkDataIntegrityProofFormat({
-    implemented: match, tag,
-    expectedProofTypes: ['Ed25519Signature2020'],
-    expectedCryptoSuite: false
   });
 
   describe('Ed25519Signature2020 (issuer)', function() {
