@@ -10,7 +10,12 @@ const {match} = endpoints.filterByTag({
   property: 'verifiers'
 });
 
+const testDataOptions = {
+  suiteName: 'Ed25519Signature2020'
+};
+
 checkDataIntegrityProofVerifyErrors({
   implemented: match,
-  expectedProofType: 'Ed25519Signature2020'
+  expectedProofType: 'Ed25519Signature2020',
+  testDataOptions
 });
