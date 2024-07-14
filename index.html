@@ -84,22 +84,22 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 278/308 90%
+      Tests passed 291/360 80%
       </p>
       <p>
-      Tests failed 30/308 10%
+      Tests failed 69/360 20%
       </p>
       <p>
-      Failures 30
+      Failures 69
       </p>
       <p>
       Tests skipped 0
       </p>
       <p>
-      Total tests 308
+      Total tests 360
       </p>
       <p>
-        These tests were run on <time>7 July 2024 at 5:02 am UTC</time>
+        These tests were run on <time>14 July 2024 at 5:02 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -187,6 +187,7 @@
                     <th class="no-wrap small-font text-center">Digital Bazaar</th>
                     <th class="no-wrap small-font text-center">EWF</th>
                     <th class="no-wrap small-font text-center">LearnCard</th>
+                    <th class="no-wrap small-font text-center">Open Security and Identity</th>
                     <th class="no-wrap small-font text-center">SpruceID</th>
                     <th class="no-wrap small-font text-center">Trinsic</th>
                 </thead>
@@ -353,6 +354,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected proof to exist.: expected undefined to exist",
+                      "stack": "AssertionError: Expected proof to exist.: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:43:14)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -584,6 +624,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'id')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'id')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:50:18)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -811,6 +890,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'should')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'should')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:57:15)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1088,6 +1206,45 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'should')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'should')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:66:15)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
                       "name": "AssertionError",
                       "message": "expected false to equal true",
                       "stack": "AssertionError: expected false to equal true\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:89:37)\n    at process.processImmediate (node:internal/timers:478:21)"
@@ -1290,6 +1447,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'type')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'type')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:98:18)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1521,6 +1717,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'created')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'created')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:112:18)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -1748,6 +1983,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'expires')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'expires')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:122:18)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1979,6 +2253,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'should')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'should')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:132:17)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -2206,6 +2519,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'should')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'should')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:149:17)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -2444,6 +2796,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'should')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'should')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:156:17)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -2680,6 +3071,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'cryptosuite')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'cryptosuite')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:167:43)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -2907,6 +3337,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'domain')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'domain')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:185:18)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -3138,6 +3607,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'challenge')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'challenge')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:196:20)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -3365,6 +3873,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'previousProof')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'previousProof')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:208:20)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -3596,6 +4143,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'nonce')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'nonce')\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/create.js:217:20)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -3738,6 +4324,7 @@
                     <th class="no-wrap small-font text-center">Digital Bazaar</th>
                     <th class="no-wrap small-font text-center">EWF</th>
                     <th class="no-wrap small-font text-center">LearnCard</th>
+                    <th class="no-wrap small-font text-center">Open Security and Identity</th>
                     <th class="no-wrap small-font text-center">SpruceID</th>
                     <th class="no-wrap small-font text-center">Trinsic</th>
                 </thead>
@@ -3913,6 +4500,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected at least one Ed25519 proof.: expected +0 to be at least 1",
+                      "stack": "AssertionError: Expected at least one Ed25519 proof.: expected +0 to be at least 1\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/10-create.js:73:42)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -4021,6 +4647,134 @@
                       </span>
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
                   <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
@@ -4058,102 +4812,6 @@
                       "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/10-create.js:105:24)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
                     }</pre>
                       </span>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -4298,6 +4956,7 @@
                     <th class="no-wrap small-font text-center">Digital Bazaar</th>
                     <th class="no-wrap small-font text-center">EWF</th>
                     <th class="no-wrap small-font text-center">LearnCard</th>
+                    <th class="no-wrap small-font text-center">Open Security and Identity</th>
                     <th class="no-wrap small-font text-center">SpruceID</th>
                     <th class="no-wrap small-font text-center">Trinsic</th>
                 </thead>
@@ -4464,6 +5123,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected HTTP Status code 400 invalid input!: expected 422 to equal 400",
+                      "stack": "AssertionError: Expected HTTP Status code 400 invalid input!: expected 422 to equal 400\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:38:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:34:9)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -4695,6 +5393,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected HTTP Status code 400 invalid input!: expected 422 to equal 400",
+                      "stack": "AssertionError: Expected HTTP Status code 400 invalid input!: expected 422 to equal 400\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:38:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:40:9)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -4924,6 +5661,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected HTTP Status code 400 invalid input!: expected 422 to equal 400",
+                      "stack": "AssertionError: Expected HTTP Status code 400 invalid input!: expected 422 to equal 400\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:38:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:46:9)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -5151,6 +5927,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:04 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist",
+                      "stack": "AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:04 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:35:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:52:7)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -5389,6 +6204,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected HTTP Status code 400 invalid input!: expected 500 to equal 400",
+                      "stack": "AssertionError: Expected HTTP Status code 400 invalid input!: expected 500 to equal 400\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:38:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:57:7)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -5616,6 +6470,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:05 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist",
+                      "stack": "AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:05 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:35:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:62:7)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -5847,6 +6740,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected HTTP Status code 400 invalid input!: expected 422 to equal 400",
+                      "stack": "AssertionError: Expected HTTP Status code 400 invalid input!: expected 422 to equal 400\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:38:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:67:7)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -6074,6 +7006,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected HTTP Status code 400 invalid input!: expected 422 to equal 400",
+                      "stack": "AssertionError: Expected HTTP Status code 400 invalid input!: expected 422 to equal 400\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:38:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:72:7)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -6305,6 +7276,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:05 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist",
+                      "stack": "AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:05 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:35:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:78:7)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -6532,6 +7542,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected HTTP Status code 400 invalid input!: expected 422 to equal 400",
+                      "stack": "AssertionError: Expected HTTP Status code 400 invalid input!: expected 422 to equal 400\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:38:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:92:7)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -6763,6 +7812,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected HTTP Status code 400 invalid input!: expected 422 to equal 400",
+                      "stack": "AssertionError: Expected HTTP Status code 400 invalid input!: expected 422 to equal 400\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:38:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:99:7)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -6990,6 +8078,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected HTTP Status code 400 invalid input!: expected 422 to equal 400",
+                      "stack": "AssertionError: Expected HTTP Status code 400 invalid input!: expected 422 to equal 400\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:38:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:105:9)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -7221,6 +8348,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:05 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist",
+                      "stack": "AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:05 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:35:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:113:7)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -7448,6 +8614,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:05 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist",
+                      "stack": "AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:05 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:35:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:122:7)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -7679,6 +8884,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:05 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist",
+                      "stack": "AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:05 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:35:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:129:9)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -7908,6 +9152,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:05 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist",
+                      "stack": "AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:05 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:35:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:138:9)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -8050,6 +9333,7 @@
                     <th class="no-wrap small-font text-center">Digital Bazaar</th>
                     <th class="no-wrap small-font text-center">EWF</th>
                     <th class="no-wrap small-font text-center">LearnCard</th>
+                    <th class="no-wrap small-font text-center">Open Security and Identity</th>
                     <th class="no-wrap small-font text-center">SpruceID</th>
                     <th class="no-wrap small-font text-center">Trinsic</th>
                 </thead>
@@ -8090,8 +9374,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -8120,13 +9404,38 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected a result from verifier.: expected undefined to exist",
-                      "stack": "AssertionError: Expected a result from verifier.: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at verificationSuccess (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:64:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/20-verify.js:56:13)"
-                    }</pre>
-                      </span>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -8454,6 +9763,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:11 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist",
+                      "stack": "AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:11 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:49:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/20-verify.js:73:11)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -8681,6 +10029,45 @@
                          margin-left: 1rem;
                        }
                       </style>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:11 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist",
+                      "stack": "AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:11 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:49:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/20-verify.js:82:11)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -8912,6 +10299,45 @@
                       </style>
                     </div>
                   </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:11 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist",
+                      "stack": "AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: 'OK', headers: Headers { authorization: '** SANITIZED TO PREVENT EXPOSING OF SECRETS ***', 'content-length': '4', 'content-type': 'application/json', date: 'Sun, 14 Jul 2024 05:02:11 GMT', server: 'uvicorn' }, body: null, bodyUsed: false, ok: true, redirected: false, type: 'default', url: '' } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:49:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/20-verify.js:91:11)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
                   <td class="passed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
@@ -9054,6 +10480,7 @@
                     <th class="no-wrap small-font text-center">Digital Bazaar</th>
                     <th class="no-wrap small-font text-center">EWF</th>
                     <th class="no-wrap small-font text-center">LearnCard</th>
+                    <th class="no-wrap small-font text-center">Open Security and Identity</th>
                     <th class="no-wrap small-font text-center">SpruceID</th>
                     <th class="no-wrap small-font text-center">Trinsic</th>
                 </thead>
@@ -9290,6 +10717,45 @@
                       <span class="err hide no-space-around">
                         <pre>{
                       "name": "AssertionError",
+                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
+                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
                       "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist",
                       "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
                     }</pre>
@@ -9372,8 +10838,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -9402,13 +10868,38 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -9608,8 +11099,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -9638,13 +11129,38 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -9851,8 +11367,8 @@
                       </span>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -9881,13 +11397,38 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -10300,6 +11841,355 @@
                       </style>
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">Open Security and Identity</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
+                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
+                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected verifier to not error.: expected HTTPError: A validation error occured in … { …(6) } to not exist",
+                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: A validation error occured in … { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected verifier to not error.: expected HTTPError { message: [ …(7) ], …(6) } to not exist",
+                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError { message: [ …(7) ], …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
+                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
+                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist",
+                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist",
+                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -10543,6 +12433,38 @@
                       </style>
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -10580,8 +12502,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -10610,13 +12532,6 @@
                          margin-left: 1rem;
                        }
                       </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist",
-                      "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-                    }</pre>
-                      </span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -10727,6 +12642,38 @@
                       "stack": "AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
                     }</pre>
                       </span>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
