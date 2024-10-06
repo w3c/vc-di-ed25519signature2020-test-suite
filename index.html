@@ -66,6 +66,10 @@
       justify-content: center;
       width: fit-content;
     }
+    .at-risk {
+      outline: thin #c45e0a solid;
+    }
+    
         </style>
   </head>
   <body>
@@ -168,13 +172,13 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 269/314 85%
+      Tests passed 263/314 83%
       </p>
       <p>
-      Tests failed 47/314 15%
+      Tests failed 53/314 17%
       </p>
       <p>
-      Failures 47
+      Failures 53
       </p>
       <p>
       Tests skipped 0
@@ -183,7 +187,7 @@
       Total tests 314
       </p>
       <p>
-        These tests were run on <time>29 September 2024 at 5:02 am UTC</time>
+        These tests were run on <time>6 October 2024 at 5:02 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -256,7 +260,7 @@
                     <th class="no-wrap small-font text-center">Trinsic</th>
                 </thead>
               <tbody>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#conformance:~:text&#x3D;When%20expressing%20a%20data%20integrity%20proof%20on%20an%20object%2C%20a%20proof%20property%20MUST%20be%20used">When expressing a data integrity proof on an object, a proof property MUST be used.</a>
@@ -304,7 +308,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#conformance:~:text&#x3D;If%20present%2C%20its%20value%20MUST%20be%20either%20a%20single%20object%2C%20or%20an%20unordered%20set%20of%20objects">If present (proof), its value MUST be either a single object, or an unordered set of objects.</a>
@@ -352,7 +356,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#conformance:~:text&#x3D;An%20optional%20identifier%20for%20the%20proof%2C%20which%20MUST%20be%20a%20URL">(&quot;proof.id&quot;) An optional identifier for the proof, which MUST be a URL.</a>
@@ -400,7 +404,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#:~:text&#x3D;The%20specific%20type%20of%20proof%20MUST%20be%20specified%20as%20a%20string%20that%20maps%20to%20a%20URL">The specific type of proof MUST be specified as a string that maps to a URL.</a>
@@ -457,7 +461,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     &quot;proof.type&quot; field MUST be &quot;Ed25519Signature2020&quot; and the associated document MUST include expected contexts.
@@ -517,7 +521,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#introduction:~:text&#x3D;If%20the%20proof%20type%20is%20DataIntegrityProof%2C%20cryptosuite%20MUST%20be%20specified%3B%20otherwise%2C%20cryptosuite%20MAY%20be%20specified.%20If%20specified%2C%20its%20value%20MUST%20be%20a%20string.">If the proof type is DataIntegrityProof, cryptosuite MUST be specified; otherwise, cryptosuite MAY be specified.</a>
@@ -565,7 +569,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#introduction:~:text&#x3D;If%20the%20proof%20type%20is%20DataIntegrityProof%2C%20cryptosuite%20MUST%20be%20specified%3B%20otherwise%2C%20cryptosuite%20MAY%20be%20specified.%20If%20specified%2C%20its%20value%20MUST%20be%20a%20string.">If specified (proof.cryptosuite), its value MUST be a string.</a>
@@ -613,7 +617,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#proofs:~:text&#x3D;A%20verification%20method%20is%20the%20means%20and%20information%20needed%20to%20verify%20the%20proof.%20If%20included%2C%20the%20value%20MUST%20be%20a%20string%20that%20maps%20to%20a%20%5BURL%5D.">A verification method is the means and information needed to verify the proof. If included, the value MUST be a string that maps to a [URL].</a>
@@ -661,7 +665,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#proofs:~:text&#x3D;The%20reason%20the%20proof%20was%20created%20MUST%20be%20specified%20as%20a%20string%20that%20maps%20to%20a%20URL">The reason the proof was created (&quot;proof.proofPurpose&quot;) MUST be specified as a string that maps to a URL.</a>
@@ -709,7 +713,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#:~:text&#x3D;A%20string%20value%20that%20expresses%20base%2Dencoded%20binary%20data%20necessary%20to%20verify%20the%20digital%20proof%20using%20the%20verificationMethod%20specified.%20The%20value%20MUST%20use%20a%20header%20and%20encoding%20as%20described%20in%20Section%202.4%20Multibase%20of%20the%20Controller%20Documents%201.0%20specification%20to%20express%20the%20binary%20data.">(&quot;proof.proofValue&quot;) A string value that expresses base-encoded binary data necessary to verify the digital proof using the verificationMethod specified. The value MUST use a header and encoding as described in Section 2.4 Multibase of the Controller Documents 1.0 specification to express the binary data.</a>
@@ -765,7 +769,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#add-proof:~:text&#x3D;MUST%20use%20mandatory%20proof%20value%20properties%20defined">Cryptographic suite designers MUST use mandatory proof value properties defined in Section 2.1 Proofs, and MAY define other properties specific to their cryptographic suite.</a>
@@ -821,7 +825,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#securing-data-losslessly:~:text&#x3D;Implementations%20that%20use%20JSON%2DLD%20processing%2C%20such%20as%20RDF%20Dataset%20Canonicalization%20%5BRDF%2DCANON%5D%2C%20MUST%20throw%20an%20error%2C%20which%20SHOULD%20be%20DATA_LOSS_DETECTION_ERROR%2C%20when%20data%20is%20dropped%20by%20a%20JSON%2DLD%20processor%2C%20such%20as%20when%20an%20undefined%20term%20is%20detected%20in%20an%20input%20document.">Implementations that use JSON-LD processing, such as RDF Dataset Canonicalization [RDF-CANON], MUST throw an error, which SHOULD be DATA_LOSS_DETECTION_ERROR, when data is dropped by a JSON-LD processor, such as when an undefined term is detected in an input document.</a>
@@ -837,8 +841,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { &#x27;content-type&#x27;: &#x27;application/ld+json&#x27;, &#x27;x-cloud-trace-context&#x27;: &#x27;4153d946dfabe377864f0f9485f67bcd&#x27;, date: &#x27;Sun, 29 Sep 2024 05:01:41 GMT&#x27;, server: &#x27;Google Frontend&#x27;, &#x27;content-length&#x27;: &#x27;745&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
-                        <pre>AssertionError: Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { &#x27;content-type&#x27;: &#x27;application/ld+json&#x27;, &#x27;x-cloud-trace-context&#x27;: &#x27;4153d946dfabe377864f0f9485f67bcd&#x27;, date: &#x27;Sun, 29 Sep 2024 05:01:41 GMT&#x27;, server: &#x27;Google Frontend&#x27;, &#x27;content-length&#x27;: &#x27;745&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        <summary>Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { &#x27;content-type&#x27;: &#x27;application/ld+json&#x27;, &#x27;x-cloud-trace-context&#x27;: &#x27;e85c058b3e3fc816059c33161db83676;o&#x3D;1&#x27;, date: &#x27;Sun, 06 Oct 2024 05:01:42 GMT&#x27;, server: &#x27;Google Frontend&#x27;, &#x27;content-length&#x27;: &#x27;744&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { &#x27;content-type&#x27;: &#x27;application/ld+json&#x27;, &#x27;x-cloud-trace-context&#x27;: &#x27;e85c058b3e3fc816059c33161db83676;o&#x3D;1&#x27;, date: &#x27;Sun, 06 Oct 2024 05:01:42 GMT&#x27;, server: &#x27;Google Frontend&#x27;, &#x27;content-length&#x27;: &#x27;744&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at shouldFailIssuance (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:104:14)
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
@@ -860,8 +864,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { date: &#x27;Sun, 29 Sep 2024 05:01:44 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;742&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;x-powered-by&#x27;: &#x27;Express&#x27;, vary: &#x27;Origin&#x27;, etag: &#x27;W/&quot;2e6-u7wAYYC2qpwEFSGJU61+cE70nQ8&quot;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
-                        <pre>AssertionError: Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { date: &#x27;Sun, 29 Sep 2024 05:01:44 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;742&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;x-powered-by&#x27;: &#x27;Express&#x27;, vary: &#x27;Origin&#x27;, etag: &#x27;W/&quot;2e6-u7wAYYC2qpwEFSGJU61+cE70nQ8&quot;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        <summary>Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { date: &#x27;Sun, 06 Oct 2024 05:01:46 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;742&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;x-powered-by&#x27;: &#x27;Express&#x27;, vary: &#x27;Origin&#x27;, etag: &#x27;W/&quot;2e6-7HJm7JUcvyWMSG5SIsPhoFjrH18&quot;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { date: &#x27;Sun, 06 Oct 2024 05:01:46 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;742&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;x-powered-by&#x27;: &#x27;Express&#x27;, vary: &#x27;Origin&#x27;, etag: &#x27;W/&quot;2e6-7HJm7JUcvyWMSG5SIsPhoFjrH18&quot;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at shouldFailIssuance (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:104:14)
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
@@ -873,8 +877,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { date: &#x27;Sun, 29 Sep 2024 05:01:44 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;758&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;x-powered-by&#x27;: &#x27;Express&#x27;, etag: &#x27;W/&quot;2f6-OEHQXppQ0vRMoriV+BWGXbmNpvQ&quot;&#x27;, &#x27;apigw-requestid&#x27;: &#x27;e2fQ6j6tIAMEJvQ&#x3D;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
-                        <pre>AssertionError: Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { date: &#x27;Sun, 29 Sep 2024 05:01:44 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;758&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;x-powered-by&#x27;: &#x27;Express&#x27;, etag: &#x27;W/&quot;2f6-OEHQXppQ0vRMoriV+BWGXbmNpvQ&quot;&#x27;, &#x27;apigw-requestid&#x27;: &#x27;e2fQ6j6tIAMEJvQ&#x3D;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        <summary>Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { date: &#x27;Sun, 06 Oct 2024 05:01:47 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;758&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;x-powered-by&#x27;: &#x27;Express&#x27;, etag: &#x27;W/&quot;2f6-4D+0Dhvz3sOttjWga1B6g6b9nWY&quot;&#x27;, &#x27;apigw-requestid&#x27;: &#x27;fNj1RhgcoAMEPUw&#x3D;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { date: &#x27;Sun, 06 Oct 2024 05:01:47 GMT&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, &#x27;content-length&#x27;: &#x27;758&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;x-powered-by&#x27;: &#x27;Express&#x27;, etag: &#x27;W/&quot;2f6-4D+0Dhvz3sOttjWga1B6g6b9nWY&quot;&#x27;, &#x27;apigw-requestid&#x27;: &#x27;fNj1RhgcoAMEPUw&#x3D;&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at shouldFailIssuance (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:104:14)
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
@@ -891,8 +895,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected issuer to error when VC has an undefined type.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 29 Sep 2024 05:01:45 GMT&#x27;, &#x27;content-type&#x27;: &#x27;text/html; charset&#x3D;utf-8&#x27;, &#x27;transfer-encoding&#x27;: &#x27;chunked&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;cache-control&#x27;: &#x27;no-cache,no-store&#x27;, expires: &#x27;-1&#x27;, pragma: &#x27;no-cache&#x27;, &#x27;x-envoy-upstream-service-time&#x27;: &#x27;36&#x27;, &#x27;cf-cache-status&#x27;: &#x27;DYNAMIC&#x27;, &#x27;report-to&#x27;: &#x27;{&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s&#x3D;kjjCM11HqHAf7vo8513Fgj1kWbNb9VSg%2FH0XfSdyZl6N0%2B7yjAGeiE6kyNttrGiCi85uktm%2BFvxOZ2%2B7BWgNzOo2SKkGg92aTIf6nhUDLoXPAEH0%2Fqq2azuwdmFITOyPIChINStlsOe4l%2FaXnVDd&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}&#x27;, nel: &#x27;{&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}&#x27;, server: &#x27;cloudflare&#x27;, &#x27;cf-ray&#x27;: &#x27;8ca96ac6ad26c9b9-IAD&#x27;, &#x27;content-encoding&#x27;: &#x27;br&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: null, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
-                        <pre>AssertionError: Expected issuer to error when VC has an undefined type.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 29 Sep 2024 05:01:45 GMT&#x27;, &#x27;content-type&#x27;: &#x27;text/html; charset&#x3D;utf-8&#x27;, &#x27;transfer-encoding&#x27;: &#x27;chunked&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;cache-control&#x27;: &#x27;no-cache,no-store&#x27;, expires: &#x27;-1&#x27;, pragma: &#x27;no-cache&#x27;, &#x27;x-envoy-upstream-service-time&#x27;: &#x27;36&#x27;, &#x27;cf-cache-status&#x27;: &#x27;DYNAMIC&#x27;, &#x27;report-to&#x27;: &#x27;{&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s&#x3D;kjjCM11HqHAf7vo8513Fgj1kWbNb9VSg%2FH0XfSdyZl6N0%2B7yjAGeiE6kyNttrGiCi85uktm%2BFvxOZ2%2B7BWgNzOo2SKkGg92aTIf6nhUDLoXPAEH0%2Fqq2azuwdmFITOyPIChINStlsOe4l%2FaXnVDd&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}&#x27;, nel: &#x27;{&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}&#x27;, server: &#x27;cloudflare&#x27;, &#x27;cf-ray&#x27;: &#x27;8ca96ac6ad26c9b9-IAD&#x27;, &#x27;content-encoding&#x27;: &#x27;br&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: null, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        <summary>Expected issuer to error when VC has an undefined type.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 06 Oct 2024 05:01:49 GMT&#x27;, &#x27;content-type&#x27;: &#x27;text/html; charset&#x3D;utf-8&#x27;, &#x27;transfer-encoding&#x27;: &#x27;chunked&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;cache-control&#x27;: &#x27;no-cache,no-store&#x27;, expires: &#x27;-1&#x27;, pragma: &#x27;no-cache&#x27;, &#x27;x-envoy-upstream-service-time&#x27;: &#x27;123&#x27;, &#x27;cf-cache-status&#x27;: &#x27;DYNAMIC&#x27;, &#x27;report-to&#x27;: &#x27;{&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s&#x3D;a3bnK%2FNYPrrBoy%2BY%2FMUM1%2FdVrBGdNSpkslg6k6l4FhfI91XFugA4MOC4EILU7xn%2BHGdJ78NxNHe6PLYsfyzV5UvT1l3pvuysAnGwtkImukPRSXV%2BjZAfIKcVEvGfIzWPJu%2BmTH6MhPmekZc3t4KW&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}&#x27;, nel: &#x27;{&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}&#x27;, server: &#x27;cloudflare&#x27;, &#x27;cf-ray&#x27;: &#x27;8ce3187c085a2ae8-LAX&#x27;, &#x27;content-encoding&#x27;: &#x27;br&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: null, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected issuer to error when VC has an undefined type.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { date: &#x27;Sun, 06 Oct 2024 05:01:49 GMT&#x27;, &#x27;content-type&#x27;: &#x27;text/html; charset&#x3D;utf-8&#x27;, &#x27;transfer-encoding&#x27;: &#x27;chunked&#x27;, connection: &#x27;keep-alive&#x27;, &#x27;cache-control&#x27;: &#x27;no-cache,no-store&#x27;, expires: &#x27;-1&#x27;, pragma: &#x27;no-cache&#x27;, &#x27;x-envoy-upstream-service-time&#x27;: &#x27;123&#x27;, &#x27;cf-cache-status&#x27;: &#x27;DYNAMIC&#x27;, &#x27;report-to&#x27;: &#x27;{&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s&#x3D;a3bnK%2FNYPrrBoy%2BY%2FMUM1%2FdVrBGdNSpkslg6k6l4FhfI91XFugA4MOC4EILU7xn%2BHGdJ78NxNHe6PLYsfyzV5UvT1l3pvuysAnGwtkImukPRSXV%2BjZAfIKcVEvGfIzWPJu%2BmTH6MhPmekZc3t4KW&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}&#x27;, nel: &#x27;{&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}&#x27;, server: &#x27;cloudflare&#x27;, &#x27;cf-ray&#x27;: &#x27;8ce3187c085a2ae8-LAX&#x27;, &#x27;content-encoding&#x27;: &#x27;br&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: null, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at shouldFailIssuance (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:104:14)
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
@@ -936,7 +940,7 @@
                     <th class="no-wrap small-font text-center">Trinsic</th>
                 </thead>
               <tbody>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     &quot;proofValue&quot; field when decoded to raw bytes, MUST be 64 bytes in length if the associated public key is 32 bytes or 114 bytes in length if the public key is 57 bytes.
@@ -990,7 +994,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     &quot;proof&quot; MUST verify when using a conformant verifier.
@@ -1014,9 +1018,16 @@
                       </details>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist</summary>
+                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist
+                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
+                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/10-create.js:105:24)
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
+                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1080,7 +1091,7 @@
                     <th class="no-wrap small-font text-center">Trinsic</th>
                 </thead>
               <tbody>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#securing-data-losslessly:~:text&#x3D;When%20deserializing%20to%20RDF%2C%20implementations%20MUST%20ensure%20that%20the%20base%20URL%20is%20set%20to%20null.">When deserializing to RDF, implementations MUST ensure that the base URL is set to null.</a>
@@ -1127,7 +1138,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#conformance:~:text&#x3D;Conforming%20processors%20MUST%20produce%20errors%20when%20non%2Dconforming%20documents%20are%20consumed.">Conforming processors MUST produce errors when non-conforming documents are consumed.</a>
@@ -1174,7 +1185,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     If the &quot;proof&quot; field is missing, an error MUST be raised.
@@ -1221,7 +1232,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     If the &quot;proof&quot; field is invalid, an error MUST be raised.
@@ -1268,7 +1279,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     If the &quot;proof.type&quot; field is missing, an error MUST be raised.
@@ -1315,7 +1326,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     If the &quot;proof.type&quot; field is not the string &quot;Ed25519Signature2020&quot;, an error MUST be raised.
@@ -1362,7 +1373,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     If the &quot;proof.verificationMethod&quot; field is missing, an error MUST be raised.
@@ -1382,8 +1393,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected &quot;response.status&quot; to exist.: expected undefined to exist</summary>
-                        <pre>AssertionError: Expected &quot;response.status&quot; to exist.: expected undefined to exist
+                        <summary>Expected &quot;errorResponse.status&quot; to exist.: expected undefined to exist</summary>
+                        <pre>AssertionError: Expected &quot;errorResponse.status&quot; to exist.: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at shouldBeErrorResponse (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:273:10)
                         at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:84:3)
@@ -1418,7 +1429,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     If the &quot;proof.verificationMethod&quot; field is invalid, an error MUST be raised.
@@ -1465,7 +1476,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     If the &quot;proof.proofPurpose&quot; field is missing, an error MUST be raised.
@@ -1512,7 +1523,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     If the &quot;proof.proofPurpose&quot; field is invalid, an error MUST be raised.
@@ -1559,7 +1570,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#:~:text&#x3D;If%20expectedProofPurpose%20was%20given%2C%20and%20it%20does%20not%20match%20proof.proofPurpose%2C%20an%20error%20MUST%20be%20raised%20and%20SHOULD%20convey%20an%20error%20type%20of%20PROOF_VERIFICATION_ERROR.">If expectedProofPurpose was given, and it does not match proof.proofPurpose, an error MUST be raised and SHOULD convey an error type of PROOF_VERIFICATION_ERROR.</a>
@@ -1606,7 +1617,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#proofs:~:text&#x3D;The%20proofValue%20property%20MUST%20be%20used%2C%20as%20specified%20in%202.1%20Proofs.">The proofValue property MUST be used, as specified in 2.1 Proofs.</a>
@@ -1653,7 +1664,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#proofs:~:text&#x3D;string%20value%20that%20contains%20the%20base%2Dencoded%20binary%20data%20necessary%20to%20verify%20the%20digital%20proof">(&quot;proof.proofValue&quot;) A string value that contains the base-encoded binary data necessary to verify the digital proof using the verificationMethod specified. The contents of the value MUST be expressed with a header and encoding as described in Section 2.4 Multibase of the Controller Documents 1.0 specification.</a>
@@ -1700,7 +1711,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#securing-data-losslessly:~:text&#x3D;Implementations%20that%20use%20JSON%2DLD%20processing%2C%20such%20as%20RDF%20Dataset%20Canonicalization%20%5BRDF%2DCANON%5D%2C%20MUST%20throw%20an%20error%2C%20which%20SHOULD%20be%20DATA_LOSS_DETECTION_ERROR%2C%20when%20data%20is%20dropped%20by%20a%20JSON%2DLD%20processor%2C%20such%20as%20when%20an%20undefined%20term%20is%20detected%20in%20an%20input%20document.">Implementations that use JSON-LD processing, such as RDF Dataset Canonicalization [RDF-CANON], MUST throw an error, which SHOULD be DATA_LOSS_DETECTION_ERROR, when data is dropped by a JSON-LD processor, such as when an undefined term is detected in an input document.</a>
@@ -1747,7 +1758,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://w3c.github.io/vc-data-integrity/#introduction:~:text&#x3D;The%20value%20of%20the%20cryptosuite%20property%20MUST%20be%20a%20string%20that%20identifies%20the%20cryptographic%20suite.%20If%20the%20processing%20environment%20supports%20subtypes%20of%20string%2C%20the%20type%20of%20the%20cryptosuite%20value%20MUST%20be%20the%20https%3A//w3id.org/security%23cryptosuiteString%20subtype%20of%20string.">The value of the cryptosuite property MUST be a string that identifies the cryptographic suite. If the processing environment supports subtypes of string, the type of the cryptosuite value MUST be the https://w3id.org/security#cryptosuiteString subtype of string.</a>
@@ -1829,7 +1840,7 @@
                     <th class="no-wrap small-font text-center">Trinsic</th>
                 </thead>
               <tbody>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     MUST verify a valid VC with an Ed25519Signature2020 proof
@@ -1845,9 +1856,17 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Expected a result from verifier.: expected undefined to exist</summary>
+                        <pre>AssertionError: Expected a result from verifier.: expected undefined to exist
+                        at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
+                        at verificationSuccess (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:64:10)
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/20-verify.js:56:13)</pre>
+                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1876,7 +1895,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     If the &quot;proofValue&quot; field, when decoded to raw bytes, is not 64 bytes in length if the associated public key is 32 bytes in length, or 114 bytes in length if the public key is 57 bytes in length, an error MUST be raised.
@@ -1886,8 +1905,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-length&#x27;: &#x27;638&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, date: &#x27;Sun, 29 Sep 2024 05:02:10 GMT&#x27;, server: &#x27;Python/3.12 aiohttp/3.10.5&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
-                        <pre>AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-length&#x27;: &#x27;638&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, date: &#x27;Sun, 29 Sep 2024 05:02:10 GMT&#x27;, server: &#x27;Python/3.12 aiohttp/3.10.5&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        <summary>Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-length&#x27;: &#x27;638&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, date: &#x27;Sun, 06 Oct 2024 05:02:22 GMT&#x27;, server: &#x27;Python/3.12 aiohttp/3.10.5&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-length&#x27;: &#x27;638&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, date: &#x27;Sun, 06 Oct 2024 05:02:22 GMT&#x27;, server: &#x27;Python/3.12 aiohttp/3.10.5&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:49:14)
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
@@ -1931,7 +1950,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     If a canonicalization algorithm other than URDNA2015 is used, an error MUST be raised.
@@ -1941,8 +1960,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-length&#x27;: &#x27;638&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, date: &#x27;Sun, 29 Sep 2024 05:02:10 GMT&#x27;, server: &#x27;Python/3.12 aiohttp/3.10.5&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
-                        <pre>AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-length&#x27;: &#x27;638&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, date: &#x27;Sun, 29 Sep 2024 05:02:10 GMT&#x27;, server: &#x27;Python/3.12 aiohttp/3.10.5&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        <summary>Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-length&#x27;: &#x27;638&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, date: &#x27;Sun, 06 Oct 2024 05:02:22 GMT&#x27;, server: &#x27;Python/3.12 aiohttp/3.10.5&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-length&#x27;: &#x27;638&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, date: &#x27;Sun, 06 Oct 2024 05:02:22 GMT&#x27;, server: &#x27;Python/3.12 aiohttp/3.10.5&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:49:14)
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
@@ -1986,7 +2005,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     If a canonicalization data hashing algorithm SHA-2-256 is used, an error MUST be raised.
@@ -1996,8 +2015,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-length&#x27;: &#x27;638&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, date: &#x27;Sun, 29 Sep 2024 05:02:10 GMT&#x27;, server: &#x27;Python/3.12 aiohttp/3.10.5&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
-                        <pre>AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-length&#x27;: &#x27;638&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, date: &#x27;Sun, 29 Sep 2024 05:02:10 GMT&#x27;, server: &#x27;Python/3.12 aiohttp/3.10.5&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        <summary>Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-length&#x27;: &#x27;638&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, date: &#x27;Sun, 06 Oct 2024 05:02:22 GMT&#x27;, server: &#x27;Python/3.12 aiohttp/3.10.5&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-length&#x27;: &#x27;638&#x27;, &#x27;content-type&#x27;: &#x27;application/json; charset&#x3D;utf-8&#x27;, date: &#x27;Sun, 06 Oct 2024 05:02:22 GMT&#x27;, server: &#x27;Python/3.12 aiohttp/3.10.5&#x27;, Authorization: &#x27;** SANITIZED TO PREVENT EXPOSING OF SECRETS ***&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:49:14)
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
@@ -2076,7 +2095,7 @@
                     <th class="no-wrap small-font text-center">Trinsic</th>
                 </thead>
               <tbody>
-              <tr>
+              <tr class="at-risk">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     ACA-py
@@ -2179,7 +2198,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="at-risk">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     apicatalog.com
@@ -2282,7 +2301,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     Danube Tech
@@ -2298,9 +2317,16 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist</summary>
+                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist
+                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
+                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
+                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -2329,7 +2355,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     Digital Bazaar
@@ -2345,9 +2371,16 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist</summary>
+                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist
+                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
+                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
+                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -2376,7 +2409,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     EWF
@@ -2406,36 +2439,36 @@
                       </details>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                    </div>
-                  </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                    </div>
-                  </td>
                   <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist</summary>
-                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist
+                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist</summary>
+                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
                       </details>
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -2451,7 +2484,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     LearnCard
@@ -2519,7 +2552,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     SpruceID
@@ -2542,9 +2575,16 @@
                       </details>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist</summary>
+                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist
+                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
+                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
+                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -2594,7 +2634,7 @@
                     </div>
                   </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     Trinsic
@@ -2617,9 +2657,16 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist</summary>
+                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist
+                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
+                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
+                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
