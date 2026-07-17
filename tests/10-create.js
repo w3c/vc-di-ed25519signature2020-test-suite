@@ -10,8 +10,8 @@ import {
 import {endpoints} from 'vc-test-suite-implementations';
 import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
+import {randomUUID} from 'node:crypto';
 import {tag} from './test-config.js';
-import {v4 as uuidv4} from 'uuid';
 
 // only use implementations with `Ed25519 2020` issuers.
 const {match} = endpoints.filterByTag({tags: [tag], property: 'issuers'});
@@ -48,7 +48,7 @@ describe('Ed25519Signature2020 (create)', function() {
             verifier => verifier.tags.has(tag));
           const {settings: {id: issuerId, options}} = issuer;
           const body = {credential: klona(validVc), options};
-          body.credential.id = `urn:uuid:${uuidv4()}`;
+          body.credential.id = `urn:uuid:${randomUUID()}`;
           body.credential.issuer = issuerId;
           const {data, error} = await issuer.post({json: body});
           if(error) {

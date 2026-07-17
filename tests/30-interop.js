@@ -6,8 +6,8 @@ import chai from 'chai';
 import {filterByTag} from 'vc-test-suite-implementations';
 import {generateTestData} from './vc-generator/index.js';
 import {klona} from 'klona';
+import {randomUUID} from 'node:crypto';
 import {tag} from './test-config.js';
-import {v4 as uuidv4} from 'uuid';
 
 const should = chai.should();
 
@@ -40,7 +40,7 @@ describe('Ed25519Signature2020 (interop)', function() {
         issuer.tags.has(tag));
       const {settings: {id: issuerId, options}} = issuer;
       const body = {credential: klona(validVc), options};
-      body.credential.id = `urn:uuid:${uuidv4()}`;
+      body.credential.id = `urn:uuid:${randomUUID()}`;
       body.credential.issuer = issuerId;
       const {data, error} = await issuer.post({json: body});
       issuerError = error;
