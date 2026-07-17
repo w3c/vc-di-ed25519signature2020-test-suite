@@ -57,7 +57,7 @@
     "url": "https://www.w3.org/groups/wg/vc/"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "bugs": {
     "url": "https://github.com/w3c/vc-di-ed25519signature2020-test-suite/issues"
