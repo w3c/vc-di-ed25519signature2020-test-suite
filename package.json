@@ -28,7 +28,7 @@
     "mocha": "^11.7.6",
     "require-dir": "^1.2.0",
     "varint": "^6.0.0",
-    "vc-test-suite-implementations": "github:w3c/vc-test-suite-implementations"
+    "vc-test-suite-implementations": "github:w3c/vc-test-suite-implementations#main"
   },
   "devDependencies": {
     "eslint": "^8.56.0",
@@ -37,7 +37,7 @@
     "eslint-plugin-unicorn": "^50.0.1"
   },
   "scripts": {
-    "pretest": "npm update vc-test-suite-implementations",
+    "pretest": "npm install vc-test-suite-implementations@github:w3c/vc-test-suite-implementations#main --no-save",
     "test": "mocha tests/ --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options abstract=\"$PWD/abstract.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",templateData=\"$PWD/reports/index.json\",title=\"Ed25519Signature 2020 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000 --preserve-symlinks",
     "lint": "eslint ."
   },
