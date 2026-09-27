@@ -165,7 +165,7 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-        These tests were run on <time>20 September 2026 at 5:08 am UTC</time>
+        These tests were run on <time>27 September 2026 at 5:07 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -921,8 +921,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { &#x27;access-control-allow-origin&#x27;: &#x27;*&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27;, &#x27;x-cloud-trace-context&#x27;: &#x27;0a2498e5234cf9a7bf66b47dab4102f5&#x27;, date: &#x27;Sun, 20 Sep 2026 05:02:28 GMT&#x27;, server: &#x27;Google Frontend&#x27;, &#x27;content-length&#x27;: &#x27;756&#x27;, &#x27;alt-svc&#x27;: &#x27;h3&#x3D;&quot;:443&quot;; ma&#x3D;2592000,h3-29&#x3D;&quot;:443&quot;; ma&#x3D;2592000&#x27;, Authorization: &#x27;sanitized to prevent exposure of secrets&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
-                        <pre>AssertionError: Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { &#x27;access-control-allow-origin&#x27;: &#x27;*&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27;, &#x27;x-cloud-trace-context&#x27;: &#x27;0a2498e5234cf9a7bf66b47dab4102f5&#x27;, date: &#x27;Sun, 20 Sep 2026 05:02:28 GMT&#x27;, server: &#x27;Google Frontend&#x27;, &#x27;content-length&#x27;: &#x27;756&#x27;, &#x27;alt-svc&#x27;: &#x27;h3&#x3D;&quot;:443&quot;; ma&#x3D;2592000,h3-29&#x3D;&quot;:443&quot;; ma&#x3D;2592000&#x27;, Authorization: &#x27;sanitized to prevent exposure of secrets&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        <summary>Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { &#x27;access-control-allow-origin&#x27;: &#x27;*&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27;, &#x27;x-cloud-trace-context&#x27;: &#x27;83a392723208aef60cf44fcb191521e8&#x27;, date: &#x27;Sun, 27 Sep 2026 05:02:38 GMT&#x27;, server: &#x27;Google Frontend&#x27;, &#x27;content-length&#x27;: &#x27;756&#x27;, &#x27;alt-svc&#x27;: &#x27;h3&#x3D;&quot;:443&quot;; ma&#x3D;2592000,h3-29&#x3D;&quot;:443&quot;; ma&#x3D;2592000&#x27;, Authorization: &#x27;sanitized to prevent exposure of secrets&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected issuer to error when VC has an undefined type.: expected Response { status: 201, statusText: &#x27;Created&#x27;, headers: Headers { &#x27;access-control-allow-origin&#x27;: &#x27;*&#x27;, &#x27;content-type&#x27;: &#x27;application/json&#x27;, &#x27;x-cloud-trace-context&#x27;: &#x27;83a392723208aef60cf44fcb191521e8&#x27;, date: &#x27;Sun, 27 Sep 2026 05:02:38 GMT&#x27;, server: &#x27;Google Frontend&#x27;, &#x27;content-length&#x27;: &#x27;756&#x27;, &#x27;alt-svc&#x27;: &#x27;h3&#x3D;&quot;:443&quot;; ma&#x3D;2592000,h3-29&#x3D;&quot;:443&quot;; ma&#x3D;2592000&#x27;, Authorization: &#x27;sanitized to prevent exposure of secrets&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
                         at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
                         at shouldFailIssuance (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:105:14)
                         at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
@@ -1299,17 +1299,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]
-                        at shouldBeErrorResponse (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:278:28)
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:85:3)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:39:7)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1396,17 +1388,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]
-                        at shouldBeErrorResponse (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:278:28)
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:85:3)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:51:7)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1502,17 +1486,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]
-                        at shouldBeErrorResponse (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:278:28)
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:85:3)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:63:7)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1608,17 +1584,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]
-                        at shouldBeErrorResponse (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:278:28)
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:85:3)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:82:7)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1705,17 +1673,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]
-                        at shouldBeErrorResponse (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:278:28)
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:85:3)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:126:9)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1802,17 +1762,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]
-                        at shouldBeErrorResponse (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:278:28)
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:85:3)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:139:7)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1899,17 +1851,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]
-                        at shouldBeErrorResponse (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:278:28)
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:85:3)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
-                        at async shouldBeProofValue (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:311:3)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1996,17 +1940,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]
-                        at shouldBeErrorResponse (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:278:28)
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:85:3)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
-                        at async shouldBeProofValue (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:311:3)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -2093,17 +2029,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]
-                        at shouldBeErrorResponse (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:278:28)
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:85:3)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:165:7)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -2190,17 +2118,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: received HTTP status ${status}: expected 503 to be one of [ 400, 422 ]
-                        at shouldBeErrorResponse (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:278:28)
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/assertions.js:85:3)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/node_modules/data-integrity-test-suite-assertion/suites/verify.js:194:7)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -2331,17 +2251,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Expected a result from verifier.: expected undefined to exist</summary>
-                        <pre>AssertionError: Expected a result from verifier.: expected undefined to exist
-                        at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
-                        at verificationSuccess (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:64:10)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/20-verify.js:56:13)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -2437,9 +2349,10 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected HTTP Status code 400 or 422.: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: Expected HTTP Status code 400 or 422.: expected 503 to be one of [ 400, 422 ]
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:52:26)
+                        <summary>Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-type&#x27;: &#x27;application/json&#x27;, date: &#x27;Sun, 27 Sep 2026 05:05:08 GMT&#x27;, &#x27;content-length&#x27;: &#x27;34&#x27;, Authorization: &#x27;sanitized to prevent exposure of secrets&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-type&#x27;: &#x27;application/json&#x27;, date: &#x27;Sun, 27 Sep 2026 05:05:08 GMT&#x27;, &#x27;content-length&#x27;: &#x27;34&#x27;, Authorization: &#x27;sanitized to prevent exposure of secrets&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
+                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:49:14)
                         at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/20-verify.js:73:11)</pre>
                       </details>
@@ -2530,9 +2443,10 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected HTTP Status code 400 or 422.: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: Expected HTTP Status code 400 or 422.: expected 503 to be one of [ 400, 422 ]
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:52:26)
+                        <summary>Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-type&#x27;: &#x27;application/json&#x27;, date: &#x27;Sun, 27 Sep 2026 05:05:08 GMT&#x27;, &#x27;content-length&#x27;: &#x27;34&#x27;, Authorization: &#x27;sanitized to prevent exposure of secrets&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-type&#x27;: &#x27;application/json&#x27;, date: &#x27;Sun, 27 Sep 2026 05:05:08 GMT&#x27;, &#x27;content-length&#x27;: &#x27;34&#x27;, Authorization: &#x27;sanitized to prevent exposure of secrets&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
+                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:49:14)
                         at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/20-verify.js:82:11)</pre>
                       </details>
@@ -2623,9 +2537,10 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected HTTP Status code 400 or 422.: expected 503 to be one of [ 400, 422 ]</summary>
-                        <pre>AssertionError: Expected HTTP Status code 400 or 422.: expected 503 to be one of [ 400, 422 ]
-                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:52:26)
+                        <summary>Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-type&#x27;: &#x27;application/json&#x27;, date: &#x27;Sun, 27 Sep 2026 05:05:09 GMT&#x27;, &#x27;content-length&#x27;: &#x27;34&#x27;, Authorization: &#x27;sanitized to prevent exposure of secrets&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist</summary>
+                        <pre>AssertionError: Expected no result from verifier.: expected Response { status: 200, statusText: &#x27;OK&#x27;, headers: Headers { &#x27;content-type&#x27;: &#x27;application/json&#x27;, date: &#x27;Sun, 27 Sep 2026 05:05:09 GMT&#x27;, &#x27;content-length&#x27;: &#x27;34&#x27;, Authorization: &#x27;sanitized to prevent exposure of secrets&#x27; }, body: ReadableStream { locked: false, state: &#x27;readable&#x27;, supportsBYOB: true }, bodyUsed: false, ok: true, redirected: false, type: &#x27;default&#x27;, url: &#x27;&#x27; } to not exist
+                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
+                        at verificationFail (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/assertions.js:49:14)
                         at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/20-verify.js:91:11)</pre>
                       </details>
@@ -2709,16 +2624,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist</summary>
-                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist
-                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -2762,16 +2670,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist</summary>
-                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist
-                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -2866,16 +2767,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist</summary>
-                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist
-                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -2970,16 +2864,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist</summary>
-                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist
-                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -3352,16 +3239,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist</summary>
-                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist
-                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -3556,16 +3436,9 @@
                       </details>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist</summary>
-                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist
-                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -3609,16 +3482,9 @@
                       </details>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist</summary>
-                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist
-                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -3667,16 +3533,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist</summary>
-                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(6) } to not exist
-                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -3713,16 +3572,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist</summary>
-                        <pre>AssertionError: Expected verifier to not error.: expected HTTPError: Request failed with status cod… { …(5) } to not exist
-                        at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-di-ed25519signature2020-test-suite/vc-di-ed25519signature2020-test-suite/tests/30-interop.js:66:20)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
